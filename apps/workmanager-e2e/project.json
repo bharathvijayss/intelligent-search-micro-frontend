@@ -1,0 +1,10 @@
+{
+  "name": "workmanager-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/workmanager-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["workmanager"],
+  "// targets": "to see all targets run: nx show project workmanager-e2e --web",
+  "targets": {}
+}
