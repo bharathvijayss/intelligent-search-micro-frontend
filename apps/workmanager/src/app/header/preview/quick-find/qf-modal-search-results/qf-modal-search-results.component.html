@@ -1,0 +1,37 @@
+@if (store.isLoading()) {
+  <!-- show some loader -->
+} @else if (store.isError()) {
+  <!-- show some error -->
+} @else {
+  @for (result of store.filteredResult(); track result) {
+    @if (
+      [FilterType.case, FilterType.ticket, FilterType.action].includes(
+        result.type
+      )
+    ) {
+      <en8-work-item-type-result />
+    } @else if (
+      [FilterType.contact, FilterType.serviceAgent].includes(result.type)
+    ) {
+      <en8-user-type-result />
+    } @else if (
+      [
+        FilterType.inboundEmail,
+        FilterType.outboundEmail,
+        FilterType.notes,
+        FilterType.selfServiceComments,
+      ].includes(result.type)
+    ) {
+      <en8-communication-type-result />
+    } @else if (
+      [
+        FilterType.fileAttachmentToPacket,
+        FilterType.fileAttachmentToEmail,
+      ].includes(result.type)
+    ) {
+      <en8-attachment-type-result [item]="result" />
+    }
+  } @empty {
+    <!-- show some empty content -->
+  }
+}

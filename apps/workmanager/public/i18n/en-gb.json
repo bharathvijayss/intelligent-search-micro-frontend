@@ -1,0 +1,3826 @@
+{
+  "browser": {
+    "unsupported": "You are currently using an unsupported browser: {{name}} {{version}} or older.",
+    "ie11": "We recommend upgrading to the latest Google Chrome, Firefox or Microsoft Edge for a better user experience."
+  },
+  "global": {
+    "all_companies_global": "All Companies/Global",
+    "confirm_action": "Confirm Status Change",
+    "abort_case": "Are you sure you want to cancel this case?",
+    "reject_ticket": "Are you sure you want to reject this ticket?",
+    "step": "Step",
+    "skip": "Skip",
+    "settings": "Settings",
+    "unique_title": "Unique Title",
+    "unique_title_tooltip": "If checked then Title must be unique within the system.",
+    "add": "Add",
+    "add_all": "Add All",
+    "add_item": "Add item",
+    "apply": "Apply",
+    "amount": "Amount",
+    "by": "by",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "cannotAssign": "Work item cannot be auto-assigned to you at the moment.",
+    "cannotSetAssign": "Work item cannot be assigned to you at the moment",
+    "clear_all": "Clear all",
+    "close": "Close",
+    "confirm": "Confirm",
+    "proceed": "Proceed",
+    "create": "Create",
+    "share": "Share",
+    "confirm_dialog": {
+      "header": "Confirmation Dialog",
+      "content": "Are you sure?"
+    },
+    "created": "Created",
+    "copied": "Copied '{{m}}' to clipboard.",
+    "currentDeletedValue": "Current deleted value : ",
+    "delete": "Delete",
+    "remove": "Remove",
+    "discard": "Discard Changes",
+    "edit": "Edit",
+    "hours_short": "hrs",
+    "minutes_short": "mins",
+    "entities": {
+      "queue": "Queue",
+      "customer": "Customer",
+      "contract": "Contract",
+      "service": "Service",
+      "process": "Process",
+      "case": "Case",
+      "subcase": "Sub Case",
+      "category": "Category",
+      "sub_cat": "Sub-Category",
+      "assigned_user": "Assigned user",
+      "PrimaryEmailAddress": "Mailbox Address",
+      "EmailConnector": "Mailbox Name"
+    },
+    "expected": "Expected",
+    "from": "From",
+    "global_scope": "Global Scope",
+    "my": {
+      "text": "My"
+    },
+    "new": "New",
+    "name": "Name",
+    "no": "No",
+    "no_due_date": "No Due Date",
+    "due_date": "Due Date",
+    "no_ref": "(No Reference)",
+    "reference": "Reference",
+    "no_rows_to_display": "No Rows To Display",
+    "no_title": "No Title",
+    "title": "Title",
+    "not_found": "No items found",
+    "not_spec": "Not Specified",
+    "not_started": "Not Started",
+    "learn_more": "Learn More",
+    "ok": "OK",
+    "drop_message": "Drop files here",
+    "open_this_work_item": "Open this work item",
+    "open": "Open",
+    "select_all": "Select All",
+    "owner": "Owner",
+    "parent": "Parent",
+    "paused": "Paused",
+    "reassign_confirm_popup_header": "Assignment Confirmation",
+    "reassign_confirm_popup_msg1": "This work item is already assigned to ",
+    "reassign_confirm_popup_msg2": "Are you sure you want to assign it to yourself?",
+    "reassign_confirm_popup_tip1": "TIP:- If you decide to proceed, unsaved changes made by {{u}} will be discarded.",
+    "card_hyperlink_popup": {
+      "title": "Open external link",
+      "msg": "Clicking on this link opens a new browser tab and sends you to a website outside of Enate. Are you sure that you want to continue?",
+      "continue": "Continue"
+    },
+    "resend": "Resend Token?",
+    "pause": "Pause",
+    "resume": "Resume",
+    "save": "Save",
+    "saving": "Saving",
+    "attach": "Attach",
+    "saveAndClose": "Save & Close",
+    "search": {
+      "text": "Search"
+    },
+    "started_method": {
+      "Another Ticket": "Another Ticket",
+      "Call Handling": "Call Handling",
+      "Email": "Email",
+      "Integration": "Integration",
+      "Self Service": "Self Service",
+      "Web Form": "Web Form"
+    },
+    "stop": "Stop",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "not_now": "Not now",
+    "done": "Done",
+    "system": "System",
+    "or": "OR",
+    "TBD_bucket_tooltip": "Work items where due date is not determined yet",
+    "time": {
+      "ms": "ms",
+      "milliseconds": "Milliseconds",
+      "s": "s",
+      "sec": "Sec",
+      "secs": "Secs",
+      "second": "Second",
+      "seconds": "Seconds",
+      "m": "m",
+      "min": "Min",
+      "mins": "Mins",
+      "minute": "Minute",
+      "minutes": "Minutes",
+      "h": "h",
+      "hour": "Hour",
+      "hours": "Hours",
+      "date": "Date"
+    },
+    "steps": "Steps",
+    "to": "To",
+    "total": "Total",
+    "type_to_search": "Type to search",
+    "unsaved_popup_header": "Tab Close Confirmation",
+    "unsaved_popup_msg1": "This tab might have some unsaved changes.",
+    "unsaved_popup_msg2": "Please make sure you have saved the changes before closing the tab.",
+    "unsaved_popup_msg3": "Are you sure you want to close this tab?",
+    "unsaved_popup_msg4": "You have unsaved changes. If you leave, these changes will be lost.",
+    "updating": "Updating",
+    "upload": "Upload",
+    "import": "Import",
+    "userUnauthorized": "User does not have permission to reassign this work item.",
+    "no_permission": "You don’t have access to open this work item",
+    "process": {
+      "case": "Case",
+      "ticket": "Ticket"
+    },
+    "started_by_method": {
+      "0": "Workflow",
+      "1": "Manual",
+      "2": "Self Service",
+      "3": "Robotics",
+      "4": "Email",
+      "5": "Ticket",
+      "6": "Bulk upload",
+      "7": "Robotics in bulk",
+      "8": "Schedule",
+      "9": "Linked work item"
+    },
+    "webapi": {
+      "error": {
+        "with_id": "A processing error has occurred. This has been logged as incident ID {{id}}",
+        "_": "An error has occurred while handling your request. Please contact your administrator.",
+        "_400": "Data validation error. Please contact your administrator.",
+        "_401": "Authentication error. Please contact your administrator.",
+        "_403": "Permissions error. Please contact your administrator.",
+        "_404": "No object found. Please contact your administrator.",
+        "_406": "Server could not find any matching content. Please contact your administrator.",
+        "_408": "Timeout error. Please contact your administrator.",
+        "_501": "An error has occurred while handling your request. Please contact your administrator.",
+        "_502": "An error has occurred while handling your request. Please contact your administrator.",
+        "_503": "Server is not responding. Please contact your administrator.",
+        "_504": "An error has occurred while handling your request. Please contact your administrator.",
+        "_505": "Server could not support the HTTP version in the request. Please contact your administrator.",
+        "not_accessible": "You do not have permission to work on live work items."
+      },
+      "session": {
+        "logout": "Sign out",
+        "active": {
+          "title": "Save your changes",
+          "message": "<h5>The session will be forcefully closed in</h5><h4>{{m}}:{{s}}<h4><h6>Please re-login to continue</h6>"
+        },
+        "idle": {
+          "extend": "Stay Signed In",
+          "title": "Need More Time?",
+          "message": "<h5>Your session is about to expire. You will be automatically signed out in</h5><h4>{{m}}:{{s}}<h4><h5>To continue your session, select <strong>Stay Signed In</strong></h5>"
+        },
+        "session_expired": "Session Expired!",
+        "login_needed": "Re-authentication Required!",
+        "going_login": "Redirecting to Sign-in Page.",
+        "logging_off": "Logging off from application",
+        "plz_wait": "Please wait"
+      },
+      "logger": {
+        "_": "An error has occurred.",
+        "_js": "An error has occurred.",
+        "_401": "A JavaScript"
+      }
+    },
+    "yes": "Yes",
+    "reactivate": "Reactivate",
+    "all": "All",
+    "logs": "Logs",
+    "select_filter": "Select Filter",
+    "warning": "Warning",
+    "more_info": "More info",
+    "retry": "Retry",
+    "filter": "Filter",
+    "dismiss": "Dismiss",
+    "note": "Note",
+    "workitem": "Work item",
+    "create_as": "Create as",
+    "test_version": "Testing",
+    "see_more": "See more",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "following": "Following",
+    "unfollowing": "Unfollowing",
+    "error": "Error",
+    "decision_updated_by": "Decision updated by",
+    "no_auto_email": "Automated emails will not be sent for Tickets created as Linked Tickets.",
+    "importance": {
+      "0": "Normal",
+      "1": "Low",
+      "2": "High"
+    },
+    "ng-select": {
+      "addTagText": "Add item",
+      "clearAllText": "Clear all",
+      "loadingText": "Loading...",
+      "notFoundText": "No items found",
+      "typeToSearchText": "Type to search"
+    },
+    "read_only_field_deletion_error": "This row cannot be deleted as it contains read-only fields."
+  },
+  "emails": {
+    "clear_html": "Clear Text",
+    "loading_message": "Please wait, we are loading initial data for you to start on",
+    "sending_mail": "Sending Mail"
+  },
+  "header": {
+    "qf": {
+      "owner_name": "Owner : {{name}}",
+      "no_owner": "Owner : None",
+      "assigned_name": "Assigned : {{name}}",
+      "no_assigned": "Assigned: None",
+      "search_workitem_timeout": "Work Item search took too long to process. Please try again with more specific search criteria.",
+      "search_comms_timeout": "Comms search took too long to process. Please try again with more specific search criteria.",
+      "search_file_timeout": "File search took too long to process. Please try again with more specific search criteria.",
+      "search_contact_timeout": "People search took too long to process. Please try again with more specific search criteria.",
+      "advanced_search": "Advanced Search available. ",
+      "try": "Try now"
+    },
+    "main": {
+      "builder": "Builder",
+      "queues": "Queues",
+      "recently_accessed": "Recently accessed",
+      "views": "Advanced Search",
+      "no_views": "No saved views created",
+      "outbox": "Outbox",
+      "email_inbox": "Email Inbox",
+      "drafts": "Drafts",
+      "sent_items": "Sent Items",
+      "mailbox": "Emails",
+      "contacts": "Contacts",
+      "back_to_main_menu": "Back to Main Menu",
+      "blocked_email_addresses": "Blocked Email Addresses",
+      "reports": "Reports"
+    },
+    "usefull_links": {
+      "text": "Useful Links",
+      "pwr_bi_reports": "Reports",
+      "user_profile_settings": "User profile settings",
+      "test_mode": "Switch to Test Mode",
+      "live_mode": "Switch to Live Mode",
+      "homepage": "Enate Homepage",
+      "academy": "Enate Academy",
+      "forum": "Enate Forum",
+      "help": "Enate Help",
+      "feedback": "Feedback",
+      "logout": "Logout"
+    },
+    "tooltips": {
+      "focus_list": "Focus List",
+      "notifications": "Notification Centre",
+      "home": "Home",
+      "unhandled_emails": "Unhandled Emails"
+    },
+    "test_mode": "Testing Mode",
+    "standard_mode": "Standard Search",
+    "intelligent_mode": "New Search",
+    "quick_search": "Quick Search...",
+    "quick_search_shortcut_key":  "Ctrl K",
+    "intelligent_search": {
+      "placeholder": "Search for comms, work items, contacts, files",
+      "result_count": "{{t}} results",
+      "no_title": "[No Title]",
+      "due": "due",
+      "no_due_date": "No Due Date",
+      "attach": "{{c}} attachments",
+      "no_email_id": "No Email Address",
+      "no_email_subject": "(No Email Subject)",
+      "no_email_content": "No Content",
+      "email": "email",
+      "filters": {
+        "work_items": {
+          "all": "Work Items",
+          "case": "Case",
+          "ticket": "Ticket",
+          "action": "Action"
+        },
+        "comms": {
+          "all": "Comms",
+          "received": "Received",
+          "sent": "Sent",
+          "self_service": "Self Service",
+          "notes": "Notes"
+        },
+        "users": {
+          "all": "Users",
+          "internal": "Agent",
+          "external": "Contact"
+        },
+        "files": {
+          "all": "Files",
+          "work_item": "Work Item Attachments",
+          "communication": "Comms Attachments"
+        },
+        "date": {
+          "all_time": "All Time",
+          "today": "Today",
+          "last_week": "Last Week",
+          "last_month": "Last Month",
+          "date_range": "Date Range"
+        }
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "login_via": "Sign in via",
+      "sign_in_panel": {
+        "label": "Sign-In",
+        "username": {
+          "label": "Username",
+          "tooltip": "Please enter Username"
+        },
+        "password": {
+          "label": "Password",
+          "tooltip": "Please enter Password"
+        },
+        "login": {
+          "label": "Login",
+          "error": "Access denied. The login details entered are incorrect.",
+          "go_to_login": "Back to login page",
+          "already_logged_in": "You are already logged in.",
+          "last_activity": "Your last activity was at {{p0}}.",
+          "close_and_login": "Would you like to continue to login and close the existing session?"
+        },
+        "forgot_password": {
+          "label": "Forgot Password?"
+        },
+        "privacy_policy": {
+          "label": "Privacy Policy",
+          "tooltip": "Click here to view your company's Privacy Policy.",
+          "description_link": "By logging in, you acknowledge that you have read and agreed to your company's {{p}}."
+        }
+      }
+    },
+    "change_password": {
+      "label": "Change Password",
+      "current_password": {
+        "label": "Current Password",
+        "tooltip": "Please enter Current Password"
+      },
+      "new_password": {
+        "label": "New Password",
+        "tooltip": "Please enter New Password"
+      },
+      "confirm_password": {
+        "label": "Confirm Password",
+        "tooltip": "Please enter Confirm Password"
+      },
+      "message": {
+        "header": "Your password needs to be changed.",
+        "description": "Your password has either expired or has recently been reset by the system administrator.",
+        "update_password": "Please enter your existing password followed by your new password.",
+        "password_policy": {
+          "_0": "Should not contain username, first name and last name.",
+          "_1": "Contain at least {{value}} characters.",
+          "_2": "Should not exceed {{value}} characters.",
+          "_3": "At least {{value}} numeric characters required.",
+          "_4": "At least {{value}} special characters required.",
+          "_5": "At least one upper and one lower case character required."
+        }
+      }
+    },
+    "forgot_password": {
+      "title": "Let’s find your account!",
+      "lable": "Don't worry! Just fill in your username below. If it’s linked to an email address, we'll send an email with instructions.",
+      "mail_sent_title": "Check your mail",
+      "mail_sent_message": "If this account is linked to an email address, we're sending you an email with a link to reset your password.",
+      "mail_sent_note": "If you do not have an account, please contact your administrator to discuss account setup.",
+      "username": {
+        "label": "Enter your username",
+        "tooltip": "Please enter your username"
+      },
+      "back_to_login": "Back to Login"
+    },
+    "reset_password": {
+      "token_expird": "Your password token has expired!",
+      "token_expird_resend": "Please click on the 'Resend Token' button to receive an email with the new password token.",
+      "token_resend": "Token Expired! Resend Token?",
+      "token_resend_message": "Password reset token has been resent. Please check your mail.",
+      "title": "Let’s reset your password.",
+      "password_reset": "Password Reset",
+      "message": "Congratulations! Your Password has been successfully changed. Please login to your account.",
+      "error": {
+        "_400": "The password is not accepted.",
+        "_401": "Forgot password token not found.",
+        "_403": "Forgot password token expired."
+      }
+    },
+    "password_errors": {
+      "PasswordAcceptable": "Accepted",
+      "CannotContainUsername": "Password cannot contain a username",
+      "CannotContainFirstName": "Password cannot contain a user's first name",
+      "CannotContainSurname": "Password cannot contain a user's last name.",
+      "CurrentPasswordNotOldEnough": "Password was changed too recently.",
+      "DoesNotMeetMinimumLength": "Password does not meet minimum length as defined by Password Policy",
+      "DoesNotMeetMaximumLength": "Password exceeds maximum length as defined by Password Policy",
+      "InvalidCharacterInPassword": "One or more invalid characters in password",
+      "PasswordDoesNotHaveRequiredNumberOfNumbers": "Password does not include enough numerical characters as defined by Password Policy",
+      "PasswordDoesNotHaveRequiredNumberOfSymbols": "Password does not include enough symbolic characters as defined by Password Policy",
+      "PasswordDoesNotHaveCaseChange": "Password does not include upper and lower case characters as defined by Password Policy",
+      "PasswordPreviouslyUsed": "Password has previously been used",
+      "CurrentPasswordIsWrong": "The current password entered is incorrect"
+    }
+  },
+  "master": {
+    "reassign": {
+      "tooltip": "Click to Reassign Work Item(s)",
+      "tooltip2": "Click to Unassign Work Item(s)",
+      "tooltip3": "Click to Complete Work Item(s) Assigned to You",
+      "tooltip4": "Click to create a link between work item(s)",
+      "tooltip_focus_list": "Click to add work item(s) to Focus List",
+      "reassign": "Reassign",
+      "complete": "Complete",
+      "unassign": "Unassign",
+      "create_link": "Link",
+      "focus_list": "Add to Focus List",
+      "selected": "selected",
+      "unassignConfirmMessage": "Are you sure you want to unassign the selected Work Item(s)?"
+    },
+    "add_new_work_item": {
+      "select_comp": "Select a Company",
+      "select_cont": "Select a Contract",
+      "select_service": "Select a Service",
+      "select_process_grp": "Select a Process Group",
+      "title": "Create New Work item",
+      "bulk_create": "Bulk Create",
+      "tooltip": "Create work item"
+    },
+    "notification": {
+      "all": "All",
+      "unread": "Unread",
+      "o": "Open",
+      "no_msg": "There is no message for you.",
+      "short_msg": "Short Message",
+      "group": "Group",
+      "date_read": "Date Read",
+      "message": "Message",
+      "dt_raised": "Date Raised",
+      "mark_read": "Mark as read",
+      "mark_unread": "Mark as Unread",
+      "mark_all_read": "Mark All As Read",
+      "dnd": "Do Not Disturb",
+      "dnd_description": "Turns off email and browser pop-up notifications.",
+      "notifications_disabled": "All notifications are turned off",
+      "notifications_disabled_tooltip": "Notifications can be turned on in User Settings > Notification Settings",
+      "alerts_disabled": "Do Not Disturb is on",
+      "alerts_disabled_tooltip": "All email and browser pop-up notifications are disabled",
+      "delete_msg": "Delete messages"
+    },
+    "rag": {
+      "overdue": {
+        "text": "Overdue"
+      },
+      "due_later_today": {
+        "text": "Due Today"
+      },
+      "due_in_future": {
+        "text": "On Target"
+      },
+      "to_be_determined": {
+        "text": "Not Set"
+      }
+    },
+    "manage": {
+      "tags": {
+        "unassigned": {
+          "text": "Unassigned"
+        }
+      },
+      "columns": {
+        "@others___columns": {
+          "text": "Others"
+        },
+        "@no___columns": {
+          "text": "No"
+        },
+        "ActionType": {
+          "text": "Action Type"
+        },
+        "AssignedToUser": {
+          "text": "Assigned To"
+        },
+        "ContractName": {
+          "text": "Contract Name"
+        },
+        "CustomerName": {
+          "text": "Customer"
+        },
+        "DueDate": {
+          "text": "Due"
+        },
+        "TimeRemainingWhenPaused": {
+          "text": "Time Remaining When Paused"
+        },
+        "ResolutionMethod": {
+          "text": "Resolution Method"
+        },
+        "StatusReason": {
+          "text": "Status Reason"
+        },
+        "WaitType": {
+          "text": "Wait Type"
+        },
+        "LastUpdatedBy": {
+          "text": "Last Updated By"
+        },
+        "LastUpdatedOn": {
+          "text": "Last Updated On"
+        },
+        "OwnerUser": {
+          "text": "Owned By"
+        },
+        "ParentProcessName": {
+          "text": "Parent Process Name"
+        },
+        "ParentReference": {
+          "text": "Parent Reference"
+        },
+        "ProcessName": {
+          "text": "Process Name"
+        },
+        "ProcessType": {
+          "text": "Work Item Type"
+        },
+        "Reference": {
+          "text": "Reference"
+        },
+        "ServiceLineName": {
+          "text": "Service Line"
+        },
+        "ServiceName": {
+          "text": "Service Name"
+        },
+        "StartDate": {
+          "text": "Started"
+        },
+        "State": {
+          "text": "State"
+        },
+        "Status": {
+          "text": "Status"
+        },
+        "StartedByMethod": {
+          "text": "Started By Method"
+        },
+        "StartedByUser": {
+          "text": "Started By"
+        },
+        "SupplierName": {
+          "text": "Service Provider"
+        },
+        "TicketCategoryLevel1": {
+          "text": "Ticket Category Level 1"
+        },
+        "TicketCategoryLevel2": {
+          "text": "Ticket Category Level 2"
+        },
+        "TicketCategoryLevel3": {
+          "text": "Ticket Category Level 3"
+        },
+        "Title": {
+          "text": "Title"
+        },
+        "ProjectedStart": {
+          "text": "Projected Start"
+        },
+        "ProjectedEnd": {
+          "text": "Projected End"
+        },
+        "PrimaryContactDisplayText": {
+          "text": "Primary Contact Name"
+        },
+        "RequesterDisplayText": {
+          "text": "Requester Name"
+        },
+        "SubjectDisplayText": {
+          "text": "Subject Name"
+        },
+        "LatestIncomingEmailSenderDisplayText": {
+          "text": "Last Email Sender"
+        },
+        "LatestIncomingEmailReceived": {
+          "text": "Last Email Received"
+        },
+        "PersistentQueueName": {
+          "text": "Queue"
+        },
+        "IsReOpened": {
+          "text": "Has Been Reopened"
+        },
+        "ReOpenedByUser": {
+          "text": "Last Reopened By"
+        },
+        "ReOpenedDate": {
+          "text": "Last Reopened On"
+        },
+        "OriginalStartDate": {
+          "text": "Initial Request On"
+        },
+        "IsOverdue": {
+          "text": "Is Overdue"
+        },
+        "OverdueByDays": {
+          "text": "Overdue By Days"
+        },
+        "OriginalRequesterDisplayText": {
+          "text": "Original Requester Name"
+        },
+        "PrimaryContactEmail": {
+          "text": "Primary Contact Email"
+        },
+        "RequesterEmail": {
+          "text": "Requester Email"
+        },
+        "SubjectEmail": {
+          "text": "Subject Email"
+        },
+        "OriginalRequesterEmail": {
+          "text": "Original Requester Email"
+        }
+
+      },
+      "grid": {
+        "graph": {
+          "title": "Current work by {{name}}"
+        },
+        "agent": {
+          "title": "Member profile of {{name}}"
+        },
+        "farm": {
+          "title": "Robot farm profile of {{name}}",
+          "heading": "<b>Workload:</b><span>{{CountText}} Items</span><span class=\"badge\" [ngStyle]=\"LableStyle\">{{aa}}</span><span> of potential work remaining</span>"
+        },
+        "status_text": {
+          "no_records": "No Records",
+          "showing": "Showing {{total}}",
+          "showing_of": "Showing {{count}} of {{total}}"
+        },
+        "names": {
+          "0": {
+            "text": "Team Work Inbox"
+          },
+          "1": {
+            "text": "Team Owned Work"
+          },
+          "2": {
+            "text": "Lined Up"
+          },
+          "3": {
+            "text": "Current"
+          },
+          "4": {
+            "text": "Work Inbox"
+          },
+          "5": {
+            "text": "Owned Work"
+          },
+          "6": {
+            "text": "Owned Work"
+          }
+        },
+        "tooltip": {
+          "pull_from_queue": "Pull Work from Queues.",
+          "refresh": "Refresh",
+          "column_adjust": "Fit to width",
+          "column_select": "Select columns",
+          "table_expand": "Expand table",
+          "table_collapse": "Collapse table",
+          "clear_filter": "Clear filters"
+        }
+      },
+      "operational": {
+        "permission_headers": {
+          "work_item_creation": "Work Item Creation",
+          "work_item_assignment": "Work Item Assignment",
+          "work_item_options": "Work Item Options",
+          "queues_team_members": "Queues & Team Members",
+          "email_view_options": "Email View Options",
+          "Contacts": "Contacts",
+          "views_page": "Advanced Search",
+          "reports": "Reports"
+        },
+        "permission_names": {
+          "CanCreate": "Create Individual Work Items",
+          "AccessBulkCreate": "Bulk Create Work Items",
+          "ReassignWorkItem": "Assign to Anyone",
+          "AssignWorkItemToSelf": "Assign to Themselves",
+          "UnassignWorkItem": "Unassign",
+          "OverrideWorkItemDueDate": "Override Due Dates",
+          "SplitTicket": "Split Tickets",
+          "MergeTicket": "Merge Tickets",
+          "EditDefectsOfOtherUsers": "Edit Defects Logged by Others",
+          "EditOtherUsersRecordedTimeEntry": "Edit Time Tracker Entries Logged by Others",
+          "AccessPeerReviewActions": "Access Custom Data In Peer Review Actions",
+          "DeleteEmailAttachment": "Delete Email Attachments",
+          "AccessQueuesAndPeers": "View Queues & Team Members",
+          "WorkOnItemsOutsideOfSelfQueues": "Work on Items Outside their Queues",
+          "AccessQueueSetup": "Set up Team & Queues",
+          "AccessEmailInboxOutboxAndSentItems": "Access Email Inbox, Sent Items & Outbox",
+          "AccessUnhandledEmail": "Access Unhandled Emails",
+          "AccessBlockedEmailAddresses": "View Blocked Emails Page",
+          "EditBlockedEmailAddresses": "Edit Blocked Email Address Entries",
+          "AccessContactsManagement": "Access Contacts Page",
+          "AccessViews": "Access Advanced Search Page",
+          "ExportToExcel": "Export Advanced Search views to Excel",
+          "CreateCustomReports": "Create Custom Reports",
+          "AccessReports": "Access Reports",
+          "ConvertToCase": "Convert to Case"
+        }
+      },
+      "team_view": {
+        "text": "My Team",
+        "tooltip": {
+          "expand": "Expand",
+          "collapse": "Collapse"
+        },
+        "can_create": {
+          "text": "Can Create",
+          "tooltip": "Can create work items"
+        },
+        "can_see_pears": {
+          "text": "Can See Peers & Queue",
+          "tooltip": "Can see work items from Peers and Queues"
+        },
+        "can_assign": {
+          "text": "Can Reassign",
+          "tooltip": "Can reassign work items"
+        },
+        "allow_queue_assign": {
+          "text": "Can only work on items in their Queues",
+          "tooltip": "Can only work on items which are assigned to Queues they are part of or items that are not assigned to a Queue",
+          "confirm_title": "Please Confirm",
+          "confirm_note": "Some work items may already be assigned to this agent that are in Queues they are not part of. They will still be able to continue working on these work items as normal, but assigning any further work items to them from outside of their Queues will now be blocked. If you would rather unassign these work items from this user, you can do so manually.<br /><br /> Please confirm that you only want this agent to work on items in their Queues."
+        },
+        "status": {
+          "all": {
+            "text": "All"
+          },
+          "offline": {
+            "text": "Offline"
+          },
+          "available": {
+            "text": "Available"
+          }
+        },
+        "memebers": {
+          "sorts": {
+            "0": "Least Work",
+            "1": "Most Work",
+            "2": "Least Overdue",
+            "3": "Most Overdue",
+            "4": "Least Due Today",
+            "5": "Most Due Today",
+            "6": "Least On Target",
+            "7": "Most On Target"
+          },
+          "add_member": {
+            "text": "Add New Member"
+          }
+        },
+        "robot_farm": {
+          "bots": "Bots"
+        },
+        "more_about_role": "More about this role",
+        "no_role_assigned": "No role assigned",
+        "queue": {
+          "unassign_items": {
+            "text": "Unassigned Work"
+          }
+        }
+      },
+      "farm": {
+        "bots": "Bots",
+        "workload": {
+          "not_allowed": "{{items}} more items available for bot farm but hidden due to your permissions.",
+          "owned_0": "<b>Workload:</b><span class='mx-1'>{{items}} items owned by {{farm}}</span>",
+          "owned_1": "<b>Workload:</b><span class='mx-1'>{{items}} items owned by {{farm}}</span><span class='fa fa-info-circle text-danger' style='font-size:1.2em;' title='{{notAllowed}}'></span>",
+          "case_0": "<b>Workload:</b><span class='mx-1'>{{total}} items <span class='mx-1 badge'>{{time}}</span> of potential work remaining</span>",
+          "case_1": "<b>Workload:</b><span class='mx-1'>{{total}} items <span class='mx-1 badge'>{{time}}</span> of potential work remaining</span><span class='fa fa-info-circle text-danger' style='font-size:1.2em;' title='{{notAllowed}}'></span>",
+          "case_2": "<b>Workload:</b><span class='mx-1'>{{items}} of {{total}} items <span class='mx-1 badge'>{{time}}</span> of potential work remaining</span>",
+          "case_3": "<b>Workload:</b><span class='mx-1'>{{items}} of {{total}} items <span class='mx-1 badge'>{{time}}</span> of potential work remaining</span><span class='fa fa-info-circle text-danger' style='font-size:1.2em;' title='{{notAllowed}}'></span>"
+        },
+        "load": {
+          "text": "{{c}} items",
+          "title": "Estimated work remaining"
+        },
+        "items": {
+          "zero_min": "0 minutes",
+          "zero_sec": "0 seconds",
+          "list": "{{count}} items"
+        },
+        "tooltip": {
+          "not_logged_yet": "The robot hasn't logged in yet",
+          "last_connection": "The Robot was last connected on {{time}}",
+          "bot_state": {
+            "_1": "Some robots are offline",
+            "_2": "Some robots are suspended",
+            "_3": "Some robots are offline, Some are suspended"
+          }
+        },
+        "bot_state": {
+          "_0": {
+            "text": "Offline"
+          },
+          "_1": {
+            "text": "Suspended",
+            "title": "Bot is Temporarily suspended as it took {{actual}} \n instead of maximum expected {{limit}} to complete the latest action.",
+            "message": "Resume your Bot by selecting one of the options",
+            "heading": "Bot Suspended",
+            "bot_fixed": "Bot Fixed",
+            "routing_fixed": "RPA Routine Fixed"
+          },
+          "_2": {
+            "text": "Idle"
+          },
+          "_3": {
+            "text": "Busy-Integrated"
+          },
+          "_4": {
+            "text": "Busy-Independent"
+          }
+        }
+      },
+      "assign": {
+        "agent": "Search for a Team Member",
+        "any_bot": "Any Bot within {{farm}}",
+        "complete_fail": "failed to close {{f}} out of {{t}} work item(s)",
+        "complete_success": "{{s}} out of {{t}} work item(s) successfully closed",
+        "complete_success_fail": "{{s}} out of {{t}} work item(s) successfully closed & failed to close {{f}} out of {{t}} work item(s)",
+        "add_focuslist_success_fail": "{{s}} out of {{t}} work item(s) were successfully added to your Focus List. {{f}} out of {{t}} work item(s) failed to get added to your Focus List.",
+
+        "count": "{{count}} items",
+        "fail": "{{f}} out of {{t}} work item(s) failed to assign to {{n}}",
+        "message": "Add a Note",
+        "reassign": "Reassign",
+        "reassign_me": "Reassign to me",
+        "robot": "Search for a Bot",
+        "success": "{{s}} out of {{t}} work item(s) successfully assigned to {{n}}",
+        "success_fail": "{{s}} out of {{t}} work item(s) successfully assigned and {{f}} out of {{t}} failed to assign to {{n}}",
+        "unassign_fail": "failed to unassign {{f}} out of {{t}} work item(s)",
+        "unassign_fail_due_to": "failed to unassign {{f}} out of {{t}} work item(s) as one(or more) item(s) is not in any Queue",
+        "unassign_success": "{{s}} out of {{t}} work item(s) successfully unassigned",
+        "unassign_success_fail": "{{s}} out of {{t}} work item(s) successfully unassigned and {{f}} out of {{t}} failed to unassign",
+        "yourself": "yourself",
+        "in_progress": "Resolving {{x}} work item(s). This might take a while"
+      },
+      "link_workitem": {
+        "link_success": "{{s}} out of {{t}} work item(s) successfully linked",
+        "link_fail": "{{f}} out of {{t}} work item(s) failed to link",
+        "link_success_fail": "{{s}} out of {{t}} work item(s) successfully linked and {{f}} out of {{t}} failed to linked"
+      },
+      "setting": {
+        "popup": {
+          "title": "Display and Columns Settings <strong><small>({{c}}/{{t}} selected)</small><strong>",
+          "display_by": "Display By",
+          "group_by_title": "Choose which column to group your data by on the chart.",
+          "group_by_title2": "This column will be automatically added into your grid",
+          "standard_cols": "Standard columns",
+          "custom_cols": "Custom Data Columns",
+          "mandatory": "Mandatory field",
+          "revert_to_defaults": "Revert to Defaults",
+          "max_allowed": "Maximum of {{c}} columns are allowed.",
+          "max_select": "Maximum of {{c}} columns can be selected.",
+          "default_message": "This will load default columns sorted by <strong>Due Date</strong>. Are you sure you wish to load defaults?"
+        }
+      }
+    },
+    "headers": {
+      "notification": {
+        "label": "Notifications Centre"
+      },
+      "focus_list": {
+        "label": "Focus List",
+        "description": "You can use your Focus List to add and manage the work items you want to concentrate on.",
+        "add_workitems": "Add to Focus List",
+        "search_workitems": "Add work items to your Focus List",
+        "selected_info": "{{n}} selected",
+        "search_promt": "Enter a search term.",
+        "search_no_result": "Sorry, no matching search results were found.",
+        "search_no_result_prompt": "Please try again using another search term.",
+        "focus_list_empty": "Your Focus List is empty.",
+        "focus_list_empty_prompt": "Please add work item(s) to your Focus List.",
+        "adding": "Adding work items...",
+        "removing": "Removing work items...",
+        "added_workitem": "{{r}} was successfully added to Focus List.",
+        "added_multiple": "{{n}} work items were successfully added to Focus List.",
+        "open_confirmation": "Are you sure you want to open the selected {{n}} work item(s) in new tabs?",
+        "remove_confirmation": "Are you sure you want to remove the selected {{n}} work item(s) from the Focus List?",
+        "remove_confirmation_single": "Are you sure you want to remove this work item from the Focus List?",
+        "limit_reached": "You cannot add more than 50 items to the Focus List",
+        "tooltips": {
+          "add_to_focus_list": "Add this work item to Focus List",
+          "add_items_to_focus_list": "Add item(s) to Focus List",
+          "remove_from_focus_list": "Remove this work item from Focus List",
+          "drag_tooltip": "Drag and drop to re-arrange items in Focus List",
+          "open_selected": "Open the selected work item(s) in new tabs",
+          "remove_selected": "Remove the selected work item(s) from Focus List"
+        }
+      },
+      "quickfind": {
+        "no_title": "[No Title]",
+        "no_due_date": "No Due Date",
+        "time_until_due": "Paused {h+} hours {m} minutes before due",
+        "time_after_overdue": "Paused {h+} hours {m} minutes after overdue",
+        "no_subject": "[No Subject]",
+        "paused": "Paused",
+        "not_started": "Not Started",
+        "attach": "{{c}} attachments",
+        "filter_by_short_code": "Filter by Short Code",
+        "no_email_address": "No Email Address",
+        "eg": "e.g. r:123",
+        "date_filetr_type": {
+          "AnyTime": "Any Time",
+          "Today": "Today",
+          "PastWeek": "Past Week",
+          "PastMonth": "Past Month",
+          "PastThreeMonths": "Past 3 Months",
+          "PastYear": "Past Year",
+          "SpecificDates": "Specific Dates"
+        },
+        "from": "From",
+        "to": "To",
+        "Assigned_to": "Assigned to",
+        "Owner_is": "Owner is",
+        "place_holder": {
+          "all": "Find People, Work Items, Communications and Files",
+          "people": "Find People",
+          "work_item": "Find Work Items",
+          "comms": "Find Communications",
+          "agent": "Find Agents",
+          "contact": "Find Contact",
+          "employee": "Find Employees",
+          "case": "Find Case Work Items",
+          "ticket": "Find Ticket Work Items",
+          "action": "Find Action Work Items",
+          "email_in": "Find incoming Emails",
+          "email_out": "Find outgoing Emails",
+          "comment": "Find Self Service Comment",
+          "note": "Find Note",
+          "file": "Find Files",
+          "packet_file": "Find Work Item's Files",
+          "email_file": "Find Communication's Files"
+        },
+        "title": {
+          "everything": "Everything",
+          "work_item": "Work Item",
+          "user": "User",
+          "communication": "Communication",
+          "case": "Case",
+          "ticket": "Ticket",
+          "action": "Action",
+          "employee": "Employee",
+          "contact": "Contact",
+          "agent": "Agent",
+          "email_received": "Received Email",
+          "email_sent": "Sent Email",
+          "self_service": "Self Service",
+          "note": "Note",
+          "file": "File",
+          "packet_file": "File attached to Work Items",
+          "email_file": "File attached to Communications"
+        },
+        "file": {
+
+        },
+        "no_results_user_search": {
+          "cant_find": "Can't find",
+          "would_you_like_to": "Would you like to",
+          "add_a_contact": "add a contact?"
+        }
+      },
+      "unhandled_emails": {
+        "unhandled_emails": "Unhandled Emails",
+        "unhandled_emails_desc": "Unhandled Emails are incoming emails that have failed to create or attach to a Ticket or Case. Take a look and decide if you want to convert them into a Ticket or Case, or just delete them. You should ideally have 0 unhandled emails.",
+        "go_to_unhandled_emails": "Go To Unhandled Emails",
+        "all_emails": "Total",
+        "past_24hrs_emails": "Received in past 24hrs"
+      }
+    },
+    "pages": {
+      "user_settings": {
+        "settings_updated_successfully": "Settings updated successfully",
+        "subscriptions_successful": "Notification subscriptions updated successfully",
+        "placeholder": "Your email signature",
+        "include_signature": "Include my signature in outgoing emails",
+        "create_contact_popup": "Don't show create contact popup",
+        "new_info_warning": "Don't show new information warning",
+        "new_info_warning_tooltip": "Don't show new information warning before submitting a work item",
+        "global_agent_info": "You are adding a service agent with a global scope to this work item. You can remove them manually from the contact card.",
+        "check_details_route_mail": "Don't show 'Check Details' warning",
+        "check_details_route_mail_tooltip": "Don't ask to check details when a mail is sent to a route address",
+        "remove_route_mail": "Don't show 'Remove Route Address' warning",
+        "remove_route_mail_tooltip": "Don't show warning when removing a route address from an email recipient list",
+        "open_link_in_new_tab": "Open links in new browser tab",
+        "open_link_in_new_tab_tooltip": "Switch this setting to ON to open links in a new browser tab. Switch this setting to OFF if you wish links you click on to open in your current browser tab.",
+        "global_agent_warning": "Don't show Global agent warning",
+        "global_agent_warning_tooltip": "Don't show Global agent warning while adding agents in a workitem",
+        "create_contact_popup2": "Don't show this again",
+        "create_contact_popup2_tooltip": "You can change this in user profile settings",
+        "page_name": "User Settings",
+        "password_changed": "Password successfully changed. Redirecting to login page.",
+        "cancel": "Cancel",
+        "confirm_button": {
+          "confirm": "Confirm",
+          "save": "Save"
+        },
+        "policy": {
+          "between": "Must contain between {{mn}} and {{mx}} characters.",
+          "atleast": "Must contain at least {{mn}} characters.",
+          "upto": "Can only contain up to {{mx}} characters.",
+          "atleast_number": "Must contain at least {{mn}} number.",
+          "atleast_numbers": "Must contain at least {{mn}} numbers.",
+          "atleast_symbol": "Must contain at least {{mn}} symbol.",
+          "atleast_symbols": "Must contain at least {{mn}} symbols."
+        },
+        "confirm_new_password": "Confirm New Password",
+        "current_password": "Current Password",
+        "date_pattern": "Date Pattern",
+        "edit_profile_pic": "Edit profile picture",
+        "error_messages": {
+          "no_match": "Passwords do not match",
+          "bad_policy": "Password does not adhere to password policy",
+          "no_current_pw": "Please enter your current password",
+          "no_confim_pw": "Please enter and confirm your new password",
+          "no_surname_allowed": "Your last name cannot be used in your password",
+          "change_password_warning": "Changing your password will result in you being logged out"
+        },
+        "language": "Language",
+        "email_signature": "Email Signature",
+        "new_password": "New Password",
+        "time_pattern": "Time Pattern",
+        "timezone": "Time Zone",
+        "title": "User Profile Settings",
+        "uppercase": "Must contain an uppercase character.",
+        "user_info": "User Info",
+        "password_title": "Password",
+        "mail_delay": {
+          "title": "Cancel send",
+          "message": "By adding a default delay to all your emails, you prevent them from being sent immediately. This gives you an opportunity to review and cancel them if it's within the delay you create.",
+          "minute": "{{m}} minute",
+          "seconds": "{{s}} sec"
+        },
+        "notifications": {
+          "title": "Notification Settings",
+          "message": "Choose which work items and events you want to get notified about and how you want to get notified.",
+          "pause_all": "Turn off all notifications",
+          "pause_desc": "No notifications will be generated for you while you have notifications turned off.",
+          "reload_note": "Page will be refreshed after save.",
+          "scope_header": {
+            "label": "Notification Scope",
+            "description": "Automatically send me notifications about work items sitting in these areas."
+          },
+          "alert_header": {
+            "label": "When and how to notify me",
+            "description": "Which events to notify me about and what kind of notifications to create for each."
+          },
+          "alert_tooltip": "Additional ways you want to receive notifications",
+          "alert_methods": {
+            "in_app": "In-app",
+            "email": "Email",
+            "browser": "Browser Pop-up",
+            "browser_popup_warning": "Note: Once you close all of your Enate tabs, Enate notifications will disappear from your taskbar notifications centre."
+          },
+          "subscriptions": {
+            "inbox": {
+              "label": "Work Inbox",
+              "description": "Get notifications for work items that are in my Work Inbox."
+            },
+            "queues": {
+              "label": "My Queues",
+              "description": "Get notifications for work items that are in Queues that I am in and/or manage."
+            },
+            "followed": {
+              "label": "Followed",
+              "description": "Get all notifications from followed workitems"
+            },
+            "customers": {
+              "label": "Search Customers",
+              "search_hint_contain": "Search for a name containing...",
+              "description": "You will receive notifications for work from ALL customers in your Queues. If instead you only wish to receive notifications for specific customers, please add them in the list below.",
+              "description_count": "You will receive notifications for work from <strong>{{c}}</strong> customers mentioned below."
+            }
+          },
+          "alerts": {
+            "1": {
+              "label": "Work Item Assigned to Me",
+              "description": "Assigned user of a work item has changed to me"
+            },
+            "2": {
+              "label": "New Work Item into Queue",
+              "description": "Assigned Queue of a work item has changed to a Queue that I am in and/or manage"
+            },
+            "3": {
+              "label": "New Information Received",
+              "description": "New information (Email/Self Service Note) has been received on a work item"
+            },
+            "4": {
+              "label": "New File Added",
+              "description": "A new file has been manually uploaded by an agent to the files section of the work item."
+            },
+            "5": {
+              "label": "Due Date Missed",
+              "description": "The due date of a work item has been missed and it is now overdue."
+            },
+            "6": {
+              "label": "Due Date 'At Risk' Reminder",
+              "description": "Due date of the work item is deemed to be at risk. You will be notified 30 mins before the expected time to complete the work item ends when the work item is due. E.g. if the work item is due to be completed at 17.00 and the expected time is 1 hour, you will be notified at 15.30."
+            },
+            "7": {
+              "label": "Action Rejected",
+              "description": "A robot has actively rejected an Action, or repeatedly failed to process it."
+            },
+            "8": {
+              "label": "Case Needs Attention",
+              "description": "A Case has encountered a problem and requires intervention before it can proceed."
+            },
+            "9": {
+              "label": "Peer Review Changes",
+              "description": "The peer review of an Action has been marked as 'Fail'."
+            }
+          }
+        }
+      },
+      "blocked_email_addresses": {
+        "get_started": "Enter an email address to get started",
+        "email_address": "Email Address",
+        "placeholder": "example@example.com",
+        "loading": "Loading...",
+        "block_auto": {
+          "heading": "Disable auto-generated emails when creating a new Ticket/Case from this address",
+          "tooltip": "The system will allow Tickets/Cases to be created for emails arriving from this address but will not send any auto-generated emails out to the address."
+        },
+        "block_entirely": {
+          "heading": "Auto-reject emails from this address as spam",
+          "tooltip": "The system will allow Tickets to be created for emails arriving from this address but once created, the Ticket will be automatically moved to a state of Closed with a resolution method of 'Rejected as Spam'."
+        },
+        "block_all": {
+          "heading": "Disable all auto-generated emails to this address",
+          "tooltip": "The system will not send any auto-generated emails for Tickets out to this address when it is included as a To, CC or BCC address."
+        },
+        "validation": {
+          "valid_email": "A valid email is required",
+          "duplicate": "This email address already exists"
+        },
+        "updated_on": {
+          "by_self": "Updated by you on {{d}}",
+          "by_user": "Updated by {{n}} on {{d}}",
+          "no_info": "No update information available"
+        }
+      },
+      "callHandling": {
+        "tabs": {
+          "comms": "Comms",
+          "workItems": "Work Items"
+        },
+        "about_user": {
+          "about": "About",
+          "first_name": "First name",
+          "first_name_error": "First name is required",
+          "last_name": "Last name",
+          "email_address": "Email address",
+          "email_address_error": "Email address is required",
+          "company_error": "Company name is required",
+          "invalid_email_address_error": "Email is incorrectly formatted",
+          "mobile_telephone_number": "Mobile telephone number",
+          "telephone_number": "Telephone number",
+          "employee_ID": "Employee ID",
+          "date_of_birth": "Date of birth",
+          "location": "Location",
+          "department": "Department",
+          "time_zone": "Time zone",
+          "office_location": "Office location",
+          "office_location_error": "Office location is limited to 50 characters",
+          "address": "Address"
+        },
+        "userCard": {
+          "start_work_item": {
+            "start_work_item": "Start work item",
+            "noProcess": "No processes to show"
+          },
+          "feedback_tooltip": "Happiness Rating: {{r}}/5",
+          "user_deleted": "User deleted"
+        },
+
+        "workItems": {
+          "owner": "Owner",
+          "reviewed_by": "Reviewed By",
+          "performed_by": "Performed By",
+          "closed": "Closed",
+          "resolved": "Resolved",
+          "noWorkItemsToDisplay": "No work items to display",
+          "due": "Due",
+          "assignee": "Assignee",
+          "queues": "Queues",
+          "no_assignee": "No assignee",
+          "no_queue": "No queue",
+          "no_instr": "No Instruction",
+          "action": "Action",
+          "actions": "Actions"
+        },
+        "toolBar": {
+          "filterBy": {
+            "label": "Status",
+            "all": "All",
+            "running": "Running",
+            "closed": "Closed"
+          }
+        }
+      },
+      "queues": {
+        "expandAll": "Expand All",
+        "collapseAll": "Collapse All",
+        "emptyQueue": "You are not managing any queues. Please click edit button to add queues for management.",
+        "header": "My Queues",
+        "strictModeActive": "Strict mode is active",
+        "strictModeInactive": "Strict mode is inactive",
+        "removeQueuePopupMessage": "Are you sure you want remove this queue?",
+        "removeUserPopupMessage1": "Are you sure you want to remove this user?",
+        "addedUserSuccessMessage": "New user added to the queue "
+      },
+      "bulk_create": {
+        "no_file_chosen": "No file chosen",
+        "title": "Create Cases or Tickets in bulk by uploading an excel file.",
+        "file": "File",
+        "type": "Type",
+        "placeholder": "Select a file...",
+        "change": "Change file",
+        "create": "Create Items",
+        "open_workitem": "Open this work item",
+        "uploading": "Uploading",
+        "validating": "Validating",
+        "ie_banner": "Bulk create is not supported in this browser!",
+        "search_hint_contain": "Search for a name containing...",
+        "status_count": {
+          "total": "Total",
+          "created": "Created",
+          "issues": "Issues",
+          "not_started": "Not Started"
+        },
+        "column_name": {
+          "status": "Status",
+          "reference": "Reference",
+          "CustomerColumnName": "Customer",
+          "ContractColumnName": "Contract",
+          "ServiceColumnName": "Service",
+          "CaseColumnName": "Case",
+          "TicketColumnName": "Ticket",
+          "TitleColumnName": "Title",
+          "DescriptionColumnName": "Ticket Description",
+          "TicketCategoryLevel1ColumnName": "Ticket Category Level 1",
+          "TicketCategoryLevel2ColumnName": "Ticket Category Level 2",
+          "TicketCategoryLevel3ColumnName": "Ticket Category Level 3",
+          "RequesterColumnName": "Requester",
+          "PrimaryContactColumnName": "Primary Contact",
+          "SubjectColumnName": "Subject",
+          "DoNotSendAutomatedEmailsToContactsColumnName": "Do Not Send Automated Emails To Contacts",
+          "CCEmailAddressesColumnName": "CC Email Address(s)",
+          "OverrideDueDateColumnName": "Override Due Date",
+          "EstimatedEffortColumnName": "Estimated Effort (Minutes)",
+          "RecordCountColumnName": "Record Count"
+        },
+        "datatypes": {
+          "Short Text": "Short Text",
+          "Long Text": "Long Text",
+          "Whole Number": "Whole Number",
+          "Decimal Number": "Decimal Number",
+          "Date Only": "Date Only",
+          "Date and Time": "Date and Time",
+          "Check Box": "Check Box",
+          "Email Address": "Email Address",
+          "List": "List",
+          "Entity Relationship": "Entity Relationship",
+          "Multiple Level List": "Multiple Level List"
+        },
+        "status_error": {
+          "not_valid": "Data not valid or something went wrong",
+          "completed": "Completed",
+          "in_progress": "In progress"
+        },
+        "errors": {
+          "0": "There was an unexpected error processing the file",
+          "1": "Uploaded file is not a *.xls or *.xlsx file",
+          "2": "Workbook has no worksheets",
+          "3": "Workbook has multiple worksheets. Only first sheet will be processed",
+          "4": "Master Process Instance not found",
+          "5": "Master Process Instance not live",
+          "6": "Master Process is not a supported Process Type",
+          "101": "Worksheet is missing the required column '{{v0}}'",
+          "102": "Column '{{v0}}' is of type '{{v1}}' which is not supported in Bulk Create",
+          "103": "No field found to link to Column '{{v0}}'",
+          "200": "Creation of a schedule-driven case is not supported",
+          "300": "Title is not unique in file",
+          "301": "Title is not unique",
+          "302": "Value is blank and column is required",
+          "303": "Value is not valid for data type '{{v0}}'",
+          "304": "No person could be found from email address",
+          "305": "Customer not found or you do not have permission to see it",
+          "306": "Contract not found under Customer or you do not have permission to see it",
+          "307": "Service not found under Contract or you do not have permission to see it",
+          "308": "Process not found under Service or you do not have permission to see it",
+          "309": "Ticket Category not found",
+          "310": "Value is not valid for list",
+          "311": "Value is not valid for data type Date",
+          "312": "Override Due Date is not enabled on Case Process",
+          "313": "Override Due Date is not enabled on Ticket Category"
+        },
+        "errors_ui": {
+          "1001": "There are no valid items to process.",
+          "1002": "All valid items have been processed.",
+          "500_api": "Could not create work item. Something went wrong.",
+          "file_upload_limit": "{{name}} is bigger than the server limit ({{limit}})",
+          "file_upload_failure": "Failed to upload file"
+        },
+        "download_template": "Download Template"
+      },
+      "mailbox": {
+        "title": {
+          "inbox": "Email Inbox",
+          "drafts": "Drafts",
+          "sent_items": "Sent Items"
+        },
+        "my_emails": "My Emails",
+        "my_team_emails": "My Team Emails",
+        "unassigned_emails": "Unassigned Emails",
+        "unprocessed_emails": "Unhandled Emails",
+        "deletion_audit": "Deletion Audit",
+        "all_emails": "All Emails",
+        "delete_confirmation": "Are you sure you want to delete this email? Please note that this cannot be undone.",
+        "delete_confirmation_multiple": "Are you sure you want to delete these {{n}} emails? Please note that this cannot be undone.",
+        "delete_complete": "{{n}} unhandled email(s) successfully deleted",
+        "delete_incomplete": "{{n}} out of {{t}} unhandled email(s) successfully deleted",
+        "deleting_inprogress": "Deleting {{c}} / {{t}} ",
+        "bulk_delete_info": "Important! Do not close this browser tab while deletion is in progress.",
+        "pagination": {
+          "page_info": "Page <b>{{p}}</b> of {{t}}",
+          "page_no": "Page <b>{{p}}</b>",
+          "first_page": "Go to First page",
+          "page_size": "Maximum emails per page:"
+        },
+        "filter": {
+          "up_primaryAddress_hint": "The email address or alias that emails are coming into",
+          "up_connector_hint": "The name that your admins have set for the mailbox connector"
+        }
+      },
+      "outbox": {
+        "title": "Outbox",
+        "retry": "Retry",
+        "cancel_mail": "Cancel Mail",
+        "cancel_mails": "Cancel Mails",
+        "send_now": "Send Now",
+        "selected_count": "{{v}} mails selected",
+        "confirmation": {
+          "cancel_header": "Confirm Cancel",
+          "send_now": "This mail is scheduled at {{d}}. Are you sure you want to send it now?",
+          "send_now_info": "Please wait 30 seconds for the system to send this email before clicking 'send now'. You can click to refresh after 30 seconds to see the latest information.",
+          "retry_single": "This mail was not sent successfully. Are you sure you want to send this mail again?",
+          "cancel_single": "Are you sure you want to cancel this mail?",
+          "retry_confirmation": "Are you sure you want to send the selected {{n}} mail(s)?",
+          "cancel_confirmation": "Are you sure you want to cancel the selected {{n}} mail(s)?"
+        },
+        "columns": {
+          "AttachmentCount": "Attachment Count",
+          "BCCs": "BCCs",
+          "CCs": "CCs",
+          "EmailConnectorName": "Email Connector",
+          "Importance": "Importance",
+          "IsSystemGenerated": "System Generated",
+          "LastAttemptToSend": "Last Attempt To Send",
+          "LastSendFailureMessage": "Last Send Failure Message",
+          "Logged": "Logged",
+          "NextAttemptToSend": "Next Attempt To Send",
+          "PacketReference": "Work Item",
+          "PacketType": "Work Item Type",
+          "SendRetryCount": "Send Retry Count",
+          "SendStatus": "Send Status",
+          "Subject": "Subject",
+          "To": "To"
+        },
+        "worker": {
+          "retrying": "Retrying",
+          "cancelling": "Cancelling",
+          "retry_complete": "Retry Successful for {{n}} mail(s)",
+          "cancel_complete": "{{n}} mail(s) were Cancelled Successfully",
+          "retry_fail": "Retry Failed for {{n}} mail(s)",
+          "cancel_fail": "Cancel Failed for {{n}} mail(s)"
+        },
+        "filters": {
+          "all": "All",
+          "my_mail": "My Emails",
+          "my_team": "My Team Emails",
+          "system": "System Emails"
+        },
+        "tooltip_filter_all": "All mails",
+        "tooltip_filter_user": "Emails sent by me",
+        "tooltip_filter_team": "Emails sent by my team",
+        "tooltip_filter_system": "Emails sent by the system",
+        "popup": {
+          "title": "Outbox Email",
+          "message": "Message",
+          "no_logs": "There are no error logs"
+        },
+        "pagination": {
+          "page_info": "Page <b>{{p}}</b> of {{t}}",
+          "row_info": "{{n1}}-{{n2}} of <b>{{t}}</b> Mails",
+          "total_mails": "<b>{{t}}</b> Mails",
+          "page_size": "Maximum rows per page"
+        },
+        "notification": {
+          "moved_to_outbox": "Moved to Outbox",
+          "undo_send": "Cancel Send",
+          "message_mail": "Mail to <b>{{v}}</b>"
+        },
+        "errors": {
+          "connector_disabled": "The Email connector is disabled. Please enable it and try again."
+        }
+      }
+    },
+    "queue": {
+      "q_popup_header": "Add Queues",
+      "q_add_user_popup_header": "Add to Queue",
+      "queue": "Queue",
+      "manager": "Manager",
+      "mem": "Members",
+      "select_q": "Select the Queues which you want to manage",
+      "add_button": "Add",
+      "close_button": "Close",
+      "search": "Search for ",
+      "bots": "Bots",
+      "humans": "Humans",
+      "remove": "Remove",
+      "page_name": "My Queues",
+      "collapse_all": "Collapse All",
+      "expand_all": "Expand All",
+      "refresh": "Refresh",
+      "my_team": "My Team",
+      "active_strict": "Strict mode is active",
+      "inactive_strict": "Strict mode is inactive",
+      "strict_saved": "Strict mode is saved",
+      "zero_user": "0 user",
+      "users": "{{c}} user(s)",
+      "no_queue": "You are not managing any queues. Please click edit button to add queues for management.",
+      "remove_user_confim": "Remove user '{{user}}' from queue '{{queue}}'.",
+      "user_removed": "{{user}} successfully removed from queue {{queue}}.",
+      "remove_queue": "Remove queue '{{name}}'",
+      "removed_queue": "Removed queue '{{name}}' successfully.",
+      "added_peer": "New user successfully added to your team.",
+      "peer_exist": "User Already Exists.",
+      "remove_peer": "Remove user '{{name}}' from team.",
+      "removed_peer": "User successfully removed from your team.",
+      "managed_me": "Managed by me ({{c}})",
+      "managed_others": "Managed by others ({{c}})",
+      "managed_bots": "Bots ({{c}})",
+      "add_member_toast": {
+        "error": "Failed to add team members into queue {{name}}",
+        "with_error": "{{success}} new members successfully added and {{failed}} failed to add into queue {{name}}",
+        "success": "{{success}} new members successfully added into queue {{name}}",
+        "has_same_members": "The member(s) are already present in the queue."
+      },
+      "add_queue_toast": {
+        "error": "Failed to set manager for queues.",
+        "with_error": "Successfully set manager for {{success}} queues and failed to set manager for {{failed}}.",
+        "success": "Successfully set manager for {{success}} queues"
+      }
+    },
+    "display_packet": {
+      "marketplace_status": {
+        "0": "Processing...",
+        "1": "Requires Verification",
+        "2": "Completed",
+        "3": "Failed",
+        "4": "Not Relevant"
+      },
+      "marketplace_failed_reason": {
+        "ModelNotFound": "IDP document extraction model not found",
+        "reupload": "Please reupload the file and set the Action to 'Rework', or contact your administrator.",
+        "next_attempt": "Next attempt : {{n}}",
+        "not_relevant": "This document has been marked as not relevant for extraction by a user."
+      },
+      "marketplace_table_column": {
+        "row_no": "Number",
+        "file_name": "File Name",
+        "action_name": "Name",
+        "retry_count": "Retry Count",
+        "status": "Status",
+        "failed_reason": "Failed Reason",
+        "last_attempt": "Last Attempt",
+        "instructions": "Instructions"
+      },
+      "idp_table": {
+        "title": "Document Extraction",
+        "sub_title": "Review the items below and follow instructions to resolve where necessary.",
+        "verify": "Verify Now",
+        "verify_tooltip": "Open in a new window to verify the document",
+        "loading": "Loading..."
+      },
+      "enate_ai_card": {
+        "title": "Enate AI Analyst",
+        "sub_title": "Enate AI is involved in this action. Please review the details provided and follow the instructions below.",
+        "no_info": "Either the required file is missing or Enate AI Analyst integration is disabled. Please ensure that the required file is tagged correctly, then Rework this action, restarting from this action for the AI to pick it up again. If this does not resolve the issue, check with your admin that Enate AI integration is enabled and, once fixed, Rework again."
+      },
+      "enate_ai_action_status_instructions": {
+        "0": "The action is currently being processed by Enate AI. Please refresh this action to view the latest status.",
+        "2": "This AI Analyst action has been completed successfully. The output from this action is available to view in the Files section.",
+        "3": "Please contact your system administrator and share the error message below with them for resolution.",
+        "another_resource_assigned": "Another resource assigned this action to themselves before the AI Analyst Action could return any output. As a result, the AI response was discarded. Please rework this action for the AI to pick it up.",
+        "no_output_file": "No output file was generated from this AI Analyst Action - please contact your administrator to help resolve. Once the issue is resolved, please rework this action for the AI to pick it up again."
+      },
+      "reload": "Reload",
+      "popout": "Open in new Window",
+      "not_assigned": "Not Assigned",
+      "search": "Search Activities",
+      "platform_status": "Platform Status",
+      "platform_disabled": "The Integrated Platform is currently disabled",
+      "case_card": "Fill in any required fields before starting your Case.",
+      "due_date": {
+        "not_set": "Not calculated yet",
+        "time_until_due": "Paused {h+}h {m}m before due",
+        "time_after_overdue": "Paused {h+}h {m}m after overdue",
+        "due_date_will_recalculate": "Due date will be recalculated once you submit this Ticket."
+      },
+      "unsaved": {
+        "title": "Discard unsaved changes?",
+        "proceed": "Proceed",
+        "cancel": "Cancel"
+      },
+      "toast": {
+        "success_submit": "<p><strong>{{process}} {{reference}}</strong> successfully submitted as <strong> {{status}}</strong></p>",
+        "grab_work_item": "Please assign this work item to yourself before making any changes.",
+        "update_error": "The work item is no longer assigned to you",
+        "update_validation_error": "An Update request has failed because the request does not pass validation on the server.",
+        "custom_data_update_conflict_override": "Override",
+        "custom_data_update_conflict_refresh": "Refresh",
+        "custom_data_update_conflict_header": "Custom Data Confirmation",
+        "custom_data_update_conflict_error": "<p class='text-center'>Custom Data has changed since you opened it.<br/><b>Are you sure you wish to override your changes?</b><br/><br/>Tip:- if you refresh then all unsaved changes will be discarded.</p>",
+        "rework_from_action": "<p><strong>Case {{r}}</strong> has been successfully set to<strong> Rework</strong></p>"
+      },
+      "Emails": {
+        "fw": "FW:",
+        "re": "RE:",
+        "From": "From",
+        "To": "To",
+        "CC": "Cc",
+        "BCC": "Bcc",
+        "Received": "Received",
+        "Sent": "Sent",
+        "Composed": "Composed on {{d}}",
+        "Subject": "Subject",
+        "Email": "Email",
+        "Send": "Send",
+        "in_progress": "In Progress...",
+        "open_popup": "Open Email Pop Out",
+        "SendResolve": "Send & Resolve",
+        "Cancel": "Cancel",
+        "Attachments": "Attachments",
+        "NoSuggestedEmails": "No Suggested Emails",
+        "FromDisk": "Browse This PC",
+        "AddLink": "Add a new link",
+        "attach": "Attach",
+        "link": "Link",
+        "attachFiles": "Attach files to email",
+        "addLinks": "Add links to email",
+        "formatEmail": "Format the email text",
+        "pinToolbar": "Pin/Unpin toolbar",
+        "cannedText": "Canned texts",
+        "insertCannedText": "Insert canned texts",
+        "recenty_used_canned_text": "Recently Used",
+        "setImportant": "Set this email as important",
+        "cancelEmail": "Cancel this email",
+        "sendEmailResolve": "Send a resolution email and resolve",
+        "sendEmail": "Send email",
+        "scheduleSend": "Schedule",
+        "toggleCcView": "Toggle Cc view",
+        "toggleBccView": "Toggle Bcc view",
+        "fileNotInWhite": "Selected file type not supported.",
+        "fileSize": "File size exceeded the limit set.",
+        "writeYourEmail": "Write your email content here ...",
+        "unsaved": "You have an unsaved email.",
+        "no_primary_requester_tags": "Primary contact and requester contact tags are mandatory. Please set these up before proceeding",
+        "pending_upload": "{{f}} files pending",
+        "resolution_email_tooltip": "This will be resolution text",
+        "preview_attachment": "Preview",
+        "email_error_generic": "Something went wrong. Please try again later.",
+        "upload": "Upload",
+        "file_limit_info": "Drag a File here or select a file from your device Limit {{n}} MB per file",
+        "add_link": "Add a link",
+        "link_name": "Link Name",
+        "hyperlink": "Hyperlink",
+        "enter_hyperlink": "Please enter a hyperlink",
+        "enter_hyperlink_name": "Please enter a hyperlink name",
+        "pin_toolbar": "Pin/Unpin Toolbar",
+        "tag": "Tag",
+        "notes": "Notes",
+        "specify_a_link": "Specify a link where the user will be redirected to",
+        "file_upload_info": "{{size}} per file, ({{type}})",
+        "all_file_types": "All Files Allowed",
+        "draft_popup_header": "Information",
+        "draft_popup_content": "Note: Work Item contains draft email(s).",
+        "invalid_emails": "This email contains invalid recipients: {{v}}",
+        "work_item_type": {
+          "ticket": "Ticket",
+          "case": "Case",
+          "aciton": "Action"
+        },
+        "new_work_item": "New Work Item",
+        "delete": "Delete",
+        "unprocessed": "Unhandled",
+        "processed": "Processed",
+        "deleted": "Deleted",
+        "delete_success_toast": "This email has been deleted successfully.",
+        "new_work_item_created": "This email has been processed into a work item. You can click on the link below to view the work item.",
+        "delete_success": "This email was deleted by {{u}} on {{t}}",
+        "couldnt_process": "This email has not been processed into a work item. Please decide if you want to create a work item from the email or if you want to delete the email."
+      },
+      "notes": {
+        "addNotes": "Add Notes",
+        "notes": "Note",
+        "addNote": "Add Note",
+        "cancel": "Cancel",
+        "internalNote": "Internal Note",
+        "incomingPhone": "Incoming Phone",
+        "outgoingPhone": "Outgoing Phone",
+        "incomingLetter": "Incoming Letter",
+        "outgoingLetter": "Outgoing Letter",
+        "noteResolve": "Add Note & Resolve",
+        "unsaved": "You have an unsaved note."
+      },
+      "Timeline": {
+        "desc": {
+          "2": "Email Incoming",
+          "0": "Email Outgoing",
+          "6": "Letter Incoming",
+          "7": "Letter Outgoing",
+          "4": "Note",
+          "1": "Phone Incoming",
+          "5": "Phone Outgoing",
+          "3": "Self Service Comment",
+          "8": "Draft"
+        },
+        "download_all": "Download all",
+        "attachments": "{{c}} attachments",
+        "deleted_attachmets_warn": "This email contains attachment(s) which have been deleted. If you download this email, note that these attachments will also be downloaded.",
+        "download_anyways": "Download anyway",
+        "download": "Download",
+        "download_zip": "Download as zip",
+        "retry_email": "Retry",
+        "no_match_found": "No matches found.",
+        "outbox": "Open Outbox",
+        "email_failed": "Email failed to send",
+        "action_email_failed": "Email not delivered because of invalid To/CC/BCC address",
+        "email_failed_connector": "Email failed to send because the email connector has been disabled",
+        "prepare_action_email": "Send Again",
+        "email_pending_retry": "Mail is being sent",
+        "email_cancelled": "Cancelled by <b>{{u}}</b> on <b>{{d}}</b>",
+        "email_cancelled_invalid": "Cancelled (Invalid mail) on <b>{{d}}</b>",
+        "email_scheduled": "Scheduled by <b>{{u}}</b> to send on <b>{{d}}</b>",
+        "email_drafted": "Draft created by <b>{{u}}</b> on <b>{{d}}</b>",
+        "email_scheduled_on": "Scheduled on <b>{{d}}</b>",
+        "ThisIsResoltion": "This is the resolution",
+        "create_work_item_from_communication": {
+          "info": "Create a new work item from this email. \n\n Should this email have created its own, new work item? Click here and the system will create a brand new work item from it.",
+          "confirm_header": "Are you sure you want to create a new work item from this email ?",
+          "confirm_info": "If this email has been incorrectly attached to this work item and should have created its own, new work item instead, click ‘Confirm’ and the system will create a brand new work item from it.",
+          "success_message": "A new work item is being created from this email",
+          "banner_in_progress": "<b>{{u}}</b> is creating a new work item from this email. Once created, this email will be handled by that work item. You should no longer use this work item to deal with this email.",
+          "banner_completed": "<b>{{u}}</b> created work item <b>{{r}}</b> from this email on <b>{{d}}</b>. This email is now being handled by that work item. You should no longer use this work item to deal with this email."
+        },
+        "discard_draft_header": "Discard draft",
+        "discard_draft_content": "Are you sure you want to discard this draft ?",
+        "Forward": "Forward",
+        "ReplyAll": "Reply All",
+        "system_generated_to": "System-Generated",
+        "resolved": "This email belongs to a resolved work item",
+        "closed": "This email belongs to a closed work item",
+        "overdue": "Overdue",
+        "refresh": "Refresh",
+        "my_emails": "My Emails",
+        "refresh_email": "New email(s) have arrived. Click refresh to see them.",
+        "my_team_emails": "My Team Emails",
+        "unassigned_emails": "Unassigned Emails ({{n}})",
+        "unprocessed_emails": "Unhandled Emails",
+        "email_has_attachment": "Email has attachments",
+        "show_only_emails_with_attachment": "Show only emails with attachments",
+        "system_generated": "System-generated emails",
+        "show_only_system_email": "Show only system-generated emails",
+        "enter_date_range": "Enter a date range",
+        "status": "Status",
+        "send_by": "Sent by",
+        "recipients": "Recipients",
+        "contact_search_hint": "Search for a contact containing...",
+        "search_hint_contain": "Search for a name containing...",
+        "open_work_item": "Open work item",
+        "download_all_attachments": "Download all attachments",
+        "download_all_attachments_zip": "Download all attachments as zip",
+        "Download_email": "Download message as .eml file",
+        "update_draft": "Update Draft",
+        "Download_email_warning": "Downloading of this email is now blocked as it contains attachments which were manually deleted due to data sensitivity.",
+        "Reply": "Reply",
+        "Started": "Started",
+        "Completed": "Completed",
+        "NoTitle": "No Title",
+        "Running": "Running",
+        "Closed": "Closed",
+        "Open": "Open",
+        "Print": "Print",
+        "Terminated": "Terminated",
+        "NoUser": "No User",
+        "LoadMore": "Load More",
+        "on": "on",
+        "ticket_initial_user": "<strong>{{u}} via {{m}}</strong> on {{d}}",
+        "ticket_initial_started": "<strong>Started via {{m}}</strong> on {{d}}",
+        "AutomaticallyAssignedTo": "<b>{{r}}</b> automatically assigned to <b>{{u}}</b>.",
+        "PulledFromQueueBy": "<b>{{r}}</b> pulled from Queue by <b>{{u}}</b>.",
+        "AssignedTo": "<b>{{r}}</b> assigned to <b>{{u1}}</b> by <b>{{u2}}</b>.",
+        "filter_emails": "Filter Email(s)",
+        "SentBackToQueueBy": "<b>{{r}}</b> unassigned by <b>{{u}}</b>.",
+        "AssignedToAQueue": "assigned to queue",
+        "StateChangedTo": "status changed from <span class=\" {{ef}} \"> <strong>{{f}}</strong> </span> to <span class=\" {{et}} \"> <strong>{{t}}</strong> </span> ",
+        "ApprovalRequestRejected": "<b>{{u1}}</b>  <span class=\" Closed \"> <strong>declined</strong> </span> the approval request.",
+        "ApprovalRequestApproved": "<b>{{u1}}</b>  <span class=\" Resolved \"> <strong>approved</strong> </span> the approval request.",
+        "InitialState": "status changed to  <strong>{{t}}</strong>",
+        "HasMissedTheDueDate": "has missed the due date.",
+        "DueDateChanged": "due date changed to <strong>{{d}}</strong>.",
+        "EmailAttachmentDeleted": "Email attachment <strong>{{f}}</strong> was deleted by <strong>{{u}}</strong>",
+        "CaseRework": "rework started by <strong>{{u}}</strong>",
+        "TicketCategoryChanged": "Ticket category changed to <strong>{{c}}</strong>",
+        "TicketCategoryChanged_empty": "The Ticket category is set to <strong>none</strong>",
+        "ninety_days_filter": "Date range cannot span more than 90 days",
+        "start_date": "Start Date",
+        "end_date": "End Date",
+        "valid_date_required": "Valid date required",
+        "Sentiment_Tooltip": "{{n}} sentiment with {{k}}% confidence",
+        "Tooltips": {
+          "1": "Relates to {{r}}",
+          "2": "Relates to {{r}}. Originated from this work item.",
+          "3": "Originated from {{o}}",
+          "4": "Relates to {{r}}. Originated from {{o}}",
+          "my_email_inbox": "Emails belonging to work items which are in your Work Inbox",
+          "team_email_inbox": "Emails belonging to work items which are in your Team Work Inbox",
+          "all_email_inbox": "Emails belonging to work items that you have permissions on, including emails belonging to closed work items.",
+          "my_email_sent": "Emails sent by you, plus system-generated mails for items in your Work Inbox.",
+          "team_email_sent": "Emails sent by your team members, plus system-generated mails for items in your Team Work Inbox.",
+          "unassigned_email": "Emails belonging to unassigned work items which are in your Team Work Inbox",
+          "unprocessed_email": "Emails which haven't created a Ticket/Case. Choose a Ticket or Case to create for the email, or to delete it.",
+          "expand_folderPane": "Click to expand Folder Pane",
+          "minimize_folderPane": "Minimize the Folder Pane",
+          "clear_filter": "Clear Filter(s)",
+          "pin_folderPane": "Pin the Folder Pane",
+          "unpin_folderPane": "Unpin the Folder Pane",
+          "restore_email_original_size": "Restore email to original size",
+          "expand_email": "Expand email to full screen view",
+          "more": "More",
+          "ninety_days": "Please note: By default, emails from the last 90 days are shown. To view older emails, set a date range via the Filter dropdown (max 90 day span)."
+        },
+        "select_item_to_read": "Select an item to read",
+        "Important": "Marked as Important",
+        "auto_merge": "<b>{{r}}</b> assigned to <b>{{u}}</b> automatically to merging into a Ticket.",
+        "reason": "Reason",
+        "comment": "Comment",
+        "email_subject": "Email Subject",
+        "from_step": "From Step",
+        "from_action": "From Action",
+        "wait_type": "Wait type",
+        "waiting_for": "Waiting for",
+        "waiting_for_values": {
+          "1": "Awaiting Information from 3rd Party",
+          "2": "Awaiting Information from Client",
+          "3": "Awaiting Information from Internal",
+          "4": "Other",
+          "5": "Awaiting information from Action"
+        },
+        "case_problem": "Case has problem",
+        "by": "By",
+        "resolution_method": "Resolution Method",
+        "in_peer_review": "In peer review",
+        "set_by_user": "Set by user",
+        "changed_by": "Changed by",
+        "canceled_by": "Canceled by",
+        "send_status": "Send Status",
+        "scheduled_at": "Scheduled at",
+        "send_on": "Sent on",
+        "filter_events": {
+          "header": "Filter Activities",
+          "show_system_generated": "Include System-Generated Activities",
+          "has_related": "Include Related Work Items",
+          "filters": {
+            "filters": "filters",
+            "Communication": "Communication",
+            "Email": "Email",
+            "EmailDraft": "Drafts",
+            "Incoming": "Incoming",
+            "Outgoing": "Outgoing",
+            "Cancelled": "Cancelled",
+            "Scheduled": "Scheduled",
+            "Failed": "Failed",
+            "Notes": "Notes",
+            "Self Service": "Self Service",
+            "Log Activity": "Log Activity",
+            "Letter Incoming": "Letter Incoming",
+            "Letter Outgoing": "Letter Outgoing",
+            "Phone Incoming": "Phone Incoming",
+            "Phone Outgoing": "Phone Outgoing",
+            "Allocations": "Allocations",
+            "Reassignments": "Reassignments",
+            "Queue changes": "Queue Changes",
+            "Status Changes": "Status Changes",
+            "Quality": "Quality",
+            "Due Dates missed": "Due Date Missed",
+            "DueDateChanged": "Due Date Changed",
+            "TicketCategoryChanged": "Ticket Category Changed",
+            "ApprovalRequestStatusChanged": "Approval Request Status Changed",
+            "Related Item": "Related Item",
+            "Item Started": "Item Started",
+            "Item Completed": "Item Completed",
+            "Select All": "Select All",
+            "Running": "Running",
+            "Paused": "Paused",
+            "Completed": "Completed",
+            "Unable to Complete": "Unable to Complete",
+            "Terminated": "Terminated",
+            "Ticket Initial Description": "Ticket Initial Description",
+            "Case Initial Description": "Case Initial Description",
+            "Email Attachment Deletion": "Deleted Email Attachments",
+            "Draft": "Draft",
+            "ToDo": "To Do",
+            "InProgress": "In Progress",
+            "Waiting": "Waiting",
+            "Resolved": "Resolved",
+            "Closed": "Closed"
+          }
+        },
+        "reopened": "Reopened",
+        "filter_by_date": "Filter by date"
+      },
+      "toolbar": {
+        "new_info": {
+          "mark_new": "Mark as New",
+          "mark_read": "Mark as Read",
+          "msg": "New information received on {{d}}",
+          "no_info": "There is no new information received yet.",
+          "header": "New Information Acknowledgement",
+          "confirmation": "New information has been received on this work item. Do you wish to continue without acknowledging it?",
+          "tip": "Tip: Click on the New Information icon in the header ribbon to mark it as read."
+        },
+        "due": {
+          "not_calculated": "Not calculated yet",
+          "paused": "Paused",
+          "not_started": "Not Started",
+          "tooltip_packet_new": "Due date will be calculated after work item is started.",
+          "tooltip_packet_running": "Due date will be recalculated once it has been set back to 'running' status."
+        },
+        "assignee": {
+          "assignee": "Assignee",
+          "assign_to_me": "Assign to Me",
+          "reassign": "Reassign",
+          "unassign": "Unassign"
+        },
+        "tooltip": {
+          "current_step": "Current Step",
+          "delete": "Delete",
+          "refresh": "Refresh",
+          "expand_panel": "Expand Side Panel",
+          "collapse_panel": "Collapse Side Panel",
+          "feedback": "Customer Feedback",
+          "sop": "Standard Operating Procedure",
+          "follow": "Click to follow this work item and receive notifications about updates to it.",
+          "unfollow": "Click to unfollow this work item. You will no longer receive notifications about updates to it."
+        },
+        "common": {
+          "AddAtitle": "Add a title",
+          "CurrentStep": "Current Step: "
+        },
+        "due_popup": {
+          "header": "Override Due Date",
+          "due": "Due Date",
+          "hour": "Hour",
+          "min": "Minute",
+          "error": "Due date cannot be before work item start date.",
+          "error_generic": "Selected date cannot be before current date."
+        },
+        "delete_popup": {
+          "header": "Confirm Delete",
+          "content": "Are you sure you wish to delete this item? This cannot be undone."
+        }
+      },
+      "side_card": {
+        "state": "Status: {{state}}",
+        "new_info": "New Information Received",
+        "manual_validation_needed": "Manual Validation required to add email address(es) to contact list.",
+        "validate": "Validate",
+        "not_previewable": "Preview not available for ",
+        "download": "Download",
+        "is_tagged_as": "<strong>{{c}}</strong> is tagged as",
+        "is_tagged_as_or": "<strong>{{c}}</strong> is tagged as Original Requester",
+        "title": {
+          "status": {
+            "running": "Running"
+          },
+          "info": {
+            "no_queue": "(No Queue Set)"
+          },
+          "files": "Files",
+          "defects": "Defects",
+          "tracking": "Tracking",
+          "contacts": "Contacts",
+          "approval": "Approval status",
+          "time_tracker": "Time Tracker"
+        },
+        "status_card": {
+          "label": "Status",
+          "note": "NOTE: ",
+          "enate_ai_action_warning": "AI ANALYSIS IN PROGRESS - Altering the action's status at this stage will cancel the Enate AI work.",
+          "split": "Split",
+          "merge": "Merge",
+          "rework": "Rework",
+          "submit": "Submit",
+          "reopen": "Reopen",
+          "startCase": "Start Case",
+          "updating": "Updating...",
+
+          "tabWillClose": "Tab will close",
+
+          "reason": "Reason",
+          "waiting_for": "Waiting for",
+          "resolve_method": "Resolution Method",
+
+          "set_by": "Set by",
+          "set_on": "Date",
+
+          "resolve_by": "Resolved by",
+          "resolve_on": "Resolved on",
+          "resolution_method": "Resolution Method",
+
+          "pass": "Pass",
+          "fail": "Fail",
+          "complete": "Complete",
+          "peer_reviewer": "Peer Reviewer",
+          "unable_to_complete": "Unable to complete",
+          "cancel_reason": "Unable to Complete reason",
+
+          "pause": "Pause",
+          "wait_until": "Wait Until",
+          "wait_for_sub_case": "Wait for Sub Case to complete",
+          "waitforMoreInformation": "Wait for more information",
+
+          "launched_case": "Launched Case",
+          "merge_into": "Ticket merged into",
+          "got_splits": "This Ticket was split into the following tickets",
+
+          "has_problem": "The Case needs intervention to move forward",
+          "has_problem_tooltip": "To progress the Case further you can: rework from a previous Step/Action; set it to 'In Progress' manually or pause the Case.",
+
+          "last_updated_on": "Last updated on",
+          "last_updated_by": "Last updated by",
+
+          "newInfoReceived": "New Info Received on {{d}}",
+
+          "sub_case_closed": "Sub Case is completed",
+          "not_running_sub_case": "Sub Case not yet started",
+          "action_resolve_warn": "If this Action is completed, the Case will not wait for the Sub Case to complete",
+
+          "closeIf": "Close if no response received",
+          "beyondTheDueDate": "This date is beyond the Due Date. This may result in SLA failure",
+          "doYouWishToSendEmail": "Do you wish to send an email request for this information?",
+
+          "hold_case_warning": "If this action is completed, the case will not wait for the subcase to complete.",
+
+          "days_to_wait": "No of days to wait",
+          "resolved_comms_reminder": "Remember to add a resolution Email / Note before setting as resolved",
+
+          "reject_reason": "Rejected Reason",
+          "unable_to_complete_by_bot": "Robot Rejected Reason",
+          "unable_to_complete_by_bot_reason": "Robot exceeded maximum retry count, needs human attention",
+          "reopened": "Reopened",
+          "reopened_by": "Last reopened by",
+          "reopened_on": "Last reopened on",
+
+          "caseWaitOption": {
+            "0": "(Select)",
+            "1": "Awaiting Information from 3rd Party",
+            "2": "Awaiting Information from Client",
+            "3": "Awaiting Information from Internal",
+            "4": "Other"
+          },
+
+          "caseSetRunning": "How to proceed",
+          "resumeOption": {
+            "0": "Resume",
+            "1": "Move to Next Step",
+            "2": "Complete"
+          },
+          "case_resolve_option": {
+            "cancel": "Cancel",
+            "complete": "Complete"
+          }
+        },
+        "info_card": {
+          "short_description": "Case Short Description",
+          "action_instr": "Action Instructions",
+          "rec_count": "Record Count",
+          "linked_sch": "Linked Schedule",
+          "action_3": "Disable Automated Emails",
+          "send_auto_email": "Send Automated Emails",
+          "keep_with_me": "Keep with me",
+          "keep_with_user": "Keep with <i class='fas fa-user' title='{{u}}'></i>",
+          "keep_action_with_me": "Keep Action with me",
+          "keep_action_with_user": "Keep Action with <i class='fas fa-user' title='{{u}}'></i>",
+          "no_schedule": "No schedule selected yet.",
+          "convert_to_case": "Convert to Case",
+          "original_started_on": "Initial request on {{d}}",
+          "original_startdate_tooltip": "This work item may have been originally created by a related work item, e.g. a Ticket creating further split Tickets or a Case creating Actions. This 'Initial Request Date' shows when that originating work item started. This date may be used for SLA calculations.",
+          "created_label": {
+            "created_on": "Created on {{d}}",
+            "created_on_via": "Created on {{d}} via {{m}}",
+            "created_on_by": "Created on {{d}} by {{u}}",
+            "created_on_via_by": "Created on {{d}} via {{m}} by {{u}}"
+          },
+          "started_method": {
+            "Another Ticket": "Another Ticket",
+            "Call Handling": "Call Handling",
+            "Email": "Email",
+            "Integration": "Integration",
+            "Self Service": "Self Service",
+            "Web Form": "Web Form"
+          },
+          "email_triage": {
+            "tooltip": {
+              "email_triage": "This Ticket category has been suggested by '{{p}}. You can either accept the category suggested or click 'Reject' and select a different category.",
+              "accept_prediction": "Click to accept the suggested Ticket category",
+              "reject_prediction": "Click to edit the suggested Ticket category and to select a category yourself"
+            },
+            "accept": "Accept",
+            "edit": "Edit",
+            "confidence": "Confidence : {{p}}%",
+            "updated_by_reinfer": "Categories updated by <b> {{n}}</b> with confidence level of {{p}}%"
+          }
+        },
+        "contacts_card": {
+          "cc_only": "CCs:",
+          "add_contact": "Search for a contact...",
+          "add_contact_cc": "CC Additional Contacts...",
+          "create_contact": "+ Create a contact",
+          "add_tag": "Add a tag",
+          "tags": {
+            "Requester": "Requester",
+            "Primary Contact": "Primary Contact",
+            "Original Requester": "Original Requester",
+            "Subject": "Subject",
+            "CC": "CC"
+          },
+          "contact_user_info": "<b>{{user}}</b> is tagged as <i>{{tags}}</i>.",
+          "no_contact": "Contacts (0)",
+          "original_requester_warning": "<strong>{{c}}</strong>, the contact with '<strong>{{r}}</strong>' tag will be set as '<strong>{{o}}</strong>' for this work item. Once '{{o}}' is set, both contact and tag cannot be removed."
+        },
+        "approval_card": {
+          "heading_0": "Parallel Any",
+          "heading_1": "Parallel All",
+          "heading_2": "Multilevel",
+          "resend": "Send approval email(s)",
+          "resend_warning": "If you want to restart the sending of approval request emails, check this box and set to Wait.",
+          "resend_info": "When this checkbox is checked, setting the Action to Wait will automatically send new Approval request emails and wait for response, starting from initial approvers in the case of multi-level approvals.",
+          "resend_warning_must": "Setting this Action to Wait will restart the sending of approval request emails.",
+          "approval_info": "Please move the work item to wait status to recieve approval",
+          "confirm": "The required approval is still pending for this activity. Unless approval has been received via another route, do not mark this action as Resolved.",
+          "add_more": "Add more approvers",
+          "status": {
+            "pending": "Awaiting response",
+            "rejected": "Declined",
+            "approved": "Approved",
+            "expired": "Expired",
+            "just_added": "Not yet sent"
+          },
+          "placeholder": "Select Approver",
+          "senarios": {
+            "info_0": "The approval request is sent to multiple people at the same time, and the decision is taken from the first one to respond",
+            "info_1": "The approval request is sent to multiple people at the same time, and approval is needed from ALL of them.",
+            "info_2": "This request requires {{c}} approver(s). Request will be sent to each new level upon successful approval from previous.",
+
+
+            "NO_APPROVERS_PRESNET_subtitle": "Please Add Approver(s): Approval Request emails need to be sent but Approver information is missing.<br/>Set to Wait to send approval mails.",
+            "APPROVAL_REJECTED_subtitle": "Approval request declined. Please review reason for decline and respond accordingly. Set to Wait in order for new email approval request emails to be sent out, or mark Action as Unable to complete, or set as Resolved to mark the request as approved.",
+            "TIME_OUT_subtitle": "The approval request has timed out with no responses (or insufficient responses) received. Action has been automatically set to Resolved, and Case will continue.",
+            "APPROVAL_APPROVED_subtitle": "This request has been APPROVED.",
+            "NEW_INOFRMATION_RECIEVED_subtitle": "New information received, please review. <br/> Current status: Approval mails have been sent out, decision is yet to be received. Action must be in Wait state to receive approvals.",
+            "DEFAULT_subtitle": "Approval mails have been sent out, and a decision is yet to be made. Action must be in Wait state to receive approvals.",
+            "WAITING_TO_SEND_APPROVAL_subtitle": "Approval Request emails need to be sent. <br/> Please set to Wait to send approval mails."
+          }
+        },
+        "files_card": {
+          "upload_limit": "Upload Limit",
+          "files_attached": "Files Attached",
+          "files_uploaded": "Files Uploaded",
+          "lastUpdatedOn": "Last updated on",
+          "lastUpdatedBy": "Last updated by",
+          "addNote": "Add a note about this file",
+          "expand_note": "Expand all notes",
+          "compress_notes": "Compress all notes",
+          "download": "Download",
+          "preview": "Preview",
+          "delete": "Delete",
+          "delete_selected_header": "Delete file(s) ?",
+          "delete_selected": "Are you sure want to delete one or more file(s) ?",
+          "search_tip": "Search by Filename, Tag and Notes.",
+          "add_link": "Add Link",
+          "link": "Link Name",
+          "hyperlink": "Hyperlink",
+          "enter_hyperlink": "Please enter a hyperlink",
+          "enter_valid_hyperlink": "Please enter a valid hyperlink",
+          "enter_hyperlink_name": "Please enter a hyperlink name",
+          "add_note": "Add Note",
+          "disable_for_draft": "Adding Notes and Tags to Draft Email attachment files not supported.",
+          "note": "Note",
+          "links": "Links",
+          "add_tag": "Add Tag",
+          "zip": "ZIP",
+          "attachments": "Attachments",
+          "outgoing_attach": "Outgoing Email Attachments",
+          "incoming_attach": "Incoming Email Attachments",
+          "upload_info": "You can drag and drop files to upload them. Upload file size limit is {{d}}.",
+          "uploaded_type": "Accepted file types are {{p}}.",
+          "this_ticket": "Current Ticket",
+          "this_case": "Current Case",
+          "this_action": "Current Action",
+          "ref_number": "Reference number",
+          "tag": "Tag",
+          "other_work_item": "Other work items",
+          "view": "View",
+          "all_file_types": "All file types",
+          "uploaded_by_on": "Uploaded by {{user}} on {{date}}",
+          "file_alreay_exists": "File is already present in this work item. Do you want to upload again ?",
+          "upload_again": "Upload a Copy",
+          "file_exists_label": "File Already Exists !",
+          "uploaded_by": "Uploaded by {{user}}",
+          "uploaded_on": "on {{date}}",
+          "see_more": "see more",
+          "download_progress": "Your zip file download is in progress",
+          "file_attached": "Files Attached: {{t}}",
+          "no_tag_found": "No tag(s) found",
+          "predicted_tooltip": "'{{k}}' is suggested by <b>{{p}}</b> with a confidence score of {{n}}%.",
+          "suggested_tag": "Suggested tag",
+          "confidence": "Confidence",
+          "technology": "Technology",
+          "above_threshold_text": "An automated suggestion has been made to determine the file tag. See below for further details.",
+          "below_threshold_text": "The file tag suggestion has a low confidence level. You can either accept it, reject it, or provide your own tag.",
+          "accept": "Accept",
+          "reject": "Reject"
+        },
+        "defects_card": {
+          "defects_logged": "Defects Logged",
+          "res": "Resolved",
+          "log": "Logged by: ",
+          "logged_in": "Logged in: ",
+          "cat": "Category",
+          "sub_cat": "Subcategory",
+          "desc": "Description",
+          "paf": "Party At Fault",
+          "affected_record_count": "Affected Record Count"
+        },
+        "tooltip": {
+          "expand": "Expand Card",
+          "collapse": "Collapse Card",
+          "delete_multiple": "Delete Selected Files",
+          "download_multiple": "Download Selected Files",
+          "add": {
+            "defect": "Add Defect",
+            "file": "Attach File"
+          }
+        },
+        "error": {
+          "file_size_zero": "{{name}} File size is zero.",
+          "file_upload_limit": "The file {{name}} you are attaching is bigger than the server allows ({{limit}}). Try putting the file in shared location and sending a link instead.",
+          "file_ext": "{{name}} is not an accepted file type."
+        }
+      },
+      "re_assign": {
+        "header": "Reassign",
+        "placeholder": "Search for users..",
+        "note": "Assignment Note"
+      },
+      "feedback": {
+        "header": "Customer Feedback",
+        "avg": "Average Customer Rating",
+        "no_comments": "No Comments",
+        "no_rating": "No Feedback To Display",
+        "ratingTitle": {
+          "excellent": "Excellent",
+          "very_good": "Very Good",
+          "good": "Good",
+          "bad": "Bad",
+          "very_bad": "Very Bad"
+        }
+      },
+      "split": {
+        "split": "Split",
+        "splitTicket": "Split Ticket",
+        "ticketWillBeClosed": "The ticket will move to Wait state until child Tickets are closed.",
+        "anEmailWillBeSent": "An Email will be sent to the Primary Contact informing them of this.",
+        "title": "Title",
+        "independentToCurrentItem": "Independent to current item",
+        "keepWithMe": "Keep with me",
+        "description": "Description"
+      },
+      "launch_case": {
+        "tab_name": "Convert to Case",
+        "override_due_date": "Override Due Date",
+        "schedule": "Schedule for new Sub Case",
+        "schedule_placeholder": "Select a Schedule",
+        "ticket_replace": "This ticket will be replaced by a Case.",
+        "email": "An email will be sent to the primary contact informing them of this.",
+        "select_case": "Select a Case",
+        "fill_card": "Fill in any required fields on '{{c}}' card",
+        "start_case": "Click '{{l}}' to convert this Ticket into '{{c}}'",
+        "show_instruction": "Show instructions",
+        "hide_instruction": "Hide instructions"
+      },
+      "start_case": {
+        "tab_name": "Start Case",
+        "name": "Start Case",
+        "title": "Title",
+        "description": "Short Description",
+        "independent": "Independent ",
+        "start": "Start Case",
+        "copy_communication": "Communications",
+        "copy_communication_tooltip": "All communications from the Related Group will be copied across. Communications from Linked work items will not be.",
+        "contact_required": "you can't create this Case process because Contacts are required. Please add contacts and submit this case first.",
+        "unsaved": "You have an unsaved sub case work item.",
+        "has_problem_label": "Please disable the problem state flag if you want to resume this case",
+        "subcase_detail": "Will be created as a Sub Case of the current work item and data will be shared among them",
+        "related_detail": "Will be created as an independent work item and data cannot be shared among them. However you can choose to copy some data from the options below",
+        "perm_no_process": "You either don't have permission to start a process or there are no processes to start under the selected email routes.",
+        "no_process_for_route": "You either don't have permission to start a process or there are no processes to start under the selected email routes.",
+        "copy_options": "Select options to copy",
+        "copy_defects": "Defects",
+        "copy_files": "Files",
+        "copy_links": "Links",
+        "copy_custom_data": "Custom Data",
+        "create_routes": {
+          "header": "Create New Email Routing Rule",
+          "apply_other_emails": "Apply to other emails",
+          "specify_new_rule": "Specify a new email routing rule",
+          "info": "Set a rule so that each time a new email comes in that matches the conditions you set below, a new Ticket/Case will be created.",
+          "title": "Create a rule so that each time an email like this comes in that matches the rule, the system will automatically create this kind of Ticket/Case for it and it will no longer appear in your unhandled emails.",
+          "multiple_connector_info": "You cannot create a rule for this email as it has been received into more than one mailbox.",
+          "no_to_address": "There is no To or CC address for this email so you cannot create a ‘To’ rule as it would not have any effect.",
+          "sub_section_1": "Create Ticket/Case:",
+          "sub_section_2": "for all incoming emails that match the condition: ",
+          "sub_section_3": "Tips",
+          "type": "Type",
+          "email": "Email Address",
+          "email_required": "Please select an email address",
+          "from": "From",
+          "to": "To",
+          "desc1": "Use ‘To’ when you want incoming emails with a particular To or CC address to create a particular kind of Ticket/Case.",
+          "desc2": "Use ‘From’ when you want incoming emails sent in by another system to create a particular kind of Ticket/Case.",
+          "desc3": "Click here to <a href =\"{{route}}\" target='_blank'>learn more</a>",
+          "auto_apply": "Auto-apply this rule to <strong>existing</strong> unhandled emails that match?",
+          "auto_apply_count": "{{c}} emails",
+          "auto_apply_count_1": "{{c}} email",
+          "applyAll_filter": "How far back do you want to go?",
+          "affected_emails_0": "{{c}} emails will be reprocessed",
+          "affected_emails_1": "{{c}} email will be reprocessed and might create new work item",
+          "affected_emails": "{{c}} emails will be reprocessed and might create new work items",
+          "confirm_count": "Are you sure you want to create this new email routing rule and apply it to {{c}} existing unhandled emails? This could result in the creation of {{c}} new work items.",
+          "route_success_applyall": "You have successfully created a new email routing rule. {{c}} email(s) will be reprocessed using the rule.",
+          "route_success": "You have successfully created a new email routing rule.",
+          "workitem_success": "This email has successfully created new work item {{ref}}"
+        }
+      },
+      "merge": {
+        "tab_name": "Merge",
+        "merge_with": "Merge With",
+        "merge_anyway": "Merge Anyway",
+        "merge_with_changes": "Merge with changes",
+        "different_customer_case": "The selected Case belongs to a different customer",
+        "different_customer_action": "The selected Action belongs to a different customer",
+        "different_customer_ticket": "The selected Ticket belongs to a different customer",
+        "different_customer_multiple": "These {{0}} Tickets belong to a different customer",
+        "no_tickets_message": "The Tickets you are about to merge all belong to the same customer.",
+        "different_customer_single": "The following Ticket belongs to a different customer",
+        "different_customer_top_warning": "Some of the selected Tickets belong to a different customer.",
+        "different_customer": "Click here to review.",
+        "types": {
+          "case": "Case",
+          "ticket": "Ticket",
+          "action": "Action"
+        },
+        "close_type": {
+          "_16": "This work Item",
+          "_32": "Other work Items"
+        },
+        "search": {
+          "placeholder": "Search by title, reference, customer, contract and service (3 characters minimum)"
+        },
+        "select_all": "Select All",
+        "more": "{{m}} more",
+        "show_less": "Show Less",
+        "clear_search_text": "Clear Search Text",
+        "clear_all_selected_items": "Remove All Selected Items",
+        "selected": "{{a}}/{{b}} selected"
+
+      },
+      "start_action": {
+        "type": "Action Type",
+        "override": "Override Instruction",
+        "cpy": "How many copies",
+        "can": "Cancel",
+        "start": "Start Action",
+        "del": "Delete",
+        "tab_name": "Start Action",
+        "header": "Start New Action",
+        "unsaved": "You have an unsaved action work item.",
+        "due_date": "Due Date",
+        "default_Instruction": "Default Instruction"
+      },
+      "rework": {
+        "rework": "Rework",
+        "terminate": "Close below work items as part of rework?",
+        "terminate_tooltip": "You can select subcase and adhoc actions to close from the list below.",
+        "system_terminated": "Work items to be closed by the workflow",
+        "schedule": "Schedule",
+        "restart_case_from_step": "Restart Case from...",
+        "action_disabled_reason": "You cannot rework the Case from this Action as it is a parallel Action.",
+        "warning": "Warning: You can only select previously started Actions to restart from. To select an Action that only runs as a result of a different condition output, please select the start of that step."
+      },
+      "miscellaneous": {
+        "addTicketDesc": "Add Ticket Description",
+        "addCaseDesc": "Add Case Short Description",
+        "schedule": "Schedule for new case"
+      },
+      "peer_review": {
+        "no_comment": "(No Reviewer's Comments)",
+        "comment": "Reviewer's Comments",
+        "peer_review": "Peer Review",
+        "peer_review_comment": "Add Action Peer Review Comments",
+        "passed": "Passed",
+        "rejected": "Rejected",
+        "cant_complete": "Unable to Complete",
+        "wait": "Waiting for more Information"
+      },
+      "checklist": {
+        "name": "Checks",
+        "peer_name": "Reviewer Checks",
+        "note": "Note",
+        "peerNote": "Peer Review Note",
+        "check_require": "checks required",
+        "options": {
+          "0": "No decision",
+          "1": "N/A",
+          "2": "No",
+          "3": "Yes"
+        }
+      },
+      "events": {
+        "tabs": {
+          "Links": "Linked Work",
+          "Links_title": "Links - sorted by status and due date",
+          "Actions": "Actions",
+          "Actions_title": "Actions - Sorted by Status, Due Date",
+          "Sub Cases": "Sub Cases",
+          "Sub_Cases_title": "Sub Cases - Sorted by Status, Due Date",
+          "Comms": "Comms",
+          "Timeline": "Timeline",
+          "File Card": "Files",
+          "Effort Forecasting": "Effort Estimation",
+          "digitel_workers": "Digital Workers"
+        },
+        "search": "Search Activities",
+        "more": "More"
+      },
+      "effort_forecasting": {
+        "description": "Enter more accurate estimations below to help better plan resource requirements. This will also help with longer-term forecasting by providing predictions for how long it might take to complete similar work in the future.",
+        "overrunning": "Overrunning",
+        "start_by": "Start by: {{d}}",
+        "error": {
+          "title": "No information can be displayed for this case.",
+          "subtitle": "Please contact your system administrator to rectify the problem.",
+          "minimum_total_actions": "The Estimated effort for the Case must be at least equal to the combined effort of all the Actions ({{t}}).",
+          "minimum_total_actions_subcase": "The Estimated effort for the Case must be at least equal to the combined effort of all the Actions and Sub-Cases ({{t}}).",
+          "not_negative": "The Estimated effort must be greater than or equal to zero."
+        },
+        "summary": {
+          "title": "Case Effort Summary",
+          "description": "Enter or update the estimated effort to complete this Case. This section shows a summary of how much effort the entire Case is estimated to take (<b>Estimated</b>), how much effort has actually been spent on the Case (<b>Actual</b>) and how much effort is estimated to be remaining on the Case (<b>Estimated Remaining</b>).",
+          "tooltips": {
+            "estimated": "This is how much effort is estimated to be needed to complete this Case. It is the sum of the ‘Estimated’ effort of all the created and yet-to-be created Actions (and Sub Case Actions) that make up this Case. Note that increasing this value will increase the ‘Work Not Yet Created’ estimate and vice versa.",
+            "actual": "This is how much effort has been spent working on this Case. It is the sum of the ‘Actual’ effort of all the Actions (and Sub Case Actions) that make up this Case, taken from the Time Tracker.",
+            "remaining": "This is how much time is estimated to be left on the Case. It is the sum of the ‘Estimated Remaining’ effort of all the created and yet-to-be created Actions (and Sub Case Actions) that make up this Case."
+          },
+          "headers": {
+            "estimated": "Total Case Estimated Effort",
+            "actual": "Total Case Actual Effort",
+            "remaining": "Total Case Remaining Effort"
+          }
+        },
+        "breakdown": {
+          "title": "Effort Breakdown for Created Work",
+          "description": "Enter or update the estimated effort to complete each of the created Actions (and Sub Cases) that make up this Case. As Actions (and Sub Cases) get created, the estimated effort for them will be taken from the <b>Estimated</b> effort value from the <b>Work Not Yet Created</b> section below.",
+          "tooltips": {
+            "estimated": "This is a breakdown of how much effort each created Action (and Sub Case Action) that makes up this Case is estimated to take. \n\nNote that changes to any ‘Estimated’ time here will affect the ‘Estimated’ effort for work that is yet-to-be created and might affect the total ‘Estimated’ effort for the Case.",
+            "actual": "This is a breakdown of how much effort has been spent on each created Action (and Sub Case Action) that makes up this Case, taken from their individual time trackers.",
+            "remaining": "This is a breakdown of how much effort is estimated to be left on each created Action (and Sub Case Action) that makes up this Case. It is the difference between the ‘Actual’ effort and the ‘Estimated’ effort."
+          }
+        },
+        "other": {
+          "title": "Effort for Work Not Yet Created",
+          "description": "Enter or update the estimated effort to complete the Actions (and Sub Cases) that have not yet been created for this Case.  As more Actions (and Sub Cases) get created, the estimated effort for them will be subtracted from the <b>Estimated</b> effort value here.",
+          "col_header": "Work Not Yet Created",
+          "col_header_subcase": "Sub Case Work Not Yet Created",
+          "tooltips": {
+            "estimated": "This is how much effort is estimated to be needed to complete Actions (and Sub Cases Actions) that have not yet been created for this Case. As more Actions get created, the estimated time for them will be taken from this value. \n\nNote that changing this estimate will affect the effort estimate for the overall Case."
+          }
+        },
+        "columns": {
+          "task": "Task",
+          "estimated": "Estimated",
+          "actual": "Actual",
+          "remaining": "Estimated Remaining",
+          "due_date": "Due Date",
+          "status": "Status"
+        }
+      },
+      "wait_for_subcase": {
+        "title": "This action is waiting for a subcase to complete.",
+        "not_started_message": "{{p}} subcase has not started yet."
+      },
+      "related": {
+        "title": "Related",
+        "related_workitem": "Related Work Item",
+        "unlink": "Unlink this work item",
+        "unlink_warning": "Are you sure you want to Unlink this work item?"
+      },
+      "delete_popup": {
+        "header": "Confirm Delete",
+        "content": "Are you sure you wish to delete this item? This cannot be undone."
+      },
+      "time_tracker": {
+        "usr": "User",
+        "time": "Time",
+        "date": "Date",
+        "edited_by": "Time Edited By",
+        "edited_on": "Date Edited",
+        "edited_hrs": "Time Edited To",
+        "cat": "Ticket Category (Ticket Only)",
+        "edited": "Edited",
+        "record_on": "Recorded On",
+        "current": "{{t}} hr",
+        "total": "Total: {{t}} hr",
+        "exp": "Exp: {{t}} hr",
+        "expected": "Expected: {{t}} hr",
+        "recorded": "({{t}} hr)",
+        "modify": "{{t}} hr",
+        "time_day_format": "{{d}} day(s) {{t}}",
+        "user_tooltip": "Who was working on the work item",
+        "time_tooltip": "The start and end time and total length of the recorded session",
+        "date_tooltip": "The date when the session was recorded",
+        "edited_by_tooltip": "Who last edited the session's recorded time",
+        "edited_to_tooltip": "What the session's recorded time has been edited to",
+        "edited_date_tooltip": "The date when the session's recorded time was edited",
+        "cat_tooltip": "The category that the Ticket was in when the session's recorded time was edited",
+        "benchmark": "Initial Estimated Effort",
+        "benchmark_tooltip": "This is the initial estimated effort set up by your system admin.",
+        "effort_label": "Estimated Effort",
+        "effort_tooltip": "Enter a more accurate effort estimate for the entire Action to help better plan resource requirements."
+      },
+      "estimated_effort": {
+        "title": "Estimated Effort",
+        "initial_effort": "Initial Estimated Effort",
+        "tooltip": {
+          "expand": "Expand Card",
+          "collapse": "Collapse Card"
+        }
+      }
+
+    },
+    "retry_card": {
+      "error_text": "An error occurred {{_t}}",
+      "next_try": "The Action couldn't be completed. It will try again at {{_t}}",
+      "info": "The Action couldn't be completed."
+    },
+    "search": {
+      "view_fields": {
+        "0": "Reference",
+        "1": "Title",
+        "2": "Parent Reference",
+        "3": "Started",
+        "4": "Due",
+        "5": "Assigned To",
+        "6": "Owned By",
+        "7": "Queue",
+        "8": "Running",
+        "9": "Customer",
+        "10": "Service Provider",
+        "11": "Contract Name",
+        "12": "Service Name",
+        "13": "Process Name",
+        "14": "Service Line",
+        "15": "Work Item Type",
+        "16": "Action Type",
+        "17": "Ticket Category Level 1",
+        "18": "Ticket Category Level 2",
+        "19": "Ticket Category Level 3",
+        "20": "Last Updated On",
+        "21": "Last Updated By",
+        "22": "Parent Process Name",
+        "23": "End Date",
+        "24": "Schedule Period",
+        "25": "Schedule Structure",
+        "26": "Schedule",
+        "27": "Schedule Year",
+        "28": "Time Remaining When Paused",
+        "29": "Started Method",
+        "30": "Started By",
+        "31": "Has Been Reopened",
+        "32": "Last Reopened On",
+        "33": "Last Reopened By",
+        "34": "Initial Request On",
+        "35": "Is Overdue",
+        "36": "Overdue By Hours",
+        "37": "Overdue By Days",
+        "38": "Status Reason",
+        "39": "Wait Type",
+        "40": "Status",
+        "41": "Original Requester Name",
+        "42": "Primary Contact Name",
+        "43": "Requester Name",
+        "44": "Subject Name",
+        "45": "Primary Contact Email",
+        "46": "Requester Email",
+        "47": "Subject Email",
+        "48": "Original Requester Email",
+        "2001": "Context",
+        "2002": "Service Line"
+      },
+      "export_fields": {
+        "name": "File",
+        "name_cell_title": "Click to download",
+        "size": "Size (In KB)",
+        "count": "Number of Rows",
+        "req_date": "Requested On",
+        "dwn_date": "Downloaded On",
+        "str_date": "Export Started On",
+        "comp_date": "Export Completed On"
+      },
+      "export_status": {
+        "1": "Exporting. Please refresh the grid.",
+        "2": "Ready for download",
+        "3": "Failed to export",
+        "downloaded": "Downloaded"
+      },
+      "filter_header": "Meet All of the following conditions:",
+      "grid_header": "Search Results",
+      "file_grid_header": "Exported Files",
+      "reset_grid": "Reset",
+      "estimated": "Estimated results",
+      "open_workitem": "Open this work item",
+      "others": "Others",
+      "more": "more",
+      "group_header_label": "Group",
+      "last_30_days": "Showing file export requests of the last 30 days. Once you have clicked to export a search, make sure to refresh the grid.",
+      "selected_count": "You have copied only {{n}} rows. To load all {{t}} rows, please scroll down in the table.",
+      "filter": {
+        "context_tree": "Context",
+        "field": "Field",
+        "condition": "Condition",
+        "value": "Value",
+        "expand": "Expand Filters",
+        "collapse": "Collapse Filters",
+        "group_by": "Group By",
+        "filename": "File Name",
+        "export": "Export",
+        "swt_export": "Switch to Export",
+        "swt_search": "Switch to Search",
+        "order_by": "Order By"
+      },
+      "conditions": {
+        "0": "Equals",
+        "1": "Not Equal",
+        "2": "Greater Than",
+        "3": "Less Than",
+        "4": "Greater Than Or Equals To",
+        "5": "Less Than Or Equals To",
+        "6": "Begins With",
+        "7": "Is Empty",
+        "8": "Is Not Empty",
+        "9": "Between"
+      },
+      "workitems": {
+        "1": "Case",
+        "2": "Ticket",
+        "3": "Action"
+      },
+      "order_by_ascending": {
+        "0": "Descending",
+        "1": "Ascending"
+      },
+      "saved": {
+        "label": "{{n}} Saved view(s) available",
+        "header": "Saved Views",
+        "save_new": "Save new view",
+        "overwrite": "Saving to <b>{{n}}</b>",
+        "save_as": "Save as a new view",
+        "duplicate": "A view with this name already exists"
+      },
+      "status_reason_25": "Updated By Enate (as End Case Action reached)",
+      "errors": {
+        "no_filter": "At least one filter should be selected",
+        "search_too_big": "Search took too long to process. Please try again with more specific search criteria."
+      },
+      "overdue_by": {
+        "days_range": "{{f}} - {{t}} Days",
+        "working_days_range": "{{f}} - {{t}} Working Days",
+        "more_than_seven_days": "{{d}} + Days",
+        "more_than_seven_working_days": "{{d}} + Working Days",
+        "hours": "{{h}} Hours",
+        "working_hours": "{{h}} Working Hours",
+        "more_than_sevendays_hours": "> {{h}} Hours",
+        "more_than_sevendays_working_hours": "> {{h}} Working Hours",
+        "tooltip_for_overdueby_days": "Please note that this information may be out of date since this data gets updated once a day"
+      },
+      "context_filter": {
+        "search_customer": "Search For Customer",
+        "select_contract": "Select Contract",
+        "select_service": "Select Service",
+        "select_process": "Select Process"
+
+      }
+    },
+    "contacts": {
+      "bulk_edit": "Bulk Edit",
+      "delete_confirmation": "Are you sure you want to delete the selected {{n}} contact(s)?",
+      "edit_label": "Editing {{n}} Contacts",
+      "selected_label": "{{n}} contacts selected",
+      "import_header": "Import Contacts",
+      "drop_message": "Click here to select or Drop the file here",
+      "download_template": "Click to download template",
+      "delete_complete": "{{n}} contacts successfully deleted.",
+      "delete_fail": "{{n}} contacts could not be deleted.",
+      "edit_complete": "{{n}} contacts successfully edited.",
+      "edit_fail": "{{n}} contacts could not be edited.",
+      "deleting": "Deleting",
+      "editing": "Editing ",
+      "creating": "Creating ({{n}}/{{t}})",
+      "all_companies": "All Companies/Global",
+      "search_companies": "Search for companies starting with ...",
+      "all_companies_tooltip": "This field cannot be edited. Your platform is configured to scope all external contacts as Global",
+      "search_hint_contain": "Search for a name containing...",
+      "error_count": "{{c}} contacts with error",
+      "setting": {
+        "title": "Columns to display"
+      },
+      "contact_tag": "Default Tag",
+      "pagination": {
+        "page_info": "Page <b>{{p}}</b> of {{t}}",
+        "row_info": "{{n1}}-{{n2}} of <b>{{t}}</b> Contacts",
+        "total_contacts": "<b>{{t}}</b> Contacts",
+        "page_size": "Maximum rows per page"
+      },
+      "headers": {
+        "1": "First Name",
+        "2": "Last Name",
+        "3": "Company",
+        "4": "Email Address",
+        "5": "Preferred Language",
+        "10": "Time Zone",
+        "11": "Auto Created",
+        "12": "Default Tag"
+      },
+      "bulk_errors": {
+        "0": "There was an unexpected error processing the file",
+        "1": "Uploaded file is not a *.xls or *.xlsx file",
+        "2": "Workbook has no worksheets",
+        "3": "Workbook has multiple worksheets. Only first sheet will be processed",
+        "101": "The Excel worksheet is missing the contact column '{{0}}'",
+        "102": "Column is not supported in Bulk Create",
+        "103": "The column '{{0}}' has been found in this Excel file but it is not a valid field",
+        "300": "Username is not unique in file",
+        "301": "Username is not unique",
+        "302": "Email address is not unique in file",
+        "303": "Email address is not unique",
+        "304": "Value is blank and column is required",
+        "305": "Value is not valid for data type '{{0}}'",
+        "306": "Company not found or you do not have permission to see it",
+        "307": "External contacts must be global and may not be scoped to a company",
+        "308": "Language not Found",
+        "309": "Default Tag not Found"
+      }
+    },
+    "reports": {
+      "standard_reports": "Standard Reports",
+      "my_reports": "My Reports",
+      "shared_reports": "Shared with Me",
+      "archive_reports": "Archives",
+      "last_updated": "Last updated",
+      "edit_mode": "Advanced",
+      "save_as": "Save as",
+      "save_as_copy": "Save as a new report",
+      "print": "Print",
+      "print_tooltip": "Preview the content on the screen with any applied filters, and choose to print it directly or save it as a PDF for future reference.",
+      "save_error_standard_tooltip": "Standard reports cannot be overwritten. Please save it as a new report",
+      "save_error_shared_tooltip": "Shared reports cannot be overwritten. Please save it as a new report",
+      "save_error_tooltip": "This report cannot be overwritten. Please save it as a new report",
+      "save_existing_confirm": "Are you sure you want to save '{{r}}'?",
+      "view": "All Reports",
+      "save_report_as": "Save Report",
+      "report_saved_as": "'{{n}}' was saved successfully.",
+      "share_title": "Share Report",
+      "share_placeholder": "Type to search for a user",
+      "copy_link": "Copy report URL",
+      "copy_success": "Copied to clipboard",
+      "no_reports": "There are no reports to show.",
+      "share_success": "'{{n}}' was shared to {{u}}",
+      "share_error": "Could not share '{{n}}' to {{u}}.",
+      "report_save_error": "Could not save '{{n}}'.",
+      "list_error": "Report List could not be loaded. Please try again.",
+      "report_error": "Report could not be loaded. Please try again.",
+      "report_deleted": "This report has been deleted.",
+      "save_error": "Something went wrong while saving the report. Please try again.",
+      "name_exists_error": "A report with that name already exists. Please use a different name.",
+      "utc_date_label": "All dates are in UTC",
+      "subcribe_enateai_label": "Subscribe to EnateAI ",
+      "subcribe_enateai_description": "Struggling to understand customers' feedback or gauge their sentiment towards your services? Our AI-powered sentiment analysis tool can help. It accurately analyzes feedback, detects, and classifies emotions, opinions, and attitudes in text, providing a comprehensive understanding of your customers' perception. Use this information to improve your products, services, and customer experience. Get a competitive edge with our AI tool today! Please note, you can also integrate your own AI tools via our marketplace.",
+      "discover_enateai": "Discover EnateAI"
+
+    },
+    "user_insights": {
+      "title": "Insights",
+      "my_title": "My Insights",
+      "team_member_description": "Daily break-out of how your time outside of Enate is spent. Adjust as necessary to reflect time spent, plus set Non-working days (e.g. weekend or equivalent) and planned Leave.",
+      "team_leader_description": "Daily break-out of how your and your teams' time outside of Enate is spent. Can be adjusted as necessary, plus view / adjust Non-working days (e.g. weekend or equivalent) and planned Leave.",
+      "popup": {
+        "greeting_name": "Hello, {{u}}",
+        "title_sentiment": "How are you feeling today?",
+        "title_completed": "Successfully updated your Insights",
+        "subtitle_completed": "Thank you!",
+        "go_to_insights": "Go to Insights",
+        "not_now_tooltip": "You can find this again in the top header.",
+        "popup_today_description": "Expected working hours today: <strong> {{h}} </strong> hrs. <Br/> Expected break: <strong> {{b}} </strong> hrs.",
+        "popup_yesterday_description": "Yesterday's working hours: <strong> {{h}} </strong> hrs. <Br/> Yesterday's break: <strong> {{b}} </strong> hrs.",
+        "popup_tomorrow_description": "Tomorrow's working hours: <strong> {{h}} </strong> hrs. <Br/> Tomorrow's break: <strong> {{b}} </strong> hrs.",
+        "popup_link": "Need to change?<span class=\"link-primary\" > Click here</span>",
+        "labels_today": {
+          "title": "Is there anything happening today?",
+          "subtitle": "How's your day looking?",
+          "clear": "I'm good. I've got the day clear!",
+          "not_clear": "I have some things happening today",
+          "week_off": "It’s a non-working day",
+          "leave": "I'm on leave"
+        },
+        "labels_next_day": {
+          "title": "Anything coming up for tomorrow?",
+          "subtitle": "And how about tomorrow?",
+          "clear": "I'll have the day clear!",
+          "not_clear": "I'll have some things happening tomorrow",
+          "week_off": "It’s a non-working day",
+          "leave": "I'll be on leave",
+          "note": "Let's make a plan! If things change, you can update it later"
+        },
+        "labels_previous_day": {
+          "title": "Did yesterday go as planned?",
+          "subtitle": "And how was yesterday?",
+          "clear": "I had the day clear!",
+          "not_clear": "I had some things happen yesterday",
+          "week_off": "It was a non-working day",
+          "leave": "I was on leave",
+          "note": "Here's how you thought yesterday would go. Did it?"
+        },
+        "form_labels": {
+          "1": "Work performed outside Enate",
+          "2": "Idle Time",
+          "3": "Meetings",
+          "4": "Feedback/1-2-1",
+          "5": "Training",
+          "6": "Other"
+        },
+        "emotions": {
+          "smiley_1": "Awesome!",
+          "smiley_2": "Very Good!",
+          "smiley_3": "Good",
+          "smiley_4": "Bad",
+          "smiley_5": "Worse!",
+          "comment": "Your Comment (Optional)"
+        },
+        "error": {
+          "invalidInput": "Total hours should be less than 24 hours",
+          "working_duration_zero": "Working hours cannot be zero"
+        }
+      },
+      "overview": {
+        "feeling_tooltip": "Feeling {{f}}!",
+        "non_working_title_self": "Looks like you are not working this day.",
+        "non_working_title_user": "Looks like {{u}} is not working this day.",
+        "mark_as_working": "Mark as working day.",
+        "non_working_info": "{{d}} is marked as '{{n}}'",
+        "mark_non_working": "Mark as non-working day",
+        "save_success": "Saved successfully.",
+        "category": "Category",
+        "data_confirmed": "Hours Spent",
+        "enate_data": "Enate data",
+        "working_hours": "Working Hours",
+        "break": "Break",
+        "end_user_hours": "Operational user value added hours",
+        "business_hours": "Business value added hours",
+        "total": "Total hours",
+        "hours_enate": "Work performed within Enate",
+        "hours_outside_enate": "Work performed outside Enate",
+        "meeting": "Meetings",
+        "feedback": "Feedback/1-2-1",
+        "training": "Training",
+        "adhoc": "Other",
+        "downtime": "Idle Time",
+        "working_hours_desc": "Please enter your standard working hours per day.",
+        "break_desc": "Please enter the amount of time allocated to breaks per day.",
+        "hours_enate_desc": "Time spent working in Enate performing productive tasks (e.g. completing an Action or Ticket).",
+        "hours_outside_enate_desc": "Time spent working outside of Enate performing productive tasks, e.g. using third party application to complete a task.",
+        "meeting_desc": "Time spent in any collaborative gathering or group meeting.",
+        "feedback_desc": "Time spent in individual sessions with e.g. your team leader, manager, mentor or other.",
+        "training_desc": "Time spent in skill and knowledge development for improved performance.",
+        "adhoc_desc": "Time spent on any other activities which are not listed above",
+        "downtime_desc": "Time lost due to e.g. system issues, or non availability of work",
+        "weekoff_desc": "Please select this option for a non-working weekend day e.g. Saturday / Sunday, or an equivalent standard non-working day in place of a weekend day.",
+        "planned_leave_desc": "Please select this option for a non-working day, either as part of planned annual vacation/leave, unplanned leave, or sickness absence."
+      },
+      "team_data": {
+        "title": "Team",
+        "description": "People reporting to you, your direct subordinates or team members under your supervision in the organizational hierarchy",
+        "team_default": "Team Insights",
+        "multi_error": "Cannot select more than 15 users",
+        "no_user_found": "No Users Found"
+      },
+      "user_calendar": {
+        "title": "Calendar",
+        "description": "Select a date to plan your work and update your non-working days or to view your Insights data",
+        "days": "Days",
+        "days_range": "Range",
+        "month": "Month",
+        "leaves_title": "Upcoming planned leave/non-working days",
+        "no_leaves": "No planned leave this month",
+        "planned_leave": "Planned leave",
+        "weekoff": "Non-working day",
+        "mark_as_planned_leave": "Mark as planned leave",
+        "mark_as_weekoff": "Mark as non-working day"
+      },
+      "errors": {
+        "367570": "All Durations should be zero when Work day is planned leave or non-working day",
+        "367576": "Each Duration time should not exceed the working hours per day",
+        "367581": "Working hours per day Cannot be zero for Working Day",
+        "367575": "Total hours should be less than 24 hours"
+      }
+    },
+    "extention_properties": {
+      "title": "Extension Properties"
+    }
+  },
+  "common": {
+    "components": {
+      "bulk_edit": {
+        "title": "Bulk Edit Contacts",
+        "location": "Office Location",
+        "preferred_language": "Preferred Language",
+        "time_zone": "Time Zone"
+      },
+      "userDetailsModal": {
+        "time_zone": "Time Zone",
+        "location": "Location",
+        "department": "Department",
+        "language": "Preferred Language",
+        "address": "Address",
+        "contactDetails": "Contact Details",
+        "firstName": "First Name",
+        "surname": "Last Name",
+        "companyName": "Company Name",
+        "emailAddress": "Email Address",
+        "createContact": "Create contact",
+        "edit_contact": "Edit Contacts",
+        "global": "global",
+        "open_activity": "Open Contact Activity",
+        "company_placeholder": "Search for companies starting with ...",
+        "message": "Email sent successfully! New email address(es) detected. If you wish to add these as contacts then please verify the below details & proceed.",
+        "email_duplicate": "User with Email Address '{{_e}}' already exists.",
+        "generic_error": "Invalid Data",
+        "retired_message": "This Contact was deleted.",
+        "reactivate": {
+          "confirmation": "Are you sure you wish to reactivate this Contact?",
+          "success": "Reactivated successfully",
+          "fail": "Reactivation Failed",
+          "email_exists": "{{u}} was deleted previously. Do you want to reactivate this User?",
+          "select_company": "The Company associated with {{u}} was deleted previously. Please pick a new company."
+        }
+      },
+      "date_picker": {
+        "title": "Pick a Date and Time"
+      },
+      "new_process": {
+        "title": "New Work Item",
+        "title_case": "New Case",
+        "title_ticket": "New Ticket",
+        "title_subcase": "New Sub Case",
+        "subtitle": "Select the type of Work item you want to create from this email",
+        "subtitle_case": "Select the type of Case you want to create from this email",
+        "subtitle_ticket": "Select the type of Ticket you want to create from this email",
+        "search_email": "Select email route",
+        "auto_filled_route": "The email route has been auto-selected with the primary email address of this email’s mailbox. This might have auto-populated some of the following fields.",
+        "auto_filled_context": "The selected email route might have auto-populated some of the following fields.",
+        "creating_case": "Creating Case",
+        "creating_ticket": "Creating Ticket"
+      },
+      "create_via_mail": {
+        "title": "More Information Needed",
+        "back_existing": "Back to existing",
+        "check_details": "Check Details",
+        "removed": "Removed from recipients list",
+        "completed_ref": "Created {{r}}",
+        "creating": "Creating a new work item",
+        "selected": "Sharing with {{r}}",
+        "selected_multiple": "Sharing with {{i}} work items",
+        "proceed_tooltip_create": "Created work item will be available under 'Linked Work items' tab.",
+        "errors": {
+          "select_multiple": "For '{{e}}', Select at least one work item to share this email with",
+          "select_single": "Select at least one work item to share this email with",
+          "create_multiple": "More information is needed to create a work item for '{{e}}'",
+          "create_single": "More information is needed to create a work item",
+          "no_permission_error": "Sending this email will result in work items being created for the following email address(es):  <br/><strong>{{e}}</strong>,  <br/><br/>Since you don't have permission to create work items, you cannot send this email to the above address(es). Please remove the address(es) to proceed."
+        },
+        "create_single_description": {
+          "base_info": "You're sending this email to an internal team who are using Enate (<strong>{{e}}</strong>). This will result in a brand new work item being created for them to work on.",
+          "additional_info_single_process_type": "Please add any additional information to the work item that might be useful for them before confirming.",
+          "additional_info_multi_process_type": "Please select which work item to create for them and any details you think will be useful.",
+          "proceed_text": "Create & Send"
+        },
+        "create_multiple_description": {
+          "base_info": "You're sending this email to internal teams who are using Enate, as listed below. This will result in a new work item being created for each of them.",
+          "additional_info_single_process_type": "For each team, add any additional information to the work item that might be useful for them before confirming.",
+          "additional_info_multi_process_type": "Please select which work item to create for each team and any details you think will be useful.",
+          "proceed_text": "Create & Send"
+        },
+        "link_single_description": {
+          "base_info": "You're sending this email to an internal team who are using Enate (<strong>{{e}}</strong>).",
+          "description_single_linked": "However, we've found the following linked work item already running for that team. Do you want to share the email with this work item instead?",
+          "description_multi_linked": "However, we've found the following linked work items already running for that team. Do you want to share the email with these work items instead?",
+          "create_instead_single_linked": "If you don't want to share, please create a new linked work item for the team instead.",
+          "create_instead_multi_linked": "If you don't want to share with any of these, please create a new linked work item for the team instead.",
+          "proceed_text": "Share & Send"
+        },
+        "link_multiple_description": {
+          "base_info": "You're sending this email to internal teams who are using Enate, as listed below.",
+          "description_linked_multi_1": "However, we've found a linked work item already running for each team.",
+          "description_linked_multi_2": "However, we've found the following linked work items already running for each team.",
+          "description_linked_multi_3": "However, we've found the following linked work items already running for a few teams.",
+          "additional_info_single": "Please confirm for each whether you want to share this email with the proposed work item, or create a new work item for them to work on.",
+          "additional_info_multiple": "Please confirm for each whether you want to share this email with the proposed work items, or create a new work item for them to work on.",
+          "create_instead_single_linked": "If you don't want to share, please create a new linked work item for the team instead.",
+          "create_instead_multi_linked": "If you don't want to share with any of these, please create a new linked work item for the team instead."
+        },
+        "new": {
+          "workitem": "New Work item",
+          "ticket": "New Ticket",
+          "case": "New Case"
+        },
+        "warning": {
+          "header": "Are You Sure?",
+          "message_check_details": "You haven't checked the details for all the items you want to create. Are you sure you want to continue?",
+          "message_remove_email": "You have chosen not to send this email to {{e}}. Are you sure you want to continue?"
+        },
+        "new_process_title": "Linked work item",
+        "schedule_error": "Emails cannot be scheduled with routes in the recipients list. Please remove '{{e}}' to proceed.",
+        "cancel_warning": "Work item(s) created before sending this mail will not be removed when the mail is cancelled.",
+        "skip_tooltip": "This route will be removed from the recepient list"
+      },
+      "new_process_route": {
+        "attach": "Attach"
+      },
+      "link_workitem": {
+        "link_warning": "Once a work item is linked, it cannot be unlinked.",
+        "linked_item": "Linked item",
+        "link": "Existing item",
+        "share_with": "Share with",
+        "share_packet": "Share with linked work items"
+      },
+      "add_existing_workitem": {
+        "title": "Link Existing Work Item(s)",
+        "title_link": "Link Workitem",
+        "select_workitem": "The selected Cases and/or Tickets will be linked with",
+        "max_selected_item": "You can link up to a maximum of 50 work items at a time. Actions cannot be linked."
+      }
+    }
+  },
+  "page": {
+    "no_title": "No Title",
+    "names": {
+      "my_profile": "User Settings",
+      "0": "[No Title]",
+      "1": "Home",
+      "2": "Home",
+      "3": "Queues",
+      "4": "Bulk Create",
+      "6": "Contact Activity Page",
+      "8": "Advanced Search",
+      "9": "User Settings",
+      "10": "Blocked Email Addresses",
+      "11": "Contacts",
+      "12": "Outbox",
+      "13": "Email Inbox",
+      "14": "Drafts",
+      "15": "Sent Items",
+      "16": "Reports",
+      "17": "Insights"
+    }
+  },
+  "error": {
+    "max_date": "Date must be less than {{d}}",
+    "min_date": "Date must be greater than {{d}}",
+    "required_date": "Date must be filled",
+    "no_assign": "Please assign this work item to yourself before continuing.",
+    "no_case_title": "Please enter a Case Title/Short Description before continuing.",
+    "no_case_step_or_action": "Please specify a step or action to restart from before continuing.",
+    "no_waiting_type": "Please specify a wait type before continuing.",
+    "no_resolution_type": "Please specify a resolution type before continuing.",
+    "no_waiting_reason": "Please select the reason you are waiting for more information.",
+    "no_schedule": "Please select current schedule for this case.",
+    "no_redo_schedule": "Please select a schedule to use for reworking the case.",
+    "negative_record_count": "The record count cannot be negative.",
+    "zero_record_count": "The record count must be at least 1.",
+    "no_ticket_title": "Please enter a Ticket Title before continuing.",
+    "no_ticket_description": "Please enter a Ticket Description before continuing.",
+    "no_ticket_category": "Please specify a ticket category in the settings section before continuing.",
+    "no_mergeable_item": "Please specify mergeable work item on this Ticket before continuing.",
+    "no_email_or_note_for_resolve": "Please add a resolution Email/Note before marking as resolved.",
+    "no_note_for_resolve": "Please add a note with Resolution details before marking as resolved.",
+    "no_days_for_wait": "Please specify number of days (between 1-180) to wait before continuing.",
+    "no_date_for_follow": "Please specify a date to follow up on this Ticket before continuing.",
+    "invalid_date_for_follow": "Please set a follow up date and time in the future.",
+    "no_case_type": "Please select a Case type to launch before continuing.",
+    "no_schedule_for_case": "Please select current schedule to launch a case.",
+    "invalid_split_tickets_count": "Please specify 2 or more split tickets before marking current ticket as resolved.",
+    "no_split_ticket_title": "Please enter a Ticket Title for each split ticket before continuing.",
+    "no_split_ticket_description": "Please enter a Ticket Description for each split ticket before continuing.",
+    "no_split_ticket_category": "Please enter a Ticket Category for each split ticket before continuing.",
+    "no_status_of_checklist": "Please enter a status for all items on Checklist before marking as complete.",
+    "no_date_for_action_follow": "Please specify a date to follow up on this Action before continuing.",
+    "no_unable_to_complite_reason": "Please specify the reason why this Action cannot be completed before continuing.",
+    "cannot_work_on_peer_task": "You were involved in the delivery of this Action so are ineligible to perform the peer review. Please reassign this Action to a colleague.",
+    "no_peer_comment": "Please enter Peer Review Comments before continuing.",
+    "need_category_for_from_address": "Please specify a ticket category in the Settings section in order to determine the From address.",
+    "no_to_or_cc": "Please set a To or CC Address for your email before continuing.",
+    "from_address_must_not_in_sender_addr": "From email address must not be in To, CC and BCC email address list, Please remove it from recipients list to send the email out.",
+    "no_subject": "Please enter a Subject for your email before continuing.",
+    "no_defect_category": "Please select a defect category for all defects before continuing.",
+    "no_defect_description": "Please enter a description for all defects before continuing.",
+    "no_party_fault": "Please select the party at fault for all defects before continuing.",
+    "no_primary_contact": "Please specify a Primary Contact in the Contacts section before continuing.",
+    "no_requester_contact": "Please specify a Requester in the Contacts section before continuing.",
+    "auto_created_contact": "Please specify a First name of a Contact which has email address ({{e}}).",
+    "no_approvers": "Please select approver(s) for approval process to continue.",
+    "unselected_approvers": "Please select approver(s) for approval process to continue.",
+    "cannot_work_on_approval_action": "You are one of the approver, so are ineligible to perform update this action. Please reassign this Action to a colleague.",
+    "cannot_close_approval": "This action cannot be closed without appropriate approval",
+    "no_action_type": "Please select the type of Action you wish to launch before continuing.",
+    "no_sub_case_description": "Please enter a Short Description for the Case you are launching before continuing.",
+    "no_current_schedule": "Please select current schedule for launching New Case.",
+    "no_schedule_for_subcase": "Please select current schedule for starting New Case.",
+    "wrong_how_many_action": "Please set how many copies of this Action to launch (between 1 and 99).",
+    "no_more_work_exists": "No more work is available for you to work on. Please try again later.",
+    "not_allowed_override_due_date": "Unable to set override due date based on Due Date rule configuration.",
+    "invalid_email_address": "Field '{{p0}}' is not a valid email address.",
+    "invalid_url": "Field '{{p0}}' is not a valid URL.",
+    "mandatory_field": "Field '{{p0}}' is mandatory.",
+    "invalid_date": "Please enter a valid date format before submitting otherwise null date will be saved.",
+    "invalid_start_date": "Invalid start date",
+    "invalid_end_date": "Invalid end date",
+    "cannot_start_process_due_to_mandatory_fields": "Unable to Start Work Item: This work item cannot be initiated as it requires mandatory data to be provided during submission. Please get in touch with your administrator to adjust the validation settings",
+    "cannot_add_your_manager_as_team_member": "You cannot add this user to your team as you already report to them."
+  },
+  "app_change_notify": {
+    "ok": "OK",
+    "info": "Information",
+    "dont_show": "Don't show it again",
+    "email_editor_font_size_unit_change": "The font size unit has been changed from 'PX' to 'PT'"
+  },
+  "process_type": {
+    "1": "Case",
+    "2": "Ticket",
+    "3": "Action"
+  },
+  "status": {
+    "0": "Draft",
+    "1": "To Do",
+    "2": "In Progress",
+    "3": "Waiting",
+    "4": "Resolved",
+    "5": "Closed"
+  },
+  "status_changing": {
+    "submit": "Submit",
+    "0": "Draft",
+    "1": "To Do",
+    "2": "In Progress",
+    "3": "Wait",
+    "4": "Resolve",
+    "5": "Close"
+  },
+  "start_method": {
+    "0": "By Workflow",
+    "1": "By Operational User",
+    "2": "By Self Service User",
+    "3": "By Robot User",
+    "4": "By Email",
+    "5": "From Ticket",
+    "6": "By Operational User In Bulk",
+    "7": "By Robot User In Bulk",
+    "8": "By Schedule"
+  },
+  "status_reason": {
+    "0": "Newly Created",
+    "1": "Updated By Resource",
+    "2": "Updated By Integration",
+    "4": "New Information Received",
+    "5": "Timeout",
+    "6": "Schedule Date and Time Reached",
+    "7": "All Split Tickets Completed",
+    "9": "Sub Case Completed",
+    "10": "Sub Case Cancelled",
+    "11": "Blocked By Business Rule",
+    "14": "Feedback Window Passed",
+    "17": "All relevant Actions completed",
+    "18": "Previous Step Completed",
+    "19": "Action Unable To Complete",
+    "20": "Updated By Enate",
+    "21": "Rework",
+    "22": "Cancelled",
+    "23": "Sub Case Not Yet Started",
+    "24": "One or more Actions not completed successfully",
+    "25": "Updated By Enate",
+    "26": "Waiting For Marketplace",
+    "27": "Waiting For Human Validation",
+    "28": "Failed",
+    "29": "Completed",
+    "30": "File Not found for IDP Extraction",
+    "31": "Marketplace Not Configured",
+    "100": "Unknown",
+    "101": "Updated By Support Team"
+  },
+  "wait_type": {
+    "not": "Not waiting",
+    "0": "Wait for more information",
+    "1": "Wait Until",
+    "2": "Related Work Items",
+    "3": "Pause",
+    "4": "External System"
+  },
+  "wait_type_message": {
+    "action_future_date": "Action is set to wait until {{d}}.",
+    "action_wait_subcase": "Action is waiting for Sub Case to complete",
+    "action_wait_external": "Action is waiting for external system",
+    "action_wait_more_info": "Action is waiting for more Information",
+    "case_future_date": "Case is set to wait until {{d}}.",
+    "case_is_paused": "Case is paused",
+    "case_wait_subcase": "Case is waiting for Sub Cases to complete",
+    "case_wait_external": "Case is waiting for external system",
+    "case_wait_from_action": "Awaiting Information from Action",
+    "ticket_future_date": "Ticket is set to wait until {{d}}.",
+    "ticket_will_reopen": "Will wait until {{d}} and if no information is received, this Ticket will re-open.",
+    "ticket_will_close": "Will wait until {{d}} and if no information is received, this Ticket will be closed."
+  },
+  "resolved_reason": {
+    "not": "Not Resolved",
+    "0": "With Customer Response",
+    "1": "Case Launched",
+    "2": "No Customer Response",
+    "3": "Split Into Multiple Tickets",
+    "4": "Merged",
+    "5": "All Actions And Cases Closed",
+    "6": "Cancel",
+    "7": "Done Successfully",
+    "9": "Not Done Successfully",
+    "11": "Case Completed",
+    "12": "Rework",
+    "13": "Case Completed",
+    "100": "Rejected",
+    "101": "Rejected As Spam",
+    "102": "Rejected Unconfigured Email Address"
+  },
+  "duedate_change_reason": {
+    "1": "Due date overridden",
+    "2": "Case Step has changed",
+    "3": "Ticket Category has changed"
+  },
+  "email_send_status": {
+    "0": "Queued",
+    "1": "Sent",
+    "2": "Pending Retry",
+    "3": "Failed",
+    "4": "Cancelled",
+    "5": "Connector Disabled",
+    "6": "Copy"
+  },
+  "icons": {
+    "problem": "Case is in problem State",
+    "new_info": "New Information Received",
+    "peer": "Action is in Peer Review Stage",
+    "not_peer": "Action will be Peer Reviewed",
+    "peer_na": "Peer Review was not applicable",
+    "peer_complete": "Action has been Peer Reviewed",
+    "bot_can_do": "This work item can be done by Robot",
+    "bot_failed_to_do": "Work item can no longer be processed by a Robot, needs human attention"
+  },
+  "desktop_alerts": {
+    "permission_not_set": "To enable browser pop-up notifications you need to adjust your browser permissions. To do this, click here and in the resulting pop-up, click to ‘Allow’ notifications.",
+    "permission_denied": "You need to adjust your browser permissions to allow browser pop-up notifications.",
+    "settings": "You can change these permissions via Settings > Privacy and Security > Site Settings > Permissions > Notifications"
+  },
+  "packet_errors": {
+    "1": "Unexpected failure during validation. This has been logged as incident {{0}}.",
+    "2": "When Wait Type is Future Date the Scheduled Follow Up On date must be specified.",
+    "3": "The Scheduled Follow Up On date must be in the future.",
+    "4": "The Days to Wait For More Information must be null or greater than 0.",
+    "5": "The work item cannot be deleted as it has started processing.",
+    "6": "The work item cannot be deleted as it has communications.",
+
+
+    "81007": "Scheduled follow up on date must be in the future.",
+
+    "81013": "Override Due Date cannot be changed on this work item.",
+    "81014": "Override Due Date cannot be set to this value.",
+    "81015": "Please specify a Primary Contact in the Contacts section before continuing.",
+    "81017": "Please specify a Requester in the Contacts section before continuing.",
+
+    "81020": "The work item has already completed. No updates possible.",
+    "81021": "The work item is not assigned to logged-in user.",
+    "81022": "This work item is not available in Live Mode.",
+    "81023": "This work item is not available in Test Mode.",
+
+    "81026": "The work item cannot be deleted as it has started processing.",
+    "81027": "The work item cannot be deleted as it has Communications.",
+
+    "83001": "Contact with Name/Email '{{0}}' does not exist.",
+    "83002": "Contact with Name/Email '{{0}}' cannot be used with this work item as it is scoped to a different company.",
+    "83003": "One or more Contact is retired.",
+    "83004": "Contact with Email Address '{{0}}' does not have a first name.",
+
+    "84001": "Contact Tag '{{0}}' does not exist.",
+    "84002": "Contact Tag '{{0}}' cannot be used multiple times.",
+    "84003": "Contact Tag '{{0}}' cannot be used with this work item as it is scoped to a different company.",
+    "84004": "One or more Contact tag is retired.",
+    "84005": "Contact Tag '{{0}}' cannot be removed.",
+
+    "88001": "Defect with GUID '{{0}}' does not exist.",
+    "88002": "Defect Party at Fault with Name '{{0}}' does not exist.",
+    "88003": "Defect Category with Name '{{0}}' does not exist.",
+    "88004": "Defect Category with Name '{{0}}' has child levels. Only a Defect Category with no further levels can be selected.",
+    "88005": "One or more Defect is retired and not updatable.",
+    "88006": "One or more Defect category is retired",
+    "88007": "One or more Defect party at fault is retired",
+    "88008": "A defect record can only be modified by the agent who created it. Please undo your defect changes in order to submit.",
+    "81019": "User does not have permission to access work item.",
+
+    "817002": "This email is not available in Live Mode.",
+    "817003": "This email is not available in Test Mode.",
+    "818001": "Work item contact address is not valid.",
+    "818002": "Work Item Communication Contact address '{{0}}' is not valid for routing.",
+    "818003": "Work Item Communication Contact address '{{0}}' does not match Work Item reference '{{1}}'.",
+    "818004": "The contact with address '{{0}}' does not have a valid work item identifier",
+    "821006": "Email size ('{{0}}' KB) exceeds the maximum email size allowed ('{{1}}' KB).",
+    "821007": "{{0}} in '{{1}}' list is Closed. Please remove it to proceed.",
+    "821008": "{{0}} has been added as an email recipient multiple times. Please only add them once to proceed.",
+    "821009": "{{0}} in '{{1}}' list is not linked with this work item. Please remove it to proceed.",
+    "821010": "Email cannot be scheduled for the route '{{0}}'",
+    "821011": "Email has already been processed.",
+    "821013": "Email has already been processed.",
+    "828001": "Data Fields last updated at {{0}} but when downloaded was last updated at {{1}}. Update blocked to avoid accidental overwrite.",
+    "828002": "Short Text field '{{0}}' cannot be longer than 400 characters.",
+    "828003": "List field '{{0}}' value is not valid.",
+    "828004": "Multiple Level List field '{{0}}' cannot be longer than 400 characters.",
+    "828005": "Date/Time field '{{0}}' value is not valid.",
+    "828007": "CheckBox field '{{0}}' value is not valid.",
+    "828006": "Date field '{{0}}' value is not valid.",
+    "828008": "Decimal field '{{0}}' value is not valid.",
+    "828009": "Whole Number field '{{0}}' value is not valid.",
+    "828010": "'{{0}}' is not a valid field for this work item.",
+    "828011": "'{{0}}' is not a valid field for the table field '{{1}}'.",
+    "828012": "Multiple Level List field contains invalid value.",
+    "828013": "Multiple Level List field contains invalid value.",
+    "828014": "Field '{{0}}' is mandatory. Please enter a value to continue.",
+    "828015": "Read-only field '{{0}}' cannot be updated with value '{{1}}'.",
+    "828016": "Hyperlink '{{0}}' cannot be longer than 2048 characters.",
+    "828017": "Hyperlink '{{0}}' is invalid. Please enter a valid hyperlink.",
+    "828019": "'{{1}}' is not a valid currency value in field '{{0}}'.",
+    "829001": "File with Name '{{0}}' not found.",
+    "829002": "File with Name '{{0}}' contains data. Update of existing Files is not supported.",
+    "829003": "File with Name '{{0}}' has a TemporaryFileGUID. Update of existing Files is not supported.",
+    "829004": "File with Name '{{0}}' has a different File name. Update of existing Files is not supported.",
+    "829005": "New File must contain either Data or have a TemporaryFileGUID set.",
+    "829006": "New File must contain either Data or have a TemporaryFileGUID set; not both.",
+    "829007": "New File with Data must also include a File name.",
+    "829008": "New File with TemporaryFileGUID must not include a different File name to the previously uploaded Temporary File.",
+    "829009": "TemporaryFileGUID specified in new File not found.",
+    "829010": "File with Name '{{0}}' has an unrecognised Tag with GUID '{{1}}'.",
+    "829011": "File with a source of EmailAttachment cannot have an empty GUID.",
+    "829012": "File with a source of EmailAttachment cannot be Retired.",
+
+    "912001": "This Case does not support Schedules.",
+    "912002": "The Schedule Period Supplied is not the expected Schedule Period for this Case.",
+    "912003": "Changing Schedule without Case being put to Rework is invalid",
+    "912004": "This Case requires a Schedule to be specified.",
+    "912005": "ReworkFromStep and ReworkFromActionAttributeGUID are mutually exclusive. Please only specify 1 property.",
+    "912006": "ReworkFromStep or ReworkFromActionAttributeGUID must be specified.",
+    "912007": "CaseAttributeGUID Not Found.",
+    "912008": "Case Can't be Completed With Running Work Items.",
+
+    "954368": "The 'From' email address cannot be in the BCC address list.",
+
+    "957001": "Authenticated User does not have permission to reassign work item.",
+    "957002": "User does not have access to this work item type.",
+    "957003": "The work item cannot be assigned to retired Users.",
+    "957004": "User does not have permission to access work item.",
+    "957005": "Robot User is suspended and cannot be assigned work.",
+    "957006": "The work item has already been assigned to a Robot '{{1}}' times. Maximum allowed is '{{2}}'.",
+    "957007": "The work item cannot be assigned to a Robot User during Peer Review.",
+    "957008": "The work item cannot be assigned to a Robot because no Robot Farm is configured for it.",
+    "957009": "The work item cannot be assigned to Robot User because it is not a member of the configured Robot Farm.",
+    "957010": "The work item is a Case which cannot be assigned to a Robot User.",
+    "957011": "The work item cannot be assigned to User because they are of type Employee which cannot be assigned work items.",
+    "957012": "The work item cannot be assigned to User because it is in Peer Review and they were involved in the activity.",
+    "957013": "The work item cannot be assigned to User because it is not in Peer Review and they were involved in the peer review.",
+    "957014": "The work item is already assigned to {{1}}.",
+    "957015": "User does not exist.",
+    "957016": "This work item cannot be assigned to '{{0}}' as they can only work on items that are in Queues they are part of or items that are not assigned to a Queue.",
+
+    "963001": "When creating a new Case CaseAttributeVersionGUID must be specified.",
+    "963008": "This Case requires a Schedule to be specified.",
+    "963012": "Case cannot be completed with running child work items.",
+    "963366": "The 'From' email address cannot be in the To address list.",
+    "963367": "The 'From' email address cannot be in the CC address list.",
+    "963368": "The 'From' email address cannot be in the BCC address list.",
+    "963006": "Please select a schedule.",
+
+    "964006": "You cannot rework the Case from this Action as it is a parallel Action.",
+    "964366": "The 'From' email address cannot be in the To address list.",
+    "964367": "The 'From' email address cannot be in the CC address list.",
+    "964368": "The 'From' email address cannot be in the BCC address list.",
+
+    "967001": "When splitting a Ticket it must be split into at least 2 Tickets.",
+    "967002": "When creating a new Ticket either TicketCategoryAttribute or TicketAttributeVersionGUID must be specified.",
+    "967003": "The Ticket Attribute Version configuration is Draft and no new Tickets can be created.",
+    "967004": "The Ticket Attribute Version configuration is Testing and current session is not in Test Mode.",
+    "967005": "The Ticket Attribute Version configuration is Retiring and no new Tickets can be created.",
+    "967006": "The Ticket Attribute Version configuration is Archived and no new Tickets can be created.",
+    "967007": "When RequesterUserGUID is set the Contacts collection must be empty or null.",
+    "967008": "When waiting for Child work items the Ticket cannot be updated.",
+    "967009": "Unable to merge into a Target work item that is already closed.",
+    "967011": "Ticket to merge into work item does not exist.",
+    "967019": "The selected Ticket category is not available. Please select a different one.",
+    "967020": "Case '{{0}}' must be live or retired.",
+    "967023": "Resolution communication needed to resolve this Ticket.",
+    "967024": "Case '{{0}}' must be in a state of testing, live or retiring.",
+    "85007": "Hyperlink is invalid. Please enter a valid hyperlink."
+  },
+  "user_errors": {
+    "invalid_val": "Please specify a valid value for '{{p}}' before continuing.",
+    "del_success": "User has been successfully deleted",
+    "update_success": "User has been successfully updated",
+
+    "312002": "User name is already in use.",
+
+    "312087": "Timezone is required.",
+
+    "312241": "Username is required.",
+    "312242": "Password is required.",
+    "312245": "Email address is required.",
+    "312246": "Email address is invalid.",
+    "312247": "User cannot be found.",
+    "312248": "Company value is required.",
+    "312249": "Company does not exist.",
+    "312250": "User is configured with multiple companies.",
+    "312251": "User is already configured with another company.",
+    "312252": "User cannot be mapped to a company.",
+    "312253": "User already exists.",
+    "312254": "Changing the Company of a User is not supported.",
+
+    "312299": "Supplied username is not a supported username, please specify a different username.",
+    "312300": "Unable to set password on User using SSO.",
+    "312301": "Email address '{{0}}' is already in use.",
+    "312302": "Email address is already in use by one or more retired users.",
+    "312303": "A Robot must be in 1 or more Robot Farms.",
+    "312304": "Company is retired.",
+    "312305": "Cannot create self service user when self service portal not configured for this instance.",
+    "312306": "User Extension Property '{{0}}' is Invalid",
+    "312307": "Robot Farm does not exist.",
+    "312308": "Password not acceptable.",
+    "312309": "A user with that name already exists.",
+    "312310": "User type cannot be changed after creation.",
+    "312311": "Cannot update self service user when self service portal not configured for this instance.",
+    "312312": "Changing the Company of a User is not supported.",
+    "312313": "Unable to update 'Username' of a Robot that syncs with RPA Platform.",
+    "312314": "Unable to update 'First Name' of a Robot that syncs with RPA Platform.",
+    "312315": "Unable to update 'Date Of Birth' of a Robot that syncs with RPA Platform.",
+    "312316": "Robot Farm is retired.",
+    "312335": "Allowed Work Item Types is required.",
+    "312336": "Allowed Work Item Types must be Live for Employee.",
+    "312337": "User Password Policy validation has failed",
+    "312338": "Password cannot contain a username.",
+    "312339": "Password cannot contain a user's first name.",
+    "312340": "Password cannot contain a user's last name.",
+    "312341": "Password does not meet minimum length as defined by Password Policy.",
+    "312342": "Password exceeds maximum length as defined by Password Policy.",
+    "312343": "One or more invalid characters in password.",
+    "312344": "Password does include enough numerical characters as defined by Password Policy.",
+    "312345": "Password does include enough symbolic characters as defined by Password Policy.",
+    "312346": "Password does include upper and lower case characters as defined by Password Policy.",
+    "312347": "Password has previously been used.",
+
+    "312356": "User Password Policy validation has failed",
+    "312407": "Email address already exists as an incoming Email Connector or Route.",
+    "312452": "Username must not start or end with a blank space.",
+    "312453": "Username is too long. Maximum length is 50 characters.",
+    "312454": "First name is required.",
+    "312455": "First name is too long. Maximum length is 50 characters.",
+    "312456": "First name must not start or end with a blank space.",
+    "312457": "Last name is required.",
+    "312458": "Last name is too long. Maximum length is 50 characters.",
+    "312459": "Last name must not start or end with a blank space.",
+    "312460": "Email address is too long. Maximum length is 255 characters.",
+    "312461": "Email address must not start or end with a blank space.",
+    "312462": "'Known As' field is too long. Maximum length is 50 characters.",
+    "312463": "'Known As' field must not start or end with a blank space.",
+    "312649": "Location is retired.",
+    "312650": "Location does not exist.",
+    "312653": "Department is retired.",
+    "312654": "Department does not exist.",
+    "336001": "Robot Farm Name is required.",
+    "336002": "Robot Farm name is already in use.",
+
+    "950680": "Hyperlink '{{0}}' is invalid. Please enter a valid hyperlink.",
+    "950681": "Hyperlink '{{0}}' is invalid. Please use http or https protocol.",
+
+    "1326299": "Invalid Integration Robot Farm Process ID"
+  },
+  "errors": {
+  },
+  "create_route_errors": {
+    "96401": "This route must have at least one filter in addition to Email Address.",
+    "96407": "Email Address {{0}} already exists on an Email Connector or Route",
+    "96246": "One or more Email Address is not a valid email address.",
+    "96279": "One or more Recipient Address is not a valid email address.",
+    "96281": "Email Connector does not exist.",
+    "96282": "Email Connector is retired.",
+    "96406": "Email Address {{0}} already exists as a User.",
+    "96606": "'Sender List Includes' is required when Email address for this Rule is `*`",
+    "96630": "This email routing rule already exists."
+  },
+  "help_url": {
+    "v2022": "https://docs.enate.net/enate-help/work-manager/work-manager-2021.1"
+  },
+  "ag_grid": {
+    "selectAll": "(Select All)",
+    "selectAllSearchResults": "(Select All Search Results)",
+    "searchOoo": "Search...",
+    "blanks": "(Blanks)",
+    "noMatches": "No matches",
+
+    "filterOoo": "Filter...",
+    "equals": "Equals",
+    "notEqual": "Not equal",
+    "empty": "Choose One",
+
+    "lessThan": "Less than",
+    "greaterThan": "Greater than",
+    "lessThanOrEqual": "Less than or equal",
+    "greaterThanOrEqual": "Greater than or equal",
+    "inRange": "In range",
+    "inRangeStart": "to",
+    "inRangeEnd": "from",
+
+    "contains": "Contains",
+    "notContains": "Not contains",
+    "startsWith": "Starts with",
+    "endsWith": "Ends with",
+
+    "dateFormatOoo": "yyyy-mm-dd",
+
+    "andCondition": "AND",
+    "orCondition": "OR",
+
+    "applyFilter": "Apply",
+    "resetFilter": "Reset",
+    "clearFilter": "Clear",
+    "cancelFilter": "Cancel",
+
+    "textFilter": "Text Filter",
+    "numberFilter": "Number Filter",
+    "dateFilter": "Date Filter",
+    "setFilter": "Set Filter",
+
+    "columns": "Columns",
+    "filters": "Filters",
+
+    "pivotMode": "Pivot Mode",
+    "groups": "Row Groups",
+    "rowGroupColumnsEmptyMessage": "Drag here to set row groups",
+    "values": "Values",
+    "valueColumnsEmptyMessage": "Drag here to aggregate",
+    "pivots": "Column Labels",
+    "pivotColumnsEmptyMessage": "Drag here to set column labels",
+
+    "group": "Group",
+
+    "loadingOoo": "Loading...",
+    "loadingData": "Loading Data",
+    "noRowsToShow": "No Rows To Show",
+    "enabled": "Enabled",
+
+    "pinColumn": "Pin Column",
+    "pinLeft": "Pin Left",
+    "pinRight": "Pin Right",
+    "noPin": "No Pin",
+    "valueAggregation": "Value Aggregation",
+    "autosizeThiscolumn": "Autosize This Column",
+    "autosizeAllColumns": "Autosize All Columns",
+    "groupBy": "Group by",
+    "ungroupBy": "Un-Group by",
+    "resetColumns": "Reset Columns",
+    "expandAll": "Expand All",
+    "collapseAll": "Close All",
+    "copy": "Copy",
+    "ctrlC": "Ctrl+C",
+    "copyWithHeaders": "Copy With Headers",
+    "paste": "Paste",
+    "ctrlV": "Ctrl+V",
+    "export": "Export",
+    "csvExport": "CSV Export",
+    "excelExport": "Excel Export",
+
+    "sum": "Sum",
+    "min": "Min",
+    "max": "Max",
+    "none": "None",
+    "count": "Count",
+    "avg": "Average",
+    "filteredRows": "Filtered",
+    "selectedRows": "Selected",
+    "totalRows": "Total Rows",
+    "totalAndFilteredRows": "Rows",
+    "more": "More",
+    "to": "to",
+    "of": "of",
+    "page": "Page",
+    "nextPage": "Next Page",
+    "lastPage": "Last Page",
+    "firstPage": "First Page",
+    "previousPage": "Previous Page",
+
+    "pivotChartAndPivotMode": "Pivot Chart & Pivot Mode",
+    "pivotChart": "Pivot Chart",
+    "chartRange": "Chart Range",
+
+    "columnChart": "Column",
+    "groupedColumn": "Grouped",
+    "stackedColumn": "Stacked",
+    "normalizedColumn": "100% Stacked",
+
+    "barChart": "Bar",
+    "groupedBar": "Grouped",
+    "stackedBar": "Stacked",
+    "normalizedBar": "100% Stacked",
+
+    "pieChart": "Pie",
+    "pie": "Pie",
+    "doughnut": "Doughnut",
+
+    "line": "Line",
+
+    "xyChart": "X Y (Scatter)",
+    "scatter": "Scatter",
+    "bubble": "Bubble",
+
+    "areaChart": "Area",
+    "area": "Area",
+    "stackedArea": "Stacked",
+    "normalizedArea": "100% Stacked",
+
+    "histogramChart": "Histogram",
+
+    "pivotChartTitle": "Pivot Chart",
+    "rangeChartTitle": "Range Chart",
+    "settings": "Settings",
+    "data": "Data",
+    "format": "Format",
+    "categories": "Categories",
+    "defaultCategory": "(None)",
+    "series": "Series",
+    "xyValues": "X Y Values",
+    "paired": "Paired Mode",
+    "axis": "Axis",
+    "navigator": "Navigator",
+    "color": "Colour",
+    "thickness": "Thickness",
+    "xType": "X Type",
+    "automatic": "Automatic",
+    "category": "Category",
+    "number": "Number",
+    "time": "Time",
+    "xRotation": "X Rotation",
+    "yRotation": "Y Rotation",
+    "ticks": "Ticks",
+    "width": "Width",
+    "height": "Height",
+    "length": "Length",
+    "padding": "Padding",
+    "spacing": "Spacing",
+    "chart": "Chart",
+    "title": "Title",
+    "titlePlaceholder": "Chart title - double click to edit",
+    "background": "Background",
+    "font": "Font",
+    "top": "Top",
+    "right": "Right",
+    "bottom": "Bottom",
+    "left": "Left",
+    "labels": "Labels",
+    "size": "Size",
+    "minSize": "Minimum Size",
+    "maxSize": "Maximum Size",
+    "legend": "Legend",
+    "position": "Position",
+    "markerSize": "Marker Size",
+    "markerStroke": "Marker Stroke",
+    "markerPadding": "Marker Padding",
+    "itemSpacing": "Item Spacing",
+    "itemPaddingX": "Item Padding X",
+    "itemPaddingY": "Item Padding Y",
+    "layoutHorizontalSpacing": "Horizontal Spacing",
+    "layoutVerticalSpacing": "Vertical Spacing",
+    "strokeWidth": "Stroke Width",
+    "offset": "Offset",
+    "offsets": "Offsets",
+    "tooltips": "Tooltips",
+    "callout": "Callout",
+    "markers": "Markers",
+    "shadow": "Shadow",
+    "blur": "Blur",
+    "xOffset": "X Offset",
+    "yOffset": "Y Offset",
+    "lineWidth": "Line Width",
+    "normal": "Normal",
+    "bold": "Bold",
+    "italic": "Italic",
+    "boldItalic": "Bold Italic",
+    "predefined": "Predefined",
+    "fillOpacity": "Fill Opacity",
+    "strokeOpacity": "Line Opacity",
+    "histogramBinCount": "Bin count",
+    "columnGroup": "Column",
+    "barGroup": "Bar",
+    "pieGroup": "Pie",
+    "lineGroup": "Line",
+    "scatterGroup": "X Y (Scatter)",
+    "areaGroup": "Area",
+    "histogramGroup": "Histogram",
+    "groupedColumnTooltip": "Grouped",
+    "stackedColumnTooltip": "Stacked",
+    "normalizedColumnTooltip": "100% Stacked",
+    "groupedBarTooltip": "Grouped",
+    "stackedBarTooltip": "Stacked",
+    "normalizedBarTooltip": "100% Stacked",
+    "pieTooltip": "Pie",
+    "doughnutTooltip": "Doughnut",
+    "lineTooltip": "Line",
+    "groupedAreaTooltip": "Area",
+    "stackedAreaTooltip": "Stacked",
+    "normalizedAreaTooltip": "100% Stacked",
+    "scatterTooltip": "Scatter",
+    "bubbleTooltip": "Bubble",
+    "histogramTooltip": "Histogram",
+    "noDataToChart": "No data available to be charted.",
+    "pivotChartRequiresPivotMode": "Pivot Chart requires Pivot Mode enabled.",
+    "chartSettingsToolbarTooltip": "Menu",
+    "chartLinkToolbarTooltip": "Linked to Grid",
+    "chartUnlinkToolbarTooltip": "Unlinked from Grid",
+    "chartDownloadToolbarTooltip": "Download Chart",
+
+    "ariaHidden": "hidden",
+    "ariaVisible": "visible",
+    "ariaChecked": "checked",
+    "ariaUnchecked": "unchecked",
+    "ariaIndeterminate": "indeterminate",
+    "ariaColumnSelectAll": "Toggle Select All Columns",
+    "ariaInputEditor": "Input Editor",
+    "ariaDateFilterInput": "Date Filter Input",
+    "ariaFilterInput": "Filter Input",
+    "ariaFilterColumnsInput": "Filter Columns Input",
+    "ariaFilterValue": "Filter Value",
+    "ariaFilterFromValue": "Filter from value",
+    "ariaFilterToValue": "Filter to value",
+    "ariaFilteringOperator": "Filtering Operator",
+    "ariaColumnToggleVisibility": "column toggle visibility",
+    "ariaColumnGroupToggleVisibility": "column group toggle visibility",
+    "ariaRowSelect": "Press SPACE to select this row",
+    "ariaRowDeselect": "Press SPACE to deselect this row",
+    "ariaRowToggleSelection": "Press Space to toggle row selection",
+    "ariaRowSelectAll": "Press Space to toggle all rows selection",
+    "ariaSearch": "Search",
+    "ariaSearchFilterValues": "Search filter values"
+  },
+  "froala": {
+    "common_actions": "Common actions 1",
+    "basic_formatting": "Basic Formatting",
+    "navigation": "Navigation",
+    "copy": "Copy",
+    "cut": "Cut",
+    "paste": "Paste",
+    "undo": "Undo",
+    "redo": "Redo",
+    "select_all": "Select All",
+    "bold": "Bold",
+    "italic": "Italic",
+    "underline": "Underline",
+    "strikethrough": "Strikethrough",
+    "increase_indent": "Increase Indent",
+    "decrease_indent": "Decrease Indent",
+    "shortcuts": "Shortcuts",
+    "focus_toolbar": "Focus popup / toolbar",
+    "focus_previous": "Return focus to previous position"
+  },
+  "standalone_approval_page": {
+    "title": "Approval",
+    "approvalStatusTitle_Approved": "Approve",
+    "approvalStatusTitle_Rejected": "Decline",
+    "messageDescription_Approved": "To confirm your approval, please hit Submit. Feel free to add any comments.",
+    "messageDescription_Rejected": "To confirm declining this request, please select a reason and hit Submit. Feel free to add any comments.",
+    "commentBoxLabel": "Comment",
+    "error_rejected_reason": "Please select a reason for decline.",
+    "rejectedReasonDrpLabel": "Reason for Decline",
+    "defaultDrpReason": "Select a reason",
+    "submitBtn": "Submit",
+    "responseSaved": "Response Saved Successfully",
+    "responseNotSaved": "Some Processing Error Occured!",
+    "approve_success": {
+      "title": "Thanks",
+      "subtitle": "Your response has been succesfully submitted.",
+      "alt": "approved"
+    },
+    "approve_rejected": {
+      "title": "Thanks",
+      "subtitle": "Your response has been succesfully submitted.",
+      "alt": "declined"
+    },
+    "approve_expired": {
+      "title": "Oops, this link has expired",
+      "subtile": "Please speak to your team to generate a new link",
+      "alt": "expired"
+    },
+    "invalid_url": {
+      "title": "Oops, this link is invalid",
+      "subtitle": "Please enter valid url",
+      "alt": "expired"
+    },
+    "loading": {
+      "title": "Loading...",
+      "alt": "loading..."
+    },
+    "inprogress": {
+      "title": "Unable to Submit Decision",
+      "alt": "Unable to Submit Decision",
+      "subtitle": "You cannot submit your approval decision at this time as this item is currently being updated."
+    },
+    "already_approved": {
+      "title": "Approved",
+      "alt": "Approved",
+      "subtitle": "This request has already been approved."
+    },
+    "already_rejected": {
+      "title": "Declined",
+      "alt": "declined",
+      "subtitle": "This request has already been declined."
+    },
+    "network_issue": {
+      "title": "Network Error",
+      "alt": "network error",
+      "subtitle": "Please check your internet."
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IntelligentSearchComponent } from '@enate/workmanager/intelligent-search';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [IntelligentSearchComponent],
-  selector: 'app-root',
+  imports: [RouterOutlet],
+  selector: 'en8-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
