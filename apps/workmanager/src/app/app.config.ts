@@ -4,6 +4,7 @@ import { appRoutes } from './app.routes';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { provideHttpClient } from '@angular/common/http';
 import { CustomLocaleJsonFileLoader } from '../custom-locale-json-file-loader';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
         provide: TranslateLoader,
         useClass: CustomLocaleJsonFileLoader
       }
-    }))
+    })),
+    provideAnimationsAsync()
   ],
 };
