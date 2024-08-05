@@ -1,0 +1,36 @@
+@use 'layout';
+
+.search-box {
+  width: calc(100vw * 0.4);
+  max-width: 900px;
+  min-width: 400px;
+  border: 1px solid #E9E6F0 !important;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  padding: .375rem !important;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  &__icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__search-input {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: left;
+    color: #9695A6;
+    width: 100%;
+    border: none;
+    outline: none;
+  }
+
+  &__shortcut-key {
+    @include layout.l-shortcut-key;
+  }
+}

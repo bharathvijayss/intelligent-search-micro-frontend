@@ -30,7 +30,12 @@
           "@angular/material/prebuilt-themes/azure-blue.css",
           "apps/workmanager/src/styles.scss"
         ],
-        "scripts": []
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "apps/workmanager/src/shared/scss"
+          ]
+        }
       },
       "configurations": {
         "production": {

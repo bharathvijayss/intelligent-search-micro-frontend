@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+@let translationLoaded = translation$ | async;
+
+@defer (when translationLoaded) {
+  <router-outlet></router-outlet>
+} @placeholder (minimum 1.5s) {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}

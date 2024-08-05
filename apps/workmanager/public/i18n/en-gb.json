@@ -301,9 +301,10 @@
     "standard_mode": "Standard Search",
     "intelligent_mode": "New Search",
     "quick_search": "Quick Search...",
-    "quick_search_shortcut_key":  "Ctrl K",
     "intelligent_search": {
       "placeholder": "Search for comms, work items, contacts, files",
+      "close_shortcut_key": "Esc",
+      "open_shortcut_key": "Alt + Q",
       "result_count": "{{t}} results",
       "no_title": "[No Title]",
       "due": "due",
@@ -313,7 +314,11 @@
       "no_email_subject": "(No Email Subject)",
       "no_email_content": "No Content",
       "email": "email",
+      "all": "All",
+      "more": "more",
+      "applied_filters_title": "Showing: {{f}}",
       "filters": {
+        "all": "Show Everything",
         "work_items": {
           "all": "Work Items",
           "case": "Case",
@@ -664,7 +669,6 @@
         "OriginalRequesterEmail": {
           "text": "Original Requester Email"
         }
-
       },
       "grid": {
         "graph": {
@@ -874,7 +878,6 @@
         "complete_success": "{{s}} out of {{t}} work item(s) successfully closed",
         "complete_success_fail": "{{s}} out of {{t}} work item(s) successfully closed & failed to close {{f}} out of {{t}} work item(s)",
         "add_focuslist_success_fail": "{{s}} out of {{t}} work item(s) were successfully added to your Focus List. {{f}} out of {{t}} work item(s) failed to get added to your Focus List.",
-
         "count": "{{count}} items",
         "fail": "{{f}} out of {{t}} work item(s) failed to assign to {{n}}",
         "message": "Add a Note",
@@ -1006,9 +1009,7 @@
           "packet_file": "File attached to Work Items",
           "email_file": "File attached to Communications"
         },
-        "file": {
-
-        },
+        "file": {},
         "no_results_user_search": {
           "cant_find": "Can't find",
           "would_you_like_to": "Would you like to",
@@ -1227,7 +1228,6 @@
           "feedback_tooltip": "Happiness Rating: {{r}}/5",
           "user_deleted": "User deleted"
         },
-
         "workItems": {
           "owner": "Owner",
           "reviewed_by": "Reviewed By",
@@ -1962,64 +1962,48 @@
           "reopen": "Reopen",
           "startCase": "Start Case",
           "updating": "Updating...",
-
           "tabWillClose": "Tab will close",
-
           "reason": "Reason",
           "waiting_for": "Waiting for",
           "resolve_method": "Resolution Method",
-
           "set_by": "Set by",
           "set_on": "Date",
-
           "resolve_by": "Resolved by",
           "resolve_on": "Resolved on",
           "resolution_method": "Resolution Method",
-
           "pass": "Pass",
           "fail": "Fail",
           "complete": "Complete",
           "peer_reviewer": "Peer Reviewer",
           "unable_to_complete": "Unable to complete",
           "cancel_reason": "Unable to Complete reason",
-
           "pause": "Pause",
           "wait_until": "Wait Until",
           "wait_for_sub_case": "Wait for Sub Case to complete",
           "waitforMoreInformation": "Wait for more information",
-
           "launched_case": "Launched Case",
           "merge_into": "Ticket merged into",
           "got_splits": "This Ticket was split into the following tickets",
-
           "has_problem": "The Case needs intervention to move forward",
           "has_problem_tooltip": "To progress the Case further you can: rework from a previous Step/Action; set it to 'In Progress' manually or pause the Case.",
-
           "last_updated_on": "Last updated on",
           "last_updated_by": "Last updated by",
-
           "newInfoReceived": "New Info Received on {{d}}",
-
           "sub_case_closed": "Sub Case is completed",
           "not_running_sub_case": "Sub Case not yet started",
           "action_resolve_warn": "If this Action is completed, the Case will not wait for the Sub Case to complete",
-
           "closeIf": "Close if no response received",
           "beyondTheDueDate": "This date is beyond the Due Date. This may result in SLA failure",
           "doYouWishToSendEmail": "Do you wish to send an email request for this information?",
-
           "hold_case_warning": "If this action is completed, the case will not wait for the subcase to complete.",
-
           "days_to_wait": "No of days to wait",
           "resolved_comms_reminder": "Remember to add a resolution Email / Note before setting as resolved",
-
           "reject_reason": "Rejected Reason",
           "unable_to_complete_by_bot": "Robot Rejected Reason",
           "unable_to_complete_by_bot_reason": "Robot exceeded maximum retry count, needs human attention",
           "reopened": "Reopened",
           "reopened_by": "Last reopened by",
           "reopened_on": "Last reopened on",
-
           "caseWaitOption": {
             "0": "(Select)",
             "1": "Awaiting Information from 3rd Party",
@@ -2027,7 +2011,6 @@
             "3": "Awaiting Information from Internal",
             "4": "Other"
           },
-
           "caseSetRunning": "How to proceed",
           "resumeOption": {
             "0": "Resume",
@@ -2120,8 +2103,6 @@
             "info_0": "The approval request is sent to multiple people at the same time, and the decision is taken from the first one to respond",
             "info_1": "The approval request is sent to multiple people at the same time, and approval is needed from ALL of them.",
             "info_2": "This request requires {{c}} approver(s). Request will be sent to each new level upon successful approval from previous.",
-
-
             "NO_APPROVERS_PRESNET_subtitle": "Please Add Approver(s): Approval Request emails need to be sent but Approver information is missing.<br/>Set to Wait to send approval mails.",
             "APPROVAL_REJECTED_subtitle": "Approval request declined. Please review reason for decline and respond accordingly. Set to Wait in order for new email approval request emails to be sent out, or mark Action as Unable to complete, or set as Resolved to mark the request as approved.",
             "TIME_OUT_subtitle": "The approval request has timed out with no responses (or insufficient responses) received. Action has been automatically set to Resolved, and Case will continue.",
@@ -2342,7 +2323,6 @@
         "clear_search_text": "Clear Search Text",
         "clear_all_selected_items": "Remove All Selected Items",
         "selected": "{{a}}/{{b}} selected"
-
       },
       "start_action": {
         "type": "Action Type",
@@ -2515,7 +2495,6 @@
           "collapse": "Collapse Card"
         }
       }
-
     },
     "retry_card": {
       "error_text": "An error occurred {{_t}}",
@@ -2667,7 +2646,6 @@
         "select_contract": "Select Contract",
         "select_service": "Select Service",
         "select_process": "Select Process"
-
       }
     },
     "contacts": {
@@ -2765,7 +2743,6 @@
       "subcribe_enateai_label": "Subscribe to EnateAI ",
       "subcribe_enateai_description": "Struggling to understand customers' feedback or gauge their sentiment towards your services? Our AI-powered sentiment analysis tool can help. It accurately analyzes feedback, detects, and classifies emotions, opinions, and attitudes in text, providing a comprehensive understanding of your customers' perception. Use this information to improve your products, services, and customer experience. Get a competitive edge with our AI tool today! Please note, you can also integrate your own AI tools via our marketplace.",
       "discover_enateai": "Discover EnateAI"
-
     },
     "user_insights": {
       "title": "Insights",
@@ -3260,34 +3237,26 @@
     "4": "The Days to Wait For More Information must be null or greater than 0.",
     "5": "The work item cannot be deleted as it has started processing.",
     "6": "The work item cannot be deleted as it has communications.",
-
-
     "81007": "Scheduled follow up on date must be in the future.",
-
     "81013": "Override Due Date cannot be changed on this work item.",
     "81014": "Override Due Date cannot be set to this value.",
     "81015": "Please specify a Primary Contact in the Contacts section before continuing.",
     "81017": "Please specify a Requester in the Contacts section before continuing.",
-
     "81020": "The work item has already completed. No updates possible.",
     "81021": "The work item is not assigned to logged-in user.",
     "81022": "This work item is not available in Live Mode.",
     "81023": "This work item is not available in Test Mode.",
-
     "81026": "The work item cannot be deleted as it has started processing.",
     "81027": "The work item cannot be deleted as it has Communications.",
-
     "83001": "Contact with Name/Email '{{0}}' does not exist.",
     "83002": "Contact with Name/Email '{{0}}' cannot be used with this work item as it is scoped to a different company.",
     "83003": "One or more Contact is retired.",
     "83004": "Contact with Email Address '{{0}}' does not have a first name.",
-
     "84001": "Contact Tag '{{0}}' does not exist.",
     "84002": "Contact Tag '{{0}}' cannot be used multiple times.",
     "84003": "Contact Tag '{{0}}' cannot be used with this work item as it is scoped to a different company.",
     "84004": "One or more Contact tag is retired.",
     "84005": "Contact Tag '{{0}}' cannot be removed.",
-
     "88001": "Defect with GUID '{{0}}' does not exist.",
     "88002": "Defect Party at Fault with Name '{{0}}' does not exist.",
     "88003": "Defect Category with Name '{{0}}' does not exist.",
@@ -3297,7 +3266,6 @@
     "88007": "One or more Defect party at fault is retired",
     "88008": "A defect record can only be modified by the agent who created it. Please undo your defect changes in order to submit.",
     "81019": "User does not have permission to access work item.",
-
     "817002": "This email is not available in Live Mode.",
     "817003": "This email is not available in Test Mode.",
     "818001": "Work item contact address is not valid.",
@@ -3341,7 +3309,6 @@
     "829010": "File with Name '{{0}}' has an unrecognised Tag with GUID '{{1}}'.",
     "829011": "File with a source of EmailAttachment cannot have an empty GUID.",
     "829012": "File with a source of EmailAttachment cannot be Retired.",
-
     "912001": "This Case does not support Schedules.",
     "912002": "The Schedule Period Supplied is not the expected Schedule Period for this Case.",
     "912003": "Changing Schedule without Case being put to Rework is invalid",
@@ -3350,9 +3317,7 @@
     "912006": "ReworkFromStep or ReworkFromActionAttributeGUID must be specified.",
     "912007": "CaseAttributeGUID Not Found.",
     "912008": "Case Can't be Completed With Running Work Items.",
-
     "954368": "The 'From' email address cannot be in the BCC address list.",
-
     "957001": "Authenticated User does not have permission to reassign work item.",
     "957002": "User does not have access to this work item type.",
     "957003": "The work item cannot be assigned to retired Users.",
@@ -3369,7 +3334,6 @@
     "957014": "The work item is already assigned to {{1}}.",
     "957015": "User does not exist.",
     "957016": "This work item cannot be assigned to '{{0}}' as they can only work on items that are in Queues they are part of or items that are not assigned to a Queue.",
-
     "963001": "When creating a new Case CaseAttributeVersionGUID must be specified.",
     "963008": "This Case requires a Schedule to be specified.",
     "963012": "Case cannot be completed with running child work items.",
@@ -3377,12 +3341,10 @@
     "963367": "The 'From' email address cannot be in the CC address list.",
     "963368": "The 'From' email address cannot be in the BCC address list.",
     "963006": "Please select a schedule.",
-
     "964006": "You cannot rework the Case from this Action as it is a parallel Action.",
     "964366": "The 'From' email address cannot be in the To address list.",
     "964367": "The 'From' email address cannot be in the CC address list.",
     "964368": "The 'From' email address cannot be in the BCC address list.",
-
     "967001": "When splitting a Ticket it must be split into at least 2 Tickets.",
     "967002": "When creating a new Ticket either TicketCategoryAttribute or TicketAttributeVersionGUID must be specified.",
     "967003": "The Ticket Attribute Version configuration is Draft and no new Tickets can be created.",
@@ -3403,11 +3365,8 @@
     "invalid_val": "Please specify a valid value for '{{p}}' before continuing.",
     "del_success": "User has been successfully deleted",
     "update_success": "User has been successfully updated",
-
     "312002": "User name is already in use.",
-
     "312087": "Timezone is required.",
-
     "312241": "Username is required.",
     "312242": "Password is required.",
     "312245": "Email address is required.",
@@ -3420,7 +3379,6 @@
     "312252": "User cannot be mapped to a company.",
     "312253": "User already exists.",
     "312254": "Changing the Company of a User is not supported.",
-
     "312299": "Supplied username is not a supported username, please specify a different username.",
     "312300": "Unable to set password on User using SSO.",
     "312301": "Email address '{{0}}' is already in use.",
@@ -3452,7 +3410,6 @@
     "312345": "Password does include enough symbolic characters as defined by Password Policy.",
     "312346": "Password does include upper and lower case characters as defined by Password Policy.",
     "312347": "Password has previously been used.",
-
     "312356": "User Password Policy validation has failed",
     "312407": "Email address already exists as an incoming Email Connector or Route.",
     "312452": "Username must not start or end with a blank space.",
@@ -3473,14 +3430,11 @@
     "312654": "Department does not exist.",
     "336001": "Robot Farm Name is required.",
     "336002": "Robot Farm name is already in use.",
-
     "950680": "Hyperlink '{{0}}' is invalid. Please enter a valid hyperlink.",
     "950681": "Hyperlink '{{0}}' is invalid. Please use http or https protocol.",
-
     "1326299": "Invalid Integration Robot Farm Process ID"
   },
-  "errors": {
-  },
+  "errors": {},
   "create_route_errors": {
     "96401": "This route must have at least one filter in addition to Email Address.",
     "96407": "Email Address {{0}} already exists on an Email Connector or Route",
@@ -3501,12 +3455,10 @@
     "searchOoo": "Search...",
     "blanks": "(Blanks)",
     "noMatches": "No matches",
-
     "filterOoo": "Filter...",
     "equals": "Equals",
     "notEqual": "Not equal",
     "empty": "Choose One",
-
     "lessThan": "Less than",
     "greaterThan": "Greater than",
     "lessThanOrEqual": "Less than or equal",
@@ -3514,30 +3466,23 @@
     "inRange": "In range",
     "inRangeStart": "to",
     "inRangeEnd": "from",
-
     "contains": "Contains",
     "notContains": "Not contains",
     "startsWith": "Starts with",
     "endsWith": "Ends with",
-
     "dateFormatOoo": "yyyy-mm-dd",
-
     "andCondition": "AND",
     "orCondition": "OR",
-
     "applyFilter": "Apply",
     "resetFilter": "Reset",
     "clearFilter": "Clear",
     "cancelFilter": "Cancel",
-
     "textFilter": "Text Filter",
     "numberFilter": "Number Filter",
     "dateFilter": "Date Filter",
     "setFilter": "Set Filter",
-
     "columns": "Columns",
     "filters": "Filters",
-
     "pivotMode": "Pivot Mode",
     "groups": "Row Groups",
     "rowGroupColumnsEmptyMessage": "Drag here to set row groups",
@@ -3545,14 +3490,11 @@
     "valueColumnsEmptyMessage": "Drag here to aggregate",
     "pivots": "Column Labels",
     "pivotColumnsEmptyMessage": "Drag here to set column labels",
-
     "group": "Group",
-
     "loadingOoo": "Loading...",
     "loadingData": "Loading Data",
     "noRowsToShow": "No Rows To Show",
     "enabled": "Enabled",
-
     "pinColumn": "Pin Column",
     "pinLeft": "Pin Left",
     "pinRight": "Pin Right",
@@ -3573,7 +3515,6 @@
     "export": "Export",
     "csvExport": "CSV Export",
     "excelExport": "Excel Export",
-
     "sum": "Sum",
     "min": "Min",
     "max": "Max",
@@ -3592,38 +3533,29 @@
     "lastPage": "Last Page",
     "firstPage": "First Page",
     "previousPage": "Previous Page",
-
     "pivotChartAndPivotMode": "Pivot Chart & Pivot Mode",
     "pivotChart": "Pivot Chart",
     "chartRange": "Chart Range",
-
     "columnChart": "Column",
     "groupedColumn": "Grouped",
     "stackedColumn": "Stacked",
     "normalizedColumn": "100% Stacked",
-
     "barChart": "Bar",
     "groupedBar": "Grouped",
     "stackedBar": "Stacked",
     "normalizedBar": "100% Stacked",
-
     "pieChart": "Pie",
     "pie": "Pie",
     "doughnut": "Doughnut",
-
     "line": "Line",
-
     "xyChart": "X Y (Scatter)",
     "scatter": "Scatter",
     "bubble": "Bubble",
-
     "areaChart": "Area",
     "area": "Area",
     "stackedArea": "Stacked",
     "normalizedArea": "100% Stacked",
-
     "histogramChart": "Histogram",
-
     "pivotChartTitle": "Pivot Chart",
     "rangeChartTitle": "Range Chart",
     "settings": "Settings",
@@ -3721,7 +3653,6 @@
     "chartLinkToolbarTooltip": "Linked to Grid",
     "chartUnlinkToolbarTooltip": "Unlinked from Grid",
     "chartDownloadToolbarTooltip": "Download Chart",
-
     "ariaHidden": "hidden",
     "ariaVisible": "visible",
     "ariaChecked": "checked",

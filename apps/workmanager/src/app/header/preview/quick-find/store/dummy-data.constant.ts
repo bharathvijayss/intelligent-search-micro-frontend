@@ -1,4 +1,16 @@
-import { FilterType } from "./quick-find.service";
+enum FilterType {
+  case = 'case',
+  ticket = 'ticket',
+  action = 'action',
+  contact = 'contact',
+  serviceAgent = 'serviceAgent',
+  inboundEmail = 'inboundEmail',
+  outboundEmail = 'outboundEmail',
+  selfServiceComments = 'selfServiceComments',
+  notes = 'notes',
+  fileAttachmentToPacket = 'fileAttachmentToPacket',
+  fileAttachmentToEmail = 'fileAttachmentToEmail',
+}
 
 export interface QuickFindResult {
   "UserGUID"?: string,

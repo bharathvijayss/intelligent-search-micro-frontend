@@ -1,0 +1,18 @@
+<div class="search-box" (click)="searchInp.focus()">
+  <mat-icon
+    class="search-box__icon"
+    aria-hidden="false"
+    [attr.aria-label]="icon() + 'icon'"
+  >
+    {{ icon() }}
+  </mat-icon>
+  <input
+    type="search"
+    class="search-box__search-input"
+    [placeholder]="placeholder()"
+    [readonly]="readonly()"
+    #searchInp
+    [class.c-pointer]="readonly()"
+  />
+  <span class="search-box__shortcut-key">{{ shortcutKey() }}</span>
+</div>

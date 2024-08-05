@@ -1,1 +1,7 @@
-<button>Search by clicking here or press ALT + Q</button>
+<en8-qf-search-box
+  [shortcutKey]="locale?.open_shortcut_key"
+  [icon]="searchBoxIcon"
+  [placeholder]="locale?.placeholder"
+  readonly
+  class="c-pointer"
+/>

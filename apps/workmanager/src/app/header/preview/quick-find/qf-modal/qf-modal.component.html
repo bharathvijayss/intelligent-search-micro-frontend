@@ -1,1 +1,10 @@
-
+<div class="filters">
+  <en8-qf-search-box
+    [shortcutKey]="data.locale?.close_shortcut_key"
+    [icon]="data.searchBoxIcon"
+    [placeholder]="data.locale?.placeholder"
+  />
+  <en8-qf-modal-filters [locale]="data.locale" />
+</div>
+<mat-dialog-content> </mat-dialog-content>
+<mat-dialog-actions />
