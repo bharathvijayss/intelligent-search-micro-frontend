@@ -1,30 +1,37 @@
-<div class="filter-options">
-  @for (filter of filters; track filter; let index = $index) {
-    <div>
-      <mat-checkbox
-        [checked]="filter.state().completed"
-        [indeterminate]="filter.state().indeterminate"
-        (change)="updateFilter($event.checked, index)"
-      >
-        {{ filter.name }}
-      </mat-checkbox>
-      <ul class="filter-options__subfilter">
-        @for (
-          subfilter of filter.subfilters;
-          track subfilter;
-          let subIndex = $index
-        ) {
-          <li>
-            <mat-checkbox
-              [checked]="subfilter.completed()"
-              (change)="updateFilter($event.checked, index, subIndex)"
-            >
-              {{ subfilter.name }}
-            </mat-checkbox>
-          </li>
-        }
-      </ul>
+<mat-accordion>
+  <mat-expansion-panel expanded>
+    <mat-expansion-panel-header>
+      <mat-panel-title> {{ filterTitle() }} </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="filter-options">
+      @for (filter of filters; track filter; let index = $index) {
+        <div>
+          <mat-checkbox
+            [checked]="filter.state().completed"
+            [indeterminate]="filter.state().indeterminate"
+            (change)="updateFilter($event.checked, index)"
+          >
+            {{ filter.name }}
+          </mat-checkbox>
+          <ul class="filter-options__subfilter">
+            @for (
+              subfilter of filter.subfilters;
+              track subfilter;
+              let subIndex = $index
+            ) {
+              <li>
+                <mat-checkbox
+                  [checked]="subfilter.completed()"
+                  (change)="updateFilter($event.checked, index, subIndex)"
+                >
+                  {{ subfilter.name }}
+                </mat-checkbox>
+              </li>
+            }
+          </ul>
+        </div>
+      }
     </div>
-  }
-</div>
-{{ filterTitle() }}
+  </mat-expansion-panel>
+</mat-accordion>

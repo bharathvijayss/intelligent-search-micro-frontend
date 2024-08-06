@@ -1,6 +1,5 @@
 import { AfterViewInit, booleanAttribute, Component, DestroyRef, ElementRef, inject, input, viewChild } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatRippleModule } from '@angular/material/core';
+import { MatIcon } from '@angular/material/icon';
 import { QuickFindStore } from '../store/quick-find.store';
 import { filter, fromEvent, map, Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -11,8 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   styleUrl: './qf-search-box.component.scss',
   standalone: true,
   imports: [
-    MatRippleModule,
-    MatIconModule
+    MatIcon
   ]
 })
 export class QfSearchBoxComponent implements AfterViewInit {

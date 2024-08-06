@@ -3,12 +3,16 @@ import { QuickFindStore } from '../store/quick-find.store';
 import { IFilter } from '../model/filter';
 import { FilterType } from '../store/quick-find.service';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'en8-qf-modal-filters',
   standalone: true,
   imports: [
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatAccordion,
+    MatExpansionModule
   ],
   templateUrl: './qf-modal-filters.component.html',
   styleUrl: './qf-modal-filters.component.scss',
@@ -18,6 +22,8 @@ export class QFModalFiltersComponent implements OnInit {
   filters!: IFilter[];
 
   store = inject(QuickFindStore);
+
+  translateSrv = inject(TranslateService);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   locale = input.required<any>();
@@ -89,7 +95,13 @@ export class QFModalFiltersComponent implements OnInit {
   }
 
   setAllFiltersAppliedTitle() {
-    this.filterTitle.set(this.locale().filters.all);
+    this.filterTitle.set(this.getAppliedFiltersTitle(this.locale().filters.all));
+  }
+
+  getAppliedFiltersTitle(placeholder: string) {
+    return this.translateSrv.instant("header.intelligent_search.filters.applied_filters_title", {
+      'f': placeholder
+    })
   }
 
   getAppliedFiltersInfo() {
@@ -119,16 +131,16 @@ export class QFModalFiltersComponent implements OnInit {
 
   setMultipleFiltersTitle(appliedFilters: string[]) {
     if (appliedFilters.length > 1) {
-      this.filterTitle.set(`${appliedFilters[0]} + ${appliedFilters.length - 1} ${this.locale().more}`);
+      this.filterTitle.set(this.getAppliedFiltersTitle(`${appliedFilters[0]} + ${appliedFilters.length - 1} ${this.locale().filters.more}`));
     } else {
-      this.filterTitle.set(appliedFilters[0] || '');
+      this.filterTitle.set(this.getAppliedFiltersTitle(appliedFilters[0] || ''));
     }
   }
 
   setSingleFilterTitle(singleFilterIndex: number) {
-    const title = singleFilterIndex !== -1
+    const title = this.getAppliedFiltersTitle(singleFilterIndex !== -1
       ? `${this.locale().all} ${this.filters[singleFilterIndex].name}`
-      : '';
+      : '');
     this.filterTitle.set(title);
   }
 

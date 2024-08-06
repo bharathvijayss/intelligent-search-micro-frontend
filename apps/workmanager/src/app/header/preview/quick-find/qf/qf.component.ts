@@ -54,6 +54,7 @@ export class QfComponent implements AfterViewInit {
         searchBoxIcon: this.searchBoxIcon
       },
       maxWidth: '80vw',
+      maxHeight: '90vh',
       position: {
         top: '8px'
       }

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ProfileStore } from '@enate/shared/profile';
+import { ProfileStore } from 'apps/workmanager/src/app/store/app-settings.store';
 
 @Component({
   selector: 'en8-work-item-type-result',

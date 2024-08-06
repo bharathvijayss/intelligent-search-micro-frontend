@@ -315,10 +315,10 @@
       "no_email_content": "No Content",
       "email": "email",
       "all": "All",
-      "more": "more",
-      "applied_filters_title": "Showing: {{f}}",
       "filters": {
-        "all": "Show Everything",
+        "all": "Everything",
+        "more": "more",
+        "applied_filters_title": "Showing: {{f}}",
         "work_items": {
           "all": "Work Items",
           "case": "Case",

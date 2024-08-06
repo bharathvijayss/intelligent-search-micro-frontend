@@ -13,6 +13,10 @@
     [readonly]="readonly()"
     #searchInp
     [class.c-pointer]="readonly()"
+    [attr.ngClass]="{
+      'search-box__search-input--inactive': !searchInp.value,
+      'search-box__search-input--active': searchInp.value,
+    }"
   />
   <span class="search-box__shortcut-key">{{ shortcutKey() }}</span>
 </div>

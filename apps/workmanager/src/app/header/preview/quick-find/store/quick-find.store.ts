@@ -117,16 +117,18 @@ export const QuickFindStore = signalStore(
       })
     })
   })),
-  withMethods((store) => ({
+  withMethods((store, quickFindSrv = inject(QuickFindService)) => ({
     getResult: rxMethod<string>(
       pipe(
         filter((query: string) => query.length > 2),
         debounceTime(300),
         tap(() => patchState(store, { isLoading: true, isError: false, items: [] })),
         switchMap((query: string) => {
-          return inject(QuickFindService).getSearchResultForQuery(query).pipe(
+          return quickFindSrv.getSearchResultForQuery(query).pipe(
             tap({
-              next: (result) => patchState(store, { items: result.search_results }),
+              next: (result) => {
+                patchState(store, { items: result.search_results })
+              },
               error: (err) => {
                 console.error(err);
                 patchState(store, { isError: true })

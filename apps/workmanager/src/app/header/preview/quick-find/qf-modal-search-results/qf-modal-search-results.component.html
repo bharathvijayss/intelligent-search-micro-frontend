@@ -1,8 +1,16 @@
 @if (store.isLoading()) {
-  <!-- show some loader -->
+  <div class="centerise">
+    <mat-spinner></mat-spinner>
+  </div>
 } @else if (store.isError()) {
   <!-- show some error -->
 } @else {
+
+  @if (store.filteredResult().length > 0) {
+    <p class="result-count">
+      {{ resultCount() }}
+    </p>
+  }
   @for (result of store.filteredResult(); track result) {
     @if (
       [FilterType.case, FilterType.ticket, FilterType.action].includes(
@@ -34,4 +42,5 @@
   } @empty {
     <!-- show some empty content -->
   }
+
 }

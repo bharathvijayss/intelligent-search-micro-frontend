@@ -24,10 +24,18 @@
     line-height: 12px;
     letter-spacing: 0.10000000149011612px;
     text-align: left;
-    color: #9695A6;
     width: 100%;
     border: none;
     outline: none;
+
+    &--inactive {
+      color: #9695A6;
+    }
+
+    &--active {
+      color: #25282C;
+    }
+
   }
 
   &__shortcut-key {
