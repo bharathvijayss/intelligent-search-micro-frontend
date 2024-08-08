@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { QuickFindResult } from '../../store/dummy-data.constant';
 
 @Component({
   selector: 'en8-communication-type-result',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./communication-type-result.component.scss']
 })
 export class CommunicationTypeResultComponent {
+
+  item = input.required<QuickFindResult>();
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  locale = input.required<any>();
 
   // openCommunicationItem(workItem: any) {
   //   if (this.myDrop && this.myDrop.isOpen) {

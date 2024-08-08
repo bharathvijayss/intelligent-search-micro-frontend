@@ -315,6 +315,9 @@
       "no_email_content": "No Content",
       "email": "email",
       "all": "All",
+      "closed": "closed",
+      "time_until_due": "paused: {h+} hours {m} minutes before due",
+      "time_after_overdue": "paused: {h+} hours {m} minutes after overdue",
       "filters": {
         "all": "Everything",
         "more": "more",

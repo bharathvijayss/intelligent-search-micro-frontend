@@ -1,3 +1,114 @@
-<p>
-  work-item-type-result works!
-</p>
+<div
+  class="search-item"
+  (click)="openWorkItem()"
+  [ngClass]="{ muted: isClosedWork() || isPaused() }"
+>
+  <div [ngClass]="ragStatusClass()">
+    <span class="material-symbols-outlined material-symbols-outlined-fill">
+      {{ icon() }}
+    </span>
+  </div>
+  <div class="search-item__content">
+    <div class="search-item__content-header">
+      <span
+        [matTooltip]="item().Status | status: 'title'"
+        [ngClass]="item().Status | status: 'class'"
+        [style.color]="item().Status | status: 'color'"
+      >
+        {{ item().Status | status: 'icon' }}
+      </span>
+      @if (item().NewInformationReceived) {
+        <span
+          [matTooltip]="'icons.new_info' | translate"
+          class="material-symbols-outlined material-symbols-outlined-fill new-info-icon"
+          >info</span
+        >
+      }
+      @if (item().Problem) {
+        <span
+          [matTooltip]="'icons.problem' | translate"
+          class="material-symbols-outlined material-symbols-outlined-fill problem-icon"
+          >error</span
+        >
+      }
+      @if (item().CanBeDoneByRobot) {
+        @if (item().WillBeDoneByRobot) {
+          <span
+            [matTooltip]="'icons.bot_can_do' | translate"
+            class="material-symbols-outlined material-symbols-outlined-fill dueInFuture"
+            >robot</span
+          >
+        } @else {
+          <span
+            [matTooltip]="'icons.bot_failed_to_do' | translate"
+            class="material-symbols-outlined material-symbols-outlined-fill problem-icon"
+            >robot</span
+          >
+        }
+      }
+      @if (showPeerReviewInfo()) {
+        <!-- Not Implemented yet -->
+        @if (item().InPeerReview) {
+          <span
+            [matTooltip]="'icons.peer' | translate"
+            class="material-symbols-outlined material-symbols-outlined-fill primary"
+            >resume</span
+          >
+        } @else {
+          <span
+            [matTooltip]="'icons.not_peer' | translate"
+            class="material-symbols-outlined material-symbols-outlined-fill primary"
+            >not_started</span
+          >
+        }
+      }
+      <span
+        class="result-title"
+        [matTooltip]="title()"
+        [ngClass]="{ 'result-title--active': !isClosedWork() }"
+      >
+        {{ title() }}
+      </span>
+    </div>
+    <div class="search-item__content-subheader">
+      @if (isClosedWork()) {
+        <span
+          >{{ locale().closed }}:
+          {{ item().EndDate | en8LocaleDate: 'dt' }}</span
+        >
+      } @else if (isPaused()) {
+        @if (item().TimeRemainingWhenPaused) {
+          <!-- Not Implemented yet -->
+          <!-- time remaining when paused -->
+          <!-- <span>{{
+            item().TimeRemainingWhenPaused
+              | timeToText
+                : locale().time_until_due
+                : locale().time_after_overdue
+          }}</span> -->
+        } @else {
+          <span> {{ 'global.paused' | translate }} </span>
+        }
+      } @else if (item().DueDate) {
+        <span [ngClass]="ragStatusClass()"
+          >{{ locale().due }}: {{ item().DueDate | en8LocaleDate: 'dt' }}</span
+        >
+      } @else {
+        <span class="dueInFuture"
+          >{{ locale().due }}: {{ locale().no_due_date }}</span
+        >
+      }
+    </div>
+  </div>
+  <div class="search-item__action">
+    <span
+      class="material-symbols-outlined material-symbols-outlined-fill grab-icon"
+      [ngClass]="{
+        invisible: isClosedWork() || !profileStore.AssignWorkItemToSelf(),
+      }"
+      (click)="assignAndOpen($event)"
+    >
+      {{ actionIcon }}
+    </span>
+  </div>
+</div>

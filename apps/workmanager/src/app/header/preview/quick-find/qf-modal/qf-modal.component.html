@@ -7,7 +7,7 @@
   <en8-qf-modal-filters [locale]="data.locale" class="mt-1" />
 </div>
 <mat-divider></mat-divider>
-<mat-dialog-content>
-  <en8-qf-modal-search-results />
-</mat-dialog-content>
+<div class="overflow-auto">
+  <en8-qf-modal-search-results [locale]="data.locale" />
+</div>
 <mat-dialog-actions />

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { QfComponent } from './quick-find/qf/qf.component';
-import { MatIcon } from '@angular/material/icon';
 import { MatToolbar } from '@angular/material/toolbar';
 
 @Component({
@@ -8,7 +7,6 @@ import { MatToolbar } from '@angular/material/toolbar';
   standalone: true,
   imports: [
     QfComponent,
-    MatIcon,
     MatToolbar
   ],
   templateUrl: './header.component.html',

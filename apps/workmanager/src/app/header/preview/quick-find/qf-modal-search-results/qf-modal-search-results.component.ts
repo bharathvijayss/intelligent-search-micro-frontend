@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { QuickFindStore } from '../store/quick-find.store';
 import { FilterType } from '../store/quick-find.service';
 import { WorkItemTypeResultComponent } from './work-item-type-result/work-item-type-result.component';
@@ -26,6 +26,9 @@ export class QuickFindModalSearchResultsComponent {
   store = inject(QuickFindStore);
 
   FilterType = FilterType;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  locale = input.required<any>();
 
   translateSrv = inject(TranslateService);
 

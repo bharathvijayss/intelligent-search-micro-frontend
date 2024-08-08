@@ -1,11 +1,7 @@
 <div class="search-box" (click)="searchInp.focus()">
-  <mat-icon
-    class="search-box__icon"
-    aria-hidden="false"
-    [attr.aria-label]="icon() + 'icon'"
-  >
+  <span class="material-symbols-outlined material-symbols-outlined-fill search-box__icon">
     {{ icon() }}
-  </mat-icon>
+  </span>
   <input
     type="search"
     class="search-box__search-input"

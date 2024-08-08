@@ -11,6 +11,9 @@ export class AttachmentTypeResultComponent {
 
   item = input.required<QuickFindResult>();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  locale = input.required<any>();
+
   openFile() {
     // if (this.myDrop && this.myDrop.isOpen) {
     //   this.myDrop.close();

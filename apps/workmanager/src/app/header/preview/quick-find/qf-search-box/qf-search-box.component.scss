@@ -42,3 +42,11 @@
     @include layout.l-shortcut-key;
   }
 }
+
+:host-context(en8-qf-modal) {
+  .search-box {
+    max-width: unset;
+    width: unset;
+    min-width: unset;
+  }
+}

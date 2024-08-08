@@ -1,46 +1,44 @@
 @if (store.isLoading()) {
-  <div class="centerise">
+  <div class="centerise mt-2">
     <mat-spinner></mat-spinner>
   </div>
 } @else if (store.isError()) {
   <!-- show some error -->
 } @else {
-
   @if (store.filteredResult().length > 0) {
-    <p class="result-count">
+    <p class="result-count mt-3">
       {{ resultCount() }}
     </p>
   }
-  @for (result of store.filteredResult(); track result) {
+  @for (item of store.filteredResult(); track item) {
     @if (
       [FilterType.case, FilterType.ticket, FilterType.action].includes(
-        result.type
+        item.type
       )
     ) {
-      <en8-work-item-type-result />
+      <en8-work-item-type-result [item]="item" [locale]="locale()" />
     } @else if (
-      [FilterType.contact, FilterType.serviceAgent].includes(result.type)
+      [FilterType.contact, FilterType.serviceAgent].includes(item.type)
     ) {
-      <en8-user-type-result />
+      <en8-user-type-result [item]="item" [locale]="locale()" />
     } @else if (
       [
         FilterType.inboundEmail,
         FilterType.outboundEmail,
         FilterType.notes,
         FilterType.selfServiceComments,
-      ].includes(result.type)
+      ].includes(item.type)
     ) {
-      <en8-communication-type-result />
+      <en8-communication-type-result [item]="item" [locale]="locale()" />
     } @else if (
       [
         FilterType.fileAttachmentToPacket,
         FilterType.fileAttachmentToEmail,
-      ].includes(result.type)
+      ].includes(item.type)
     ) {
-      <en8-attachment-type-result [item]="result" />
+      <en8-attachment-type-result [item]="item" [locale]="locale()" />
     }
   } @empty {
     <!-- show some empty content -->
   }
-
 }

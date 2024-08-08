@@ -1,0 +1,14 @@
+@import 'variables';
+
+.email-view-icon {
+  opacity: 0;
+  color: $primary-color;
+}
+
+.search-item:hover .email-view-icon {
+  opacity: 1;
+}
+
+.email-attachment-icon {
+  color: $text-dark;
+}

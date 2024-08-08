@@ -18,6 +18,14 @@ body {
   margin-top: 0.5rem;
 }
 
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
 .mat-divider {
   border-top-color: #E9E6F0;
 }
@@ -26,4 +34,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.material-symbols-outlined-fill {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.overflow-auto {
+  overflow: auto;
 }

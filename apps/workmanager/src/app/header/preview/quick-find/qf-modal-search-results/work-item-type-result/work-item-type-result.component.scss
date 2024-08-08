@@ -1,0 +1,38 @@
+@import 'variables';
+
+.dueInFuture {
+  color: $due-in-future !important;
+}
+
+.dueToday {
+  color: $due-today !important;
+}
+
+.overdue {
+  color: $overdue !important;
+}
+
+.muted {
+  color: $text-light !important;
+}
+
+.grab-icon {
+  opacity: 0;
+  color: $primary-color;
+}
+
+.new-info-icon {
+  color: $new-info !important;
+}
+
+.problem-icon {
+  color: $error !important;
+}
+
+.search-item:hover .grab-icon {
+  opacity: 1;
+}
+
+.primary {
+  color: $primary-color !important;
+}
