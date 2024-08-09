@@ -78,14 +78,12 @@
         >
       } @else if (isPaused()) {
         @if (item().TimeRemainingWhenPaused) {
-          <!-- Not Implemented yet -->
-          <!-- time remaining when paused -->
-          <!-- <span>{{
+          <span>{{
             item().TimeRemainingWhenPaused
               | timeToText
                 : locale().time_until_due
                 : locale().time_after_overdue
-          }}</span> -->
+          }}</span>
         } @else {
           <span> {{ 'global.paused' | translate }} </span>
         }

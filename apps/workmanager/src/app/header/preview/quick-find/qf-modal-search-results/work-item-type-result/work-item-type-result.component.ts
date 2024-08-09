@@ -9,6 +9,7 @@ import { NgClass } from '@angular/common';
 import { StatusPipe } from './../../../../../shared/status.pipe';
 import { LocaleDatePipe } from './../../../../../shared/locale-date.pipe';
 import { TranslateModule } from '@ngx-translate/core';
+import { TimespanToTextPipe } from './../../../../../shared/timespan-to-text.pipe';
 
 @Component({
   selector: 'en8-work-item-type-result',
@@ -20,7 +21,8 @@ import { TranslateModule } from '@ngx-translate/core';
     NgClass,
     StatusPipe,
     TranslateModule,
-    LocaleDatePipe
+    LocaleDatePipe,
+    TimespanToTextPipe
   ]
 })
 export class WorkItemTypeResultComponent {
