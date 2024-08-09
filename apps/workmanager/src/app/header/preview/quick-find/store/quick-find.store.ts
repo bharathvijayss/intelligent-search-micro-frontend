@@ -143,6 +143,9 @@ export const QuickFindStore = signalStore(
       patchState(store, (state) => {
         return { filters: { ...state.filters, ...updatedState } }
       })
+    },
+    resetResults: () => {
+      patchState(store, { items: [] })
     }
   }))
 );

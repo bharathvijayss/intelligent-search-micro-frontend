@@ -1,10 +1,11 @@
-import { AfterViewInit, Component, DestroyRef, ElementRef, viewChild } from '@angular/core';
+import { AfterViewInit, Component, DestroyRef, ElementRef, inject, viewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateService } from '@ngx-translate/core';
 import { filter, fromEvent, merge, tap } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { QFModalComponent } from '../qf-modal/qf-modal.component';
 import { QfSearchBoxComponent } from '../qf-search-box/qf-search-box.component';
+import { QuickFindStore } from '../store/quick-find.store';
 
 @Component({
   selector: 'en8-qf',
@@ -23,6 +24,8 @@ export class QfComponent implements AfterViewInit {
   searchBox = viewChild.required(QfSearchBoxComponent, { read: ElementRef });
 
   searchBoxIcon = 'search';
+
+  store = inject(QuickFindStore);
 
   constructor(
     private translateSrv: TranslateService,
@@ -46,7 +49,6 @@ export class QfComponent implements AfterViewInit {
       ).subscribe();
   }
 
-  // after dialog closed we need to clear the state.
   openSearchContainer() {
     const dialogRef = this.dialog.open(QFModalComponent, {
       data: {
@@ -61,6 +63,12 @@ export class QfComponent implements AfterViewInit {
         top: '8px'
       }
     });
+
+    dialogRef.afterClosed().subscribe({
+      next: () => {
+        this.store.resetResults();
+      }
+    })
   }
 
 }
