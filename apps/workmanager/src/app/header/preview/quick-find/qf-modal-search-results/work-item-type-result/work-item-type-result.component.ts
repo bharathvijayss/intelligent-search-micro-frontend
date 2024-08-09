@@ -4,7 +4,6 @@ import { QuickFindResult, workItemResult } from '../../store/dummy-data.constant
 import { FilterType } from '../../store/quick-find.service';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ActionSubType, PacketStatus, RAGStatus } from './../../../../../shared/dto';
-import { tap } from 'rxjs';
 import { NgClass } from '@angular/common';
 import { StatusPipe } from './../../../../../shared/status.pipe';
 import { LocaleDatePipe } from './../../../../../shared/locale-date.pipe';
