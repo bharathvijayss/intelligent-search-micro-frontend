@@ -14,16 +14,16 @@
 
   ::ng-deep {
 
+    .text-active {
+      color: $text-dark;
+    }
+
     .result-title {
       font-size: 14px;
       font-weight: 600;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-
-      &--active {
-        color: $text-dark;
-      }
     }
 
     .search-item {

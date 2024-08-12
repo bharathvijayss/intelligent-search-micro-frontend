@@ -31,6 +31,13 @@ export interface workItemResult {
   "InPeerReview": boolean,
 }
 
+export interface userItemResult {
+  "UserGUID": string,
+  "type": FilterType,
+  "FullName": string,
+  "EmailAddress": string,
+}
+
 export interface communicationItemResult {
   "type": FilterType,
   "PacketGUID": string,
@@ -58,42 +65,7 @@ export interface attachmentItemResult {
   "GUID": string,
 }
 
-export interface userItemResult {
-  "UserGUID": string,
-  "type": FilterType,
-  "FullName": string,
-  "EmailAddress": string,
-}
-
 export type QuickFindResult = workItemResult | communicationItemResult | attachmentItemResult | userItemResult
-
-// export interface QuickFindResult {
-//   "UserGUID"?: string,
-//   "FullName"?: string,
-//   "EmailAddress"?: string,
-//   "GUID"?: string,
-//   "PacketGUID"?: string,
-//   "PacketType"?: number,
-//   "ProcessType"?: number,
-//   "type": FilterType,
-//   "Subject"?: string,
-//   "Reference"?: string,
-//   "FileName"?: string,
-//   "PacketTitle"?: string,
-//   "PacketReference"?: string,
-//   "Logged"?: string,
-//   "LastUpdatedOn"?: string,
-//   "Body"?: string,
-//   "Title"?: null | string,
-//   "DueDate"?: null | string,
-//   "Status"?: number,
-//   "PacketProcessType"?: number,
-//   "Source"?: number,
-//   "RAGStatus"?: number,
-//   "AttachmentCount"?: number,
-//   "NewInformationReceived"?: boolean,
-//   "EndDate"?: null | string
-// }
 
 export interface ISearchResult {
   "search_results": QuickFindResult[],
@@ -163,9 +135,9 @@ export const dummy_data: ISearchResult = {
       "Reference": "665693-C",
       "Title": "",
       "DueDate": "2023-04-06T11:30:49.327",
-      "Status": 3,
+      "Status": 2,
       "RAGStatus": 1,
-      "NewInformationReceived": true,
+      "NewInformationReceived": false,
       "EndDate": null,
       "TimeRemainingWhenPaused": null,
       "Problem": true,
@@ -271,8 +243,8 @@ export const dummy_data: ISearchResult = {
       "Reference": "394157-T",
       "Title": "Without reference number",
       "DueDate": "2022-11-02T22:21:54.617",
-      "Status": 1,
-      "RAGStatus": -1,
+      "Status": 2,
+      "RAGStatus": 0,
       "NewInformationReceived": false,
       "EndDate": null,
       "TimeRemainingWhenPaused": null,
@@ -349,8 +321,8 @@ export const dummy_data: ISearchResult = {
       "EndDate": null,
       "TimeRemainingWhenPaused": null,
       "Problem": false,
-      "CanBeDoneByRobot": true,
-      "WillBeDoneByRobot": true,
+      "CanBeDoneByRobot": false,
+      "WillBeDoneByRobot": false,
       "ActionSubType": 1,
       "InPeerReview": true,
     },
@@ -367,32 +339,32 @@ export const dummy_data: ISearchResult = {
       "EndDate": null,
       "TimeRemainingWhenPaused": null,
       "Problem": false,
-      "CanBeDoneByRobot": true,
-      "WillBeDoneByRobot": true,
+      "CanBeDoneByRobot": false,
+      "WillBeDoneByRobot": false,
       "ActionSubType": 1,
       "InPeerReview": false,
     },
     {
       "UserGUID": "29221aca-e653-47b6-846c-73e41fe3ed2d",
-      "FullName": "ref test",
-      "EmailAddress": "reftet23@test.net",
+      "FullName": "Agent 1 Full Name",
+      "EmailAddress": "agent1@test.net",
       "type": FilterType.contact,
     },
     {
       "UserGUID": "29221aca-e653-47b6-846c-73e41fe3ed2d",
-      "FullName": "ref testref testref testref testref testref testref testref testref testref testref testref testref testref test",
-      "EmailAddress": "reftet23@test.net",
+      "FullName": "Agent 2 Full Name ref testref testref testref testref testref testref testref testref testref testref testref testref testref test",
+      "EmailAddress": "agent2@test.net",
       "type": FilterType.contact,
     },
     {
       "UserGUID": "ed386409-17eb-4203-a4b3-b907d79f90dd",
-      "FullName": "Bharath Vijay",
-      "EmailAddress": "bharath.vijay@enate.net",
+      "FullName": "Contact 1 Full Name",
+      "EmailAddress": "contact1@enate.net",
       "type": FilterType.serviceAgent,
     },
     {
       "UserGUID": "ed386409-17eb-4203-a4b3-b907d79f90dd",
-      "FullName": "Bharath Vijay S S",
+      "FullName": "Contact 2 Full Name",
       "EmailAddress": "",
       "type": FilterType.serviceAgent,
     },
