@@ -1,3 +1,55 @@
-<p>
-  communication-type-result works!
-</p>
+<div class="search-item" (click)="openCommunicationItem()">
+  <div>
+    <span class="material-symbols-outlined material-symbols-outlined-fill">
+      {{ icon() }}
+    </span>
+  </div>
+  <div class="search-item__content">
+    <div class="search-item__content-header">
+      @if (item().Importance) {
+        <span
+          class="material-symbols-outlined material-symbols-outlined-fill problem-icon"
+          >error</span
+        >
+      }
+      @if (item().AttachmentCount) {
+        <span
+          [matTooltip]="
+            'header.intelligent_search.attach'
+              | translate: { c: item().AttachmentCount }
+          "
+          class="material-symbols-outlined material-symbols-outlined-fill text-active"
+        >
+          attachment
+        </span>
+      }
+      <span class="result-title text-active" [matTooltip]="title()">
+        {{ title() }}
+      </span>
+    </div>
+    <div>
+      <span
+        class="search-item__content-subheader muted"
+        [matTooltip]="subtitle()"
+      >
+        {{ subtitle() }}
+      </span>
+    </div>
+    @if (isEmailItem()) {
+      <div>
+        <span class="search-item__content-subheader muted">
+          {{ item().Logged | en8LocaleDate: 'dt' }}
+        </span>
+      </div>
+    }
+  </div>
+  <div class="search-item__action">
+    <span
+      (click)="viewContent($event)"
+      class="material-symbols-outlined material-symbols-outlined-fill email-view-icon"
+      [title]="content()"
+    >
+      {{ action_icon }}
+    </span>
+  </div>
+</div>

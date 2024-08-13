@@ -12,10 +12,6 @@
   color: $overdue !important;
 }
 
-.muted {
-  color: $text-light !important;
-}
-
 .grab-icon {
   opacity: 0;
   color: $primary-color;
@@ -23,10 +19,6 @@
 
 .new-info-icon {
   color: $new-info !important;
-}
-
-.problem-icon {
-  color: $error !important;
 }
 
 .search-item:hover .grab-icon {

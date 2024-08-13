@@ -46,11 +46,12 @@ export interface communicationItemResult {
   "GUID": string,
   "Logged": string,
   "FullName": string,
-  "EmailAddress": string,
+  "EmailAddress": null | string,
   "Reference": string,
   "Title": null | string,
   "Subject"?: string,
   "AttachmentCount"?: number,
+  "Importance": boolean | null;
 }
 
 export interface attachmentItemResult {
@@ -376,11 +377,12 @@ export const dummy_data: ISearchResult = {
       "GUID": "b1d96588-3b93-4639-816b-ba2ba297bf7c",
       "Logged": "2024-01-31T14:53:13.007",
       "FullName": "Naresh Kumar Ale", // new
-      "EmailAddress": "naresh.ale@enate.net", // new
+      "EmailAddress": null, // new
       "Subject": "RE: 773900-T - test for unprocessed",
       "Reference": "665693-C",
       "Title": "[EXTERNAL] Reference A; Reference B",
       "AttachmentCount": 0,
+      "Importance": false // change in data type
     },
     {
       "type": FilterType.inboundEmail,
@@ -395,6 +397,7 @@ export const dummy_data: ISearchResult = {
       "Reference": "665693-C",
       "Title": "[EXTERNAL] Reference A; Reference B",
       "AttachmentCount": 1,
+      "Importance": true
     },
     {
       "type": FilterType.outboundEmail,
@@ -408,7 +411,8 @@ export const dummy_data: ISearchResult = {
       "Title": "[EXTERNAL] Reference A; Reference B",
       "AttachmentCount": 2,
       "Body": "Dear Sir / Madam,\r\nYour ticket has been logged with reference number 773909-T and is being reviewed.\r\nTicket Description:\r\ntest\r\nIf you would like to add additional comments, then please do so by replying to this email.\r\nRegards,\r\nClaudine Richardson\r\nclaudine.richardson@enate.net\r\nCurrent Development\r\n\r\n\r\n\r\nPlease provide feedback:\r\n<https://qa22lb01.enate.engineering/currentdevelopment//feedbackForm.html?packetGUID=20f8c1c8-8acc-4c00-b6c8-0eab1f610542&feedbackScore=1><https://qa22lb01.enate.engineering/currentdevelopment//feedbackForm.html?packetGUID=20f8c1c8-8acc-4c00-b6c8-0eab1f610542&feedbackScore=2><https://qa22lb01.enate.engineering/currentdevelopment//feedbackForm.html?packetGUID=20f8c1c8-8acc-4c00-b6c8-0eab1f610542&feedbackScore=3><https://qa22lb01.enate.engineering/currentdevelopment//feedbackForm.html?packetGUID=20f8c1c8-8acc-4c00-b6c8-0eab1f610542&feedbackScore=4><https://qa22lb01.enate.engineering/currentdevelopment//feedbackForm.html?packetGUID=20f8c1c8-8acc-4c00-b6c8-0eab1f610542&feedbackSc ...",
-      "GUID": "cbd0b284-983b-431c-8470-6a0b8dcfefad"
+      "GUID": "cbd0b284-983b-431c-8470-6a0b8dcfefad",
+      "Importance": false
     },
     {
       "type": FilterType.selfServiceComments,
@@ -421,6 +425,7 @@ export const dummy_data: ISearchResult = {
       "Reference": "665693-C", // new
       "Title": "[EXTERNAL] Reference A; Reference B", // new
       "Body": "self service commented notes",
+      "Importance": null
     },
     {
       "type": FilterType.notes,
@@ -433,6 +438,7 @@ export const dummy_data: ISearchResult = {
       "Reference": "665693-C", // new
       "Title": "[EXTERNAL] Reference A; Reference B", // new
       "Body": "core product Notes",
+      "Importance": null
     },
     {
       "type": FilterType.fileAttachmentToPacket,

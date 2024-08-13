@@ -18,6 +18,14 @@
       color: $text-dark;
     }
 
+    .muted {
+      color: $text-light !important;
+    }
+
+    .problem-icon {
+      color: $error !important;
+    }
+
     .result-title {
       font-size: 14px;
       font-weight: 600;
