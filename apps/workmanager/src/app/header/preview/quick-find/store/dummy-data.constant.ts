@@ -54,9 +54,65 @@ export interface communicationItemResult {
   "Importance": boolean | null;
 }
 
+/**
+ * The source of a Packet File.
+ */
+export enum PacketFileSource {
+  /**
+   * Attached to Packet
+   */
+  AttachedToPacket = 0,
+  /**
+   * Attached to an Email
+   */
+  EmailAttachment = 1,
+  /**
+   * Temporary Attachment
+   */
+  TemporaryAttachment = 2
+}
+
+/**
+ * The type of Packet Communication.
+ */
+export enum PacketCommunicationType {
+  /**
+   * Email Outgoing
+   */
+  EmailOutgoing = 0,
+  /**
+   * Phone Incoming
+   */
+  PhoneIncoming = 1,
+  /**
+   * Email Incoming
+   */
+  EmailIncoming = 2,
+  /**
+   * Self Service Comment
+   */
+  ESSComment = 3,
+  /**
+   * Note
+   */
+  AuditNote = 4,
+  /**
+   * Phone Outgoing
+   */
+  PhoneOutgoing = 5,
+  /**
+   * Letter Incoming
+   */
+  LetterIncoming = 6,
+  /**
+   * Letter Outgoing
+   */
+  LetterOutgoing = 7
+}
+
 export interface attachmentItemResult {
   "type": FilterType,
-  "Source": number,
+  "Source": PacketFileSource | null,
   "FileName": string,
   "LastUpdatedOn": string,
   "PacketGUID": string,
@@ -64,6 +120,7 @@ export interface attachmentItemResult {
   "PacketTitle": string,
   "PacketProcessType": number,
   "GUID": string,
+  "PacketCommunicationType": PacketCommunicationType | null
 }
 
 export type QuickFindResult = workItemResult | communicationItemResult | attachmentItemResult | userItemResult
@@ -442,18 +499,19 @@ export const dummy_data: ISearchResult = {
     },
     {
       "type": FilterType.fileAttachmentToPacket,
-      "Source": 0,
+      "Source": PacketFileSource.AttachedToPacket,
       "FileName": "Bank savings account 1.xlsx",
       "LastUpdatedOn": "2024-05-26T22:56:19.57",
       "PacketGUID": "2ca018ae-c61c-4a5e-997d-6e8b55610f8d",
       "PacketReference": "773948-C",
       "PacketTitle": "Intelligent Search",
       "PacketProcessType": 1,
-      "GUID": "c0168818-5be0-41d0-a972-8c888a75ecbe"
+      "GUID": "c0168818-5be0-41d0-a972-8c888a75ecbe",
+      "PacketCommunicationType": null
     },
     {
       "type": FilterType.fileAttachmentToEmail,
-      "Source": 1,
+      "Source": PacketFileSource.EmailAttachment,
       "FileName": "File Tag Issue(1).docx",
       "GUID": "684fccf6-5409-4240-b952-4f42b659daf8",
       "PacketGUID": "4c4652dc-a631-4b11-b5ca-2aef6ccda3e6",
@@ -461,10 +519,11 @@ export const dummy_data: ISearchResult = {
       "PacketTitle": "Case with Steps ",
       "PacketProcessType": 3,
       "LastUpdatedOn": "2022-07-11T19:46:50.613",
+      "PacketCommunicationType": PacketCommunicationType.EmailIncoming
     },
     {
       "type": FilterType.fileAttachmentToEmail,
-      "Source": 1,
+      "Source": PacketFileSource.EmailAttachment,
       "FileName": "File Tag Issue(1).docx",
       "GUID": "684fccf6-5409-4240-b952-4f42b659daf8",
       "PacketGUID": "4c4652dc-a631-4b11-b5ca-2aef6ccda3e6",
@@ -472,6 +531,7 @@ export const dummy_data: ISearchResult = {
       "PacketTitle": "",
       "PacketProcessType": 3,
       "LastUpdatedOn": "2022-07-11T19:46:50.613",
+      "PacketCommunicationType": PacketCommunicationType.EmailOutgoing
     }
   ],
   "searchQuery": ''
