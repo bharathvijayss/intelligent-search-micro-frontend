@@ -35,3 +35,58 @@
     </div>
   </mat-expansion-panel>
 </mat-accordion>
+
+<div class="date-filter">
+  <mat-form-field appearance="outline">
+    <mat-select
+      [value]="store.dateFilter.type()"
+      (selectionChange)="dateFilterChanged($event)"
+    >
+      @for (dateFilter of dateFilters; track dateFilter.value) {
+        <mat-option [value]="dateFilter.value">{{
+          dateFilter.label
+        }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="outline"
+    class="date-filter__range-picker"
+    (click)="rangePicker.open()"
+  >
+    <mat-date-range-input [rangePicker]="rangePicker" [formGroup]="dateRange">
+      <input
+        matStartDate
+        [placeholder]="locale().filters.date.date_range_placeholder.from_date"
+        formControlName="fromDate"
+        readonly
+      />
+      <input
+        matEndDate
+        [placeholder]="locale().filters.date.date_range_placeholder.to_date"
+        formControlName="toDate"
+        readonly
+      />
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconPrefix [for]="rangePicker">
+      <span
+        matDatepickerToggleIcon
+        class="material-symbols-outlined material-symbols-outlined-fill"
+        [ngClass]="{ 'date-filter__range-picker-icon': !dateRange.disabled }"
+      >
+        date_range
+      </span>
+    </mat-datepicker-toggle>
+    <mat-date-range-picker #rangePicker [disabled]="dateRange.disabled">
+      <mat-date-range-picker-actions>
+        <button mat-button matDateRangePickerCancel>
+          {{ 'global.cancel' | translate }}
+        </button>
+        <button mat-raised-button matDateRangePickerApply (click)="applyCustomDateRange()">
+          {{ 'global.apply' | translate }}
+        </button>
+      </mat-date-range-picker-actions>
+    </mat-date-range-picker>
+  </mat-form-field>
+</div>

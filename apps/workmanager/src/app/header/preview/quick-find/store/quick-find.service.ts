@@ -18,6 +18,13 @@ export enum FilterType {
   // customData = 'customData'
 }
 
+export enum DateFilters {
+  allTime = 'all_time',
+  today = 'today',
+  lastWeek = 'last_week',
+  lastMonth = 'last_month'
+}
+
 @Injectable({
   providedIn: 'root'
 })

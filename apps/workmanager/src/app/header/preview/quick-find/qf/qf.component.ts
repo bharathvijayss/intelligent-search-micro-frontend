@@ -66,7 +66,7 @@ export class QfComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe({
       next: () => {
-        this.store.resetResults();
+        this.store.resetSearchQueryAndResult();
       }
     })
   }

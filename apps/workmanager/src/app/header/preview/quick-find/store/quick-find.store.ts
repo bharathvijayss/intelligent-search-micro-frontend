@@ -2,7 +2,7 @@ import { computed, inject } from "@angular/core";
 import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { debounceTime, filter, pipe, switchMap, tap } from "rxjs";
-import { FilterType, QuickFindService } from "./quick-find.service";
+import { DateFilters, FilterType, QuickFindService } from "./quick-find.service";
 import { QuickFindResult } from "./dummy-data.constant";
 
 type FilterState = {
@@ -19,14 +19,23 @@ type FilterState = {
   [FilterType.fileAttachmentToEmail]: boolean,
 }
 
+type DateFilterState = {
+  fromDate: Date | null,
+  toDate: Date | null,
+  type: DateFilters
+}
+
 type QuickFindState = {
+  searchQuery: string,
   items: QuickFindResult[],
   isLoading: boolean,
   isError: boolean,
-  filters: FilterState
+  filters: FilterState,
+  dateFilter: DateFilterState
 };
 
 const initialState: QuickFindState = {
+  searchQuery: '',
   items: [],
   isLoading: false,
   isError: false,
@@ -42,6 +51,11 @@ const initialState: QuickFindState = {
     [FilterType.notes]: true,
     [FilterType.fileAttachmentToPacket]: true,
     [FilterType.fileAttachmentToEmail]: true,
+  },
+  dateFilter: {
+    fromDate: null,
+    toDate: null,
+    type: DateFilters.allTime
   }
 };
 
@@ -118,34 +132,48 @@ export const QuickFindStore = signalStore(
     })
   })),
   withMethods((store, quickFindSrv = inject(QuickFindService)) => ({
-    getResult: rxMethod<string>(
-      pipe(
-        filter((query: string) => query.length > 2),
-        debounceTime(300),
-        tap(() => patchState(store, { isLoading: true, isError: false, items: [] })),
-        switchMap((query: string) => {
-          return quickFindSrv.getSearchResultForQuery(query).pipe(
-            tap({
-              next: (result) => {
-                patchState(store, { items: result.search_results })
-              },
-              error: (err) => {
-                console.error(err);
-                patchState(store, { isError: true })
-              },
-              finalize: () => patchState(store, { isLoading: false }),
-            })
-          );
-        })
-      )
-    ),
+    // getResult: rxMethod<string>(
+    //   pipe(
+    //     filter((query: string) => query.length > 2),
+    //     debounceTime(300),
+    //     tap(() => patchState(store, { isLoading: true, isError: false, items: [] })),
+    //     switchMap((query: string) => {
+    //       return quickFindSrv.getSearchResultForQuery(query).pipe(
+    //         tap({
+    //           next: (result) => {
+    //             patchState(store, { items: result.search_results })
+    //           },
+    //           error: (err) => {
+    //             console.error(err);
+    //             patchState(store, { isError: true })
+    //           },
+    //           finalize: () => patchState(store, { isLoading: false }),
+    //         })
+    //       );
+    //     })
+    //   )
+    // ),
+    getResult: () => {
+      // pending new implementation
+    },
     updateFilters: (updatedState: Partial<FilterState>) => {
       patchState(store, (state) => {
         return { filters: { ...state.filters, ...updatedState } }
       })
     },
-    resetResults: () => {
-      patchState(store, { items: [] })
+    setSearchQuery: (query: string) => {
+      patchState(store, { searchQuery: query })
+    },
+    resetSearchQueryAndResult: () => {
+      patchState(store, { items: [], searchQuery: '' })
+    },
+    setDateFilter: (val: DateFilterState) => {
+      patchState(store, { dateFilter: { ...val } })
+    },
+    setFromAndToDate: (val: Partial<DateFilterState>) => {
+      patchState(store, (state) => {
+        return { dateFilter: { ...state.dateFilter, ...val } }
+      })
     }
   }))
 );

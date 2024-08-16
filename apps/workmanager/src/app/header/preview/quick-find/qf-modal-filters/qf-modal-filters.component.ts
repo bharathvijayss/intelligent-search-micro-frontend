@@ -1,10 +1,20 @@
-import { Component, effect, inject, Injector, input, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, DestroyRef, effect, inject, Injector, input, OnInit, signal, untracked, WritableSignal } from '@angular/core';
 import { QuickFindStore } from '../store/quick-find.store';
 import { IFilter } from '../model/filter';
-import { FilterType } from '../store/quick-find.service';
+import { DateFilters, FilterType } from '../store/quick-find.service';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MatSelectChange, MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { IDateFilter } from '../model/date-filter';
+import { DateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { debounceTime, map, skip } from 'rxjs';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'en8-qf-modal-filters',
@@ -12,7 +22,14 @@ import { TranslateService } from '@ngx-translate/core';
   imports: [
     MatCheckboxModule,
     MatAccordion,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    TranslateModule,
+    NgClass
   ],
   templateUrl: './qf-modal-filters.component.html',
   styleUrl: './qf-modal-filters.component.scss',
@@ -30,13 +47,91 @@ export class QFModalFiltersComponent implements OnInit {
 
   filterTitle: WritableSignal<string> = signal("");
 
-  constructor(private injector: Injector) { }
+  dateFilters!: IDateFilter[];
+
+  readonly dateRange = new FormGroup({
+    fromDate: new FormControl<Date | null>(null),
+    toDate: new FormControl<Date | null>(null),
+  });
+
+  constructor(
+    private injector: Injector,
+    private _dateAdapter: DateAdapter<Date>,
+    private destroyRef: DestroyRef
+  ) { }
+
+  dateRangeEffectRef = effect(() => {
+    const appliedDateFilter = this.store.dateFilter.type();
+    untracked(() => {
+      const appliedFilter = this.store.dateFilter();
+      this.dateRange.setValue({ fromDate: appliedFilter.fromDate, toDate: appliedFilter.toDate });
+    })
+    if (appliedDateFilter === DateFilters.allTime) {
+      this.dateRange.enable({ emitEvent: false });
+    } else {
+      this.dateRange.disable({ emitEvent: false });
+    }
+  })
 
   ngOnInit(): void {
+    this.initDateFilterTypes();
     this.initFilterTypes();
-    effect(() => {
-      this.initFilterTitle();
-    }, { injector: this.injector, allowSignalWrites: true });
+    this.initSearch();
+  }
+
+  applyCustomDateRange() {
+    this.store.setFromAndToDate(this.dateRange.value);
+  }
+
+  // pending
+  initSearch() {
+    this.dateRange.valueChanges
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        debounceTime(100),
+        skip(1),
+        map(() => this.store.searchQuery())
+      )
+
+    // this.store.getResult(dataRangeChange$);
+  }
+
+  dateFilterChanged(changeValue: MatSelectChange) {
+    const currentDate = this._dateAdapter.today();
+    switch (changeValue.value) {
+      case DateFilters.allTime: {
+        this.store.setDateFilter({
+          fromDate: null,
+          toDate: null,
+          type: DateFilters.allTime
+        })
+        break;
+      }
+      case DateFilters.today: {
+        this.store.setDateFilter({
+          fromDate: currentDate,
+          toDate: currentDate,
+          type: DateFilters.today
+        })
+        break;
+      }
+      case DateFilters.lastWeek: {
+        this.store.setDateFilter({
+          fromDate: this._dateAdapter.addCalendarDays(currentDate, -6),
+          toDate: currentDate,
+          type: DateFilters.lastWeek
+        })
+        break;
+      }
+      case DateFilters.lastMonth: {
+        this.store.setDateFilter({
+          fromDate: this._dateAdapter.addCalendarMonths(currentDate, -1),
+          toDate: currentDate,
+          type: DateFilters.lastMonth
+        })
+        break;
+      }
+    }
   }
 
   initFilterTypes() {
@@ -74,6 +169,18 @@ export class QFModalFiltersComponent implements OnInit {
         ],
       }
     ]
+    effect(() => {
+      this.initFilterTitle();
+    }, { injector: this.injector, allowSignalWrites: true });
+  }
+
+  initDateFilterTypes() {
+    this.dateFilters = [
+      { value: DateFilters.allTime, label: this.locale().filters.date[DateFilters.allTime] },
+      { value: DateFilters.today, label: this.locale().filters.date[DateFilters.today] },
+      { value: DateFilters.lastWeek, label: this.locale().filters.date[DateFilters.lastWeek] },
+      { value: DateFilters.lastMonth, label: this.locale().filters.date[DateFilters.lastMonth] }
+    ];
   }
 
   initFilterTitle() {
