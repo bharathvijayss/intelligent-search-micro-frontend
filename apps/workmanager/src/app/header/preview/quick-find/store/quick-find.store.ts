@@ -1,7 +1,7 @@
 import { computed, inject } from "@angular/core";
 import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { debounceTime, filter, pipe, switchMap, tap } from "rxjs";
+import { filter, pipe, switchMap, tap } from "rxjs";
 import { DateFilters, FilterType, QuickFindService } from "./quick-find.service";
 import { QuickFindResult } from "./dummy-data.constant";
 
