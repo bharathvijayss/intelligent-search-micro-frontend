@@ -308,7 +308,7 @@
       "result_count": "{{t}} results",
       "no_title": "[No Title]",
       "due": "due",
-      "no_due_date": "No Due Date",
+      "no_due_date": "No due date",
       "attach": "{{c}} attachments",
       "no_email_id": "No Email Address",
       "no_email_subject": "(No Email Subject)",
@@ -321,29 +321,29 @@
       "filters": {
         "all": "Everything",
         "more": "more",
-        "applied_filters_title": "Showing: {{f}}",
+        "applied_filters_title": "Filters Showing: {{f}}",
         "work_items": {
           "all": "Work Items",
-          "case": "Case",
-          "ticket": "Ticket",
-          "action": "Action"
+          "case": "Cases",
+          "ticket": "Tickets",
+          "action": "Actions"
         },
         "comms": {
           "all": "Comms",
-          "received": "Received",
-          "sent": "Sent",
-          "self_service": "Self Service",
+          "received": "Emails Received",
+          "sent": "Emails Sent",
+          "self_service": "Self Service Comments",
           "notes": "Notes"
         },
         "users": {
           "all": "Users",
-          "internal": "Agent",
-          "external": "Contact"
+          "internal": "Agents",
+          "external": "Contacts"
         },
         "files": {
           "all": "Files",
           "work_item": "Work Item Attachments",
-          "communication": "Comms Attachments"
+          "communication": "Email Attachments"
         },
         "date": {
           "all_time": "All Time",
