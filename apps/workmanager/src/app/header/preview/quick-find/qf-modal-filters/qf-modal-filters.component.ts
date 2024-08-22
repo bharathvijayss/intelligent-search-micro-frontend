@@ -13,7 +13,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { debounceTime, map, skip } from 'rxjs';
+import { debounceTime, skip } from 'rxjs';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -83,17 +83,17 @@ export class QFModalFiltersComponent implements OnInit {
     this.store.setFromAndToDate(this.dateRange.value);
   }
 
-  // pending
   initSearch() {
     this.dateRange.valueChanges
       .pipe(
         takeUntilDestroyed(this.destroyRef),
         debounceTime(100),
-        skip(1),
-        map(() => this.store.searchQuery())
-      )
-
-    // this.store.getResult(dataRangeChange$);
+        skip(1)
+      ).subscribe({
+        next: () => {
+          this.store.getResult(null);
+        }
+      });
   }
 
   dateFilterChanged(changeValue: MatSelectChange) {

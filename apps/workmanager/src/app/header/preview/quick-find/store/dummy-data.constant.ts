@@ -126,8 +126,7 @@ export interface attachmentItemResult {
 export type QuickFindResult = workItemResult | communicationItemResult | attachmentItemResult | userItemResult
 
 export interface ISearchResult {
-  "search_results": QuickFindResult[],
-  "searchQuery": string
+  "search_results": QuickFindResult[]
 }
 
 export const dummy_data: ISearchResult = {
@@ -533,6 +532,5 @@ export const dummy_data: ISearchResult = {
       "LastUpdatedOn": "2022-07-11T19:46:50.613",
       "PacketCommunicationType": PacketCommunicationType.EmailOutgoing
     }
-  ],
-  "searchQuery": ''
+  ]
 }

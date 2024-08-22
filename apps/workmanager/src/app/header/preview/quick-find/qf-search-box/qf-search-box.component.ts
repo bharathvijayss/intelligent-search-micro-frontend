@@ -1,6 +1,6 @@
 import { AfterViewInit, booleanAttribute, Component, DestroyRef, ElementRef, inject, input, viewChild } from '@angular/core';
 import { QuickFindStore } from '../store/quick-find.store';
-import { filter, fromEvent, map, tap } from 'rxjs';
+import { debounceTime, filter, fromEvent, map, tap } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -33,17 +33,18 @@ export class QfSearchBoxComponent implements AfterViewInit {
     }
   }
 
-  // pending
   initSearch() {
     fromEvent<KeyboardEvent>(this.searchInput().nativeElement, 'keydown').pipe(
       takeUntilDestroyed(this.destroyRef),
       filter(event => event.key === 'Enter'),
+      debounceTime(300),
       map(() => this.searchInput().nativeElement.value || ''),
-      tap((query: string) => this.store.setSearchQuery(query)),
-      // filter((query: string) => query.length > 2)
-    );
-
-    // this.store.getResult(enterKeyPress$);
+      tap((query: string) => this.store.setSearchQuery(query))
+    ).subscribe({
+      next: () => {
+        this.store.getResult(null);
+      }
+    });
   }
 
 }

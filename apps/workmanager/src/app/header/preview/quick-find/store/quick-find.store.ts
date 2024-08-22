@@ -132,43 +132,42 @@ export const QuickFindStore = signalStore(
     })
   })),
   withMethods((store, quickFindSrv = inject(QuickFindService)) => ({
-    // getResult: rxMethod<string>(
-    //   pipe(
-    //     filter((query: string) => query.length > 2),
-    //     debounceTime(300),
-    //     tap(() => patchState(store, { isLoading: true, isError: false, items: [] })),
-    //     switchMap((query: string) => {
-    //       return quickFindSrv.getSearchResultForQuery(query).pipe(
-    //         tap({
-    //           next: (result) => {
-    //             patchState(store, { items: result.search_results })
-    //           },
-    //           error: (err) => {
-    //             console.error(err);
-    //             patchState(store, { isError: true })
-    //           },
-    //           finalize: () => patchState(store, { isLoading: false }),
-    //         })
-    //       );
-    //     })
-    //   )
-    // ),
-    getResult: () => {
-      // pending new implementation
-    },
+    getResult: rxMethod(
+      pipe(
+        filter(() => store.searchQuery().length > 2),
+        tap(() => patchState(store, { isLoading: true, isError: false, items: [] })),
+        switchMap(() => {
+          return quickFindSrv.getSearchResultForQuery({
+            searchQuery: store.searchQuery(),
+            fromDate: store.dateFilter.fromDate(),
+            toDate: store.dateFilter.toDate()
+          }).pipe(
+            tap({
+              next: (result) => {
+                patchState(store, { items: result.search_results, isLoading: false })
+              },
+              error: (err) => {
+                console.error(err);
+                patchState(store, { isError: true, isLoading: false })
+              }
+            })
+          );
+        })
+      )
+    ),
     updateFilters: (updatedState: Partial<FilterState>) => {
       patchState(store, (state) => {
         return { filters: { ...state.filters, ...updatedState } }
       })
     },
     setSearchQuery: (query: string) => {
-      patchState(store, { searchQuery: query })
+      patchState(store, { searchQuery: query });
     },
     resetSearchQueryAndResult: () => {
-      patchState(store, { items: [], searchQuery: '' })
+      patchState(store, { items: [], searchQuery: '' });
     },
     setDateFilter: (val: DateFilterState) => {
-      patchState(store, { dateFilter: { ...val } })
+      patchState(store, { dateFilter: { ...val } });
     },
     setFromAndToDate: (val: Partial<DateFilterState>) => {
       patchState(store, (state) => {
