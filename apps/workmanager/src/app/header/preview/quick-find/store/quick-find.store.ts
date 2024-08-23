@@ -177,8 +177,3 @@ export const QuickFindStore = signalStore(
   }))
 );
 
-// no data state - initial state or no result in db for query or no result according to filter.
-// error state
-// loading state
-// data available state
-
