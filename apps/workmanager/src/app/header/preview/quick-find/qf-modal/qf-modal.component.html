@@ -1,12 +1,14 @@
-<div class="filters">
-  <en8-qf-search-box
-    [shortcutKey]="data.locale?.close_shortcut_key"
-    [icon]="data.searchBoxIcon"
-    [placeholder]="data.locale?.placeholder"
-  />
-  <en8-qf-modal-filters [locale]="data.locale" class="mt-1" />
-</div>
-<mat-divider></mat-divider>
-<div class="search-results">
-  <en8-qf-modal-search-results [locale]="data.locale" />
+<div class="qf-search-container">
+  <div class="qf-search-container__filters">
+    <en8-qf-search-box
+      [shortcutKey]="data.locale?.close_shortcut_key"
+      [icon]="data.searchBoxIcon"
+      [placeholder]="data.locale?.placeholder"
+    />
+    <en8-qf-modal-filters [locale]="data.locale" class="mt-1" />
+  </div>
+  <mat-divider></mat-divider>
+  <div>
+    <en8-qf-modal-search-results [locale]="data.locale" />
+  </div>
 </div>
