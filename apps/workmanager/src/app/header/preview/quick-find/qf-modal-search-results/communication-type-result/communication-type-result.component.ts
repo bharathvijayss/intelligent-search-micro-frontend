@@ -48,6 +48,10 @@ export class CommunicationTypeResultComponent {
     return result;
   })
 
+  isInboundEmail = computed(() => {
+    return this.item().type === FilterType.inboundEmail;
+  })
+
   action_icon = 'visibility';
 
   isEmailItem = computed(() => {

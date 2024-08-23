@@ -240,14 +240,14 @@ export class QFModalFiltersComponent implements OnInit {
     if (appliedFilters.length > 1) {
       this.filterTitle.set(this.getAppliedFiltersTitle(`${appliedFilters[0]} + ${appliedFilters.length - 1} ${this.locale().filters.more}`));
     } else {
-      this.filterTitle.set(this.getAppliedFiltersTitle(appliedFilters[0] || ''));
+      this.filterTitle.set(this.getAppliedFiltersTitle(appliedFilters[0]));
     }
   }
 
   setSingleFilterTitle(singleFilterIndex: number) {
     const title = this.getAppliedFiltersTitle(singleFilterIndex !== -1
       ? `${this.locale().all} ${this.filters[singleFilterIndex].name}`
-      : '');
+      : this.locale().filters.none);
     this.filterTitle.set(title);
   }
 

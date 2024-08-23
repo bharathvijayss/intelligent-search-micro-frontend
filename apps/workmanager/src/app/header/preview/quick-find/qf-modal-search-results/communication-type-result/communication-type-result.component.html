@@ -1,6 +1,9 @@
 <div class="search-item" (click)="openCommunicationItem()">
   <div>
-    <span class="material-symbols-outlined material-symbols-outlined-fill">
+    <span
+      class="material-symbols-outlined material-symbols-outlined-fill"
+      [matTooltip]="locale().tooltips[item().type]"
+    >
       {{ icon() }}
     </span>
   </div>
@@ -9,6 +12,7 @@
       @if (item().Importance) {
         <span
           class="material-symbols-outlined material-symbols-outlined-fill problem-icon"
+          [matTooltip]="locale().tooltips.high_importance"
           >error</span
         >
       }
@@ -38,6 +42,11 @@
     @if (isEmailItem()) {
       <div>
         <span class="search-item__content-subheader muted">
+          @if (isInboundEmail()) {
+            {{ locale().received }}
+          } @else {
+            {{ locale().sent }}
+          }
           {{ item().Logged | en8LocaleDate: 'dt' }}
         </span>
       </div>

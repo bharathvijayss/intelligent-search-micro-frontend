@@ -4,7 +4,10 @@
   [ngClass]="{ muted: isClosedWork() || isPaused() }"
 >
   <div [ngClass]="ragStatusClass()">
-    <span class="material-symbols-outlined material-symbols-outlined-fill">
+    <span
+      class="material-symbols-outlined material-symbols-outlined-fill"
+      [matTooltip]="locale().tooltips[item().type]"
+    >
       {{ icon() }}
     </span>
   </div>
@@ -26,7 +29,7 @@
       }
       @if (item().Problem) {
         <span
-          [matTooltip]="'icons.problem' | translate"
+          [matTooltip]="locale().tooltips.case_problem_state"
           class="material-symbols-outlined material-symbols-outlined-fill problem-icon"
           >warning</span
         >
@@ -34,13 +37,13 @@
       @if (item().CanBeDoneByRobot) {
         @if (item().WillBeDoneByRobot) {
           <span
-            [matTooltip]="'icons.bot_can_do' | translate"
+            [matTooltip]="locale().tooltips.bot_can_do"
             class="material-symbols-outlined material-symbols-outlined-fill dueInFuture"
             >robot</span
           >
         } @else {
           <span
-            [matTooltip]="'icons.bot_failed_to_do' | translate"
+            [matTooltip]="locale().tooltips.bot_failed_to_do"
             class="material-symbols-outlined material-symbols-outlined-fill problem-icon"
             >robot</span
           >
@@ -88,13 +91,16 @@
           <span> {{ 'global.paused' | translate }} </span>
         }
       } @else if (item().DueDate) {
-        <span [ngClass]="ragStatusClass()"
-          >{{ locale().due }}: {{ item().DueDate | en8LocaleDate: 'dt' }}</span
-        >
+        <span [ngClass]="ragStatusClass()">{{
+          'header.intelligent_search.due'
+            | translate
+              : {
+                  d: item().DueDate | en8LocaleDate: 'd',
+                  t: item().DueDate | en8LocaleDate: 't',
+                }
+        }}</span>
       } @else {
-        <span class="dueInFuture"
-          >{{ locale().due }}: {{ locale().no_due_date }}</span
-        >
+        <span class="dueInFuture">{{ locale().no_due_date }}</span>
       }
     </div>
   </div>
@@ -105,6 +111,7 @@
         invisible: isClosedWork() || !profileStore.AssignWorkItemToSelf(),
       }"
       (click)="assignAndOpen($event)"
+      [matTooltip]="locale().tooltips.assign_to_me"
     >
       {{ actionIcon }}
     </span>

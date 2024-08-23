@@ -1,6 +1,9 @@
 <div class="search-item" (click)="openContact()">
   <div>
-    <span class="material-symbols-outlined material-symbols-outlined-fill">
+    <span
+      class="material-symbols-outlined material-symbols-outlined-fill"
+      [matTooltip]="locale().tooltips[item().type]"
+    >
       {{ icon() }}
     </span>
   </div>
@@ -11,7 +14,9 @@
       </span>
     </div>
     <div>
-      <span class="search-item__content-subheader text-active" [matTooltip]="subtitle()"
+      <span
+        class="search-item__content-subheader text-active"
+        [matTooltip]="subtitle()"
         >{{ locale().email }}: {{ subtitle() }}</span
       >
     </div>
