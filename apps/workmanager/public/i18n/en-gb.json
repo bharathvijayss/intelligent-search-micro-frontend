@@ -336,7 +336,9 @@
         "assign_to_me": "Assign to me",
         "bot_can_do": "This work item can be done by a robot",
         "bot_failed_to_do": "This work item needs human attention",
-        "high_importance": "Email sent with high importance"
+        "high_importance": "Email sent with high importance",
+        "show_content": "Show Content",
+        "hide_content": "Hide Content"
       },
       "filters": {
         "all": "Everything",

@@ -4,6 +4,7 @@ import { FilterType } from '../../store/quick-find.service';
 import { MatTooltip } from '@angular/material/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocaleDatePipe } from './../../../../../shared/locale-date.pipe';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'en8-communication-type-result',
@@ -13,7 +14,8 @@ import { LocaleDatePipe } from './../../../../../shared/locale-date.pipe';
   imports: [
     MatTooltip,
     TranslateModule,
-    LocaleDatePipe
+    LocaleDatePipe,
+    MatCardModule
   ]
 })
 export class CommunicationTypeResultComponent {
@@ -21,6 +23,8 @@ export class CommunicationTypeResultComponent {
   item = input.required({
     transform: (val: QuickFindResult) => (val as communicationItemResult)
   });
+
+  showContent = false;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   locale = input.required<any>();
@@ -90,14 +94,12 @@ export class CommunicationTypeResultComponent {
     // );
   }
 
-  // not completed yet.
   viewContent($event: Event) {
     if ($event) {
       $event.stopImmediatePropagation();
       $event.stopPropagation();
     }
-    console.log('view email content clicked');
+    this.showContent = !this.showContent;
   }
-
 
 }

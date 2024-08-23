@@ -56,9 +56,18 @@
     <span
       (click)="viewContent($event)"
       class="material-symbols-outlined material-symbols-outlined-fill email-view-icon"
-      [title]="content()"
+      [matTooltip]="
+        locale().tooltips[!showContent ? 'show_content' : 'hide_content']
+      "
     >
       {{ action_icon }}
     </span>
   </div>
 </div>
+@if (showContent) {
+  <mat-card appearance="outlined" class="item-content">
+    <mat-card-content>
+      <pre class="item-content__scrollable">{{ content() }}</pre>
+    </mat-card-content>
+  </mat-card>
+}
