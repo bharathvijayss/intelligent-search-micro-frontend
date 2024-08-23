@@ -376,6 +376,14 @@
             "to_date": "To Date"
           }
         }
+      },
+      "no_search_result": {
+        "title": "Sorry, we couldn’t find any results...",
+        "subtitle": "Start your Search or Double check your search for any typos or spelling errors or try expanding your search by selecting the different filter options."
+      },
+      "error_search_result": {
+        "title": "Sorry, there was a problem with your search...",
+        "subtitle": "Please contact your system administrator to rectify the problem."
       }
     }
   },

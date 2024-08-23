@@ -7,6 +7,8 @@ import { CommunicationTypeResultComponent } from './communication-type-result/co
 import { AttachmentTypeResultComponent } from './attachment-type-result/attachment-type-result.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateService } from '@ngx-translate/core';
+import { QfSearchResultErrorComponent } from './qf-search-result-error/qf-search-result-error.component';
+import { QfSearchResultPlaceholderComponent } from './qf-search-result-placeholder/qf-search-result-placeholder.component';
 
 @Component({
   selector: 'en8-qf-modal-search-results',
@@ -16,7 +18,9 @@ import { TranslateService } from '@ngx-translate/core';
     UserTypeResultComponent,
     CommunicationTypeResultComponent,
     AttachmentTypeResultComponent,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    QfSearchResultErrorComponent,
+    QfSearchResultPlaceholderComponent
   ],
   templateUrl: './qf-modal-search-results.component.html',
   styleUrl: './qf-modal-search-results.component.scss',

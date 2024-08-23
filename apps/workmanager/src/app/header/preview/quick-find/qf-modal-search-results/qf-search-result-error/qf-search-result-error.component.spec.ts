@@ -1,21 +1,21 @@
 // /* tslint:disable:no-unused-variable */
 // import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { QfSearchBoxComponent } from './qf-search-box.component';
+// import { QfSearchResultErrorComponent } from './qf-search-result-error.component';
 
-// describe('QfSearchBoxComponent', () => {
-//   let component: QfSearchBoxComponent;
-//   let fixture: ComponentFixture<QfSearchBoxComponent>;
+// describe('QfSearchResultErrorComponent', () => {
+//   let component: QfSearchResultErrorComponent;
+//   let fixture: ComponentFixture<QfSearchResultErrorComponent>;
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ QfSearchBoxComponent ]
+//       declarations: [ QfSearchResultErrorComponent ]
 //     })
 //     .compileComponents();
 //   }));
 
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(QfSearchBoxComponent);
+//     fixture = TestBed.createComponent(QfSearchResultErrorComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });
