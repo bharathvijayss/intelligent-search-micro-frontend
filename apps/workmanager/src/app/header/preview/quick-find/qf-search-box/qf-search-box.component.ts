@@ -42,7 +42,7 @@ export class QfSearchBoxComponent implements AfterViewInit {
       tap((query: string) => this.store.setSearchQuery(query))
     ).subscribe({
       next: () => {
-        this.store.getResult(null);
+        this.store.getResult();
       }
     });
   }

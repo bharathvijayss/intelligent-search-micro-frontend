@@ -91,7 +91,7 @@ export class QFModalFiltersComponent implements OnInit {
         skip(1)
       ).subscribe({
         next: () => {
-          this.store.getResult(null);
+          this.store.getResult();
         }
       });
   }

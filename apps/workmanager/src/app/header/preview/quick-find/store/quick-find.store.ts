@@ -132,7 +132,7 @@ export const QuickFindStore = signalStore(
     })
   })),
   withMethods((store, quickFindSrv = inject(QuickFindService)) => ({
-    getResult: rxMethod(
+    getResult: rxMethod<void>(
       pipe(
         filter(() => store.searchQuery().length > 2),
         tap(() => patchState(store, { isLoading: true, isError: false, items: [] })),
