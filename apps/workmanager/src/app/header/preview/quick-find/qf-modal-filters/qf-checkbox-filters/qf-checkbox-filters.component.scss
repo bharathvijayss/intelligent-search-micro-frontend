@@ -1,0 +1,12 @@
+.filter-options {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__subfilter {
+    list-style-type: none;
+    margin: unset;
+  }
+
+}
