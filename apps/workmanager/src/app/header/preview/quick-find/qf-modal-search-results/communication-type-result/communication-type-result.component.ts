@@ -1,10 +1,11 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, OnInit } from '@angular/core';
 import { communicationItemResult, QuickFindResult } from '../../store/dummy-data.constant';
 import { FilterType } from '../../store/quick-find.service';
 import { MatTooltip } from '@angular/material/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocaleDatePipe } from './../../../../../shared/locale-date.pipe';
 import { MatCardModule } from '@angular/material/card';
+import { I18nPluralPipe } from '@angular/common';
 
 @Component({
   selector: 'en8-communication-type-result',
@@ -15,10 +16,11 @@ import { MatCardModule } from '@angular/material/card';
     MatTooltip,
     TranslateModule,
     LocaleDatePipe,
-    MatCardModule
+    MatCardModule,
+    I18nPluralPipe
   ]
 })
-export class CommunicationTypeResultComponent {
+export class CommunicationTypeResultComponent implements OnInit {
 
   item = input.required({
     transform: (val: QuickFindResult) => (val as communicationItemResult)
@@ -28,6 +30,15 @@ export class CommunicationTypeResultComponent {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   locale = input.required<any>();
+
+  attachmentMapping!: { [key: string]: string }
+
+  ngOnInit(): void {
+    this.attachmentMapping = {
+      '=1': `${this.item().AttachmentCount} ${this.locale().attachment}`,
+      'other': `${this.item().AttachmentCount} ${this.locale().attachments}`,
+    }
+  }
 
   icon = computed(() => {
     let result = '';
