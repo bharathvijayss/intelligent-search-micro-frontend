@@ -342,8 +342,8 @@
         "new_info": "New information received"
       },
       "filters": {
-        "all": "Everything",
-        "none": "None",
+        "all": "All Filters Selected",
+        "none": "No Filters Selected",
         "more": "more",
         "applied_filters_title": "Filters Showing: {{f}}",
         "work_items": {

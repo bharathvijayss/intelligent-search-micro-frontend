@@ -97,7 +97,7 @@ export class QfCheckboxFiltersComponent implements OnInit {
   }
 
   setAllFiltersAppliedTitle() {
-    this.filterTitle.set(this.getAppliedFiltersTitle(this.locale().filters.all));
+    this.filterTitle.set(this.locale().filters.all);
   }
 
   getAppliedFiltersInfo() {
@@ -134,9 +134,9 @@ export class QfCheckboxFiltersComponent implements OnInit {
   }
 
   setSingleFilterTitle(singleFilterIndex: number) {
-    const title = this.getAppliedFiltersTitle(singleFilterIndex !== -1
-      ? `${this.locale().all} ${this.filters[singleFilterIndex].name}`
-      : this.locale().filters.none);
+    const title = singleFilterIndex !== -1
+      ? this.getAppliedFiltersTitle(`${this.locale().all} ${this.filters[singleFilterIndex].name}`)
+      : this.locale().filters.none;
     this.filterTitle.set(title);
   }
 
