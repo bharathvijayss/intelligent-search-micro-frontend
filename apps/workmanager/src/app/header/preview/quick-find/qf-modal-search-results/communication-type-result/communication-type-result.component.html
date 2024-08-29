@@ -42,12 +42,15 @@
     @if (isEmailItem()) {
       <div>
         <span class="search-item__content-subheader muted">
-          @if (isInboundEmail()) {
-            {{ locale().received }}
-          } @else {
-            {{ locale().sent }}
-          }
-          {{ item().Logged | en8LocaleDate: 'dt' }}
+          {{
+            'header.intelligent_search.' +
+              (isInboundEmail() ? 'received' : 'sent')
+              | translate
+                : {
+                    d: item().Logged | en8LocaleDate: 'd',
+                    t: item().Logged | en8LocaleDate: 't',
+                  }
+          }}
         </span>
       </div>
     }

@@ -313,13 +313,13 @@
       "no_email_id": "No Email Address",
       "no_email_subject": "(No Email Subject)",
       "no_email_content": "No Content",
-      "email": "email",
-      "received": "Received",
-      "sent": "Sent",
+      "email": "Email",
+      "received": "Received {{d}} at {{t}}",
+      "sent": "Sent {{d}} at {{t}}",
       "all": "All",
-      "closed": "closed",
-      "time_until_due": "paused: {h+} hours {m} minutes before due",
-      "time_after_overdue": "paused: {h+} hours {m} minutes after overdue",
+      "closed": "Closed",
+      "time_until_due": "Paused: {h+} hours {m} minutes before due",
+      "time_after_overdue": "Paused: {h+} hours {m} minutes after overdue",
       "tooltips": {
         "case": "Case",
         "ticket": "Ticket",
@@ -333,12 +333,13 @@
         "fileAttachmentToPacket": "Work Item Attachment",
         "fileAttachmentToEmail": "Email Attachment",
         "case_problem_state": "Case needs attention",
-        "assign_to_me": "Assign to me",
-        "bot_can_do": "This work item can be done by a robot",
-        "bot_failed_to_do": "This work item needs human attention",
+        "assign_to_me": "Open and assign to me",
+        "bot_can_do": "This Action can be done by a robot",
+        "bot_failed_to_do": "This Action needs human attention",
         "high_importance": "Email sent with high importance",
-        "show_content": "Show Content",
-        "hide_content": "Hide Content"
+        "show_content": "Show Preview",
+        "hide_content": "Hide Preview",
+        "new_info": "New information received"
       },
       "filters": {
         "all": "Everything",
@@ -381,7 +382,7 @@
       },
       "no_search_result": {
         "title": "Sorry, we couldn’t find any results...",
-        "subtitle": "Start your Search or Double check your search for any typos or spelling errors or try expanding your search by selecting the different filter options."
+        "subtitle": "Check your search criteria for any typos or spelling errors or try expanding your search by selecting different filter options."
       },
       "error_search_result": {
         "title": "Sorry, there was a problem with your search...",
