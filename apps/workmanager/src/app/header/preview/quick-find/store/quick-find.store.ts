@@ -1,11 +1,12 @@
 import { computed, inject } from "@angular/core";
-import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
+import { getState, patchState, signalStore, withComputed, withHooks, withMethods, withState } from "@ngrx/signals";
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { filter, pipe, switchMap, tap } from "rxjs";
 import { DateFilters, FilterType, QuickFindService } from "./quick-find.service";
 import { QuickFindResult } from "./dummy-data.constant";
+import { QuickFindUtilService } from "./quick-find-util.service";
 
-type FilterState = {
+export type FilterState = {
   [FilterType.case]: boolean,
   [FilterType.ticket]: boolean,
   [FilterType.action]: boolean,
@@ -22,10 +23,10 @@ type FilterState = {
 type DateFilterState = {
   fromDate: Date | null,
   toDate: Date | null,
-  type: DateFilters
+  type: DateFilters | null
 }
 
-type QuickFindState = {
+export type QuickFindState = {
   searchQuery: string,
   items: QuickFindResult[],
   isLoading: boolean,
@@ -40,22 +41,22 @@ const initialState: QuickFindState = {
   isLoading: false,
   isError: false,
   filters: {
-    [FilterType.case]: true,
-    [FilterType.ticket]: true,
-    [FilterType.action]: true,
-    [FilterType.contact]: true,
-    [FilterType.serviceAgent]: true,
-    [FilterType.inboundEmail]: true,
-    [FilterType.outboundEmail]: true,
-    [FilterType.selfServiceComments]: true,
-    [FilterType.notes]: true,
-    [FilterType.fileAttachmentToPacket]: true,
-    [FilterType.fileAttachmentToEmail]: true,
+    [FilterType.case]: false,
+    [FilterType.ticket]: false,
+    [FilterType.action]: false,
+    [FilterType.contact]: false,
+    [FilterType.serviceAgent]: false,
+    [FilterType.inboundEmail]: false,
+    [FilterType.outboundEmail]: false,
+    [FilterType.selfServiceComments]: false,
+    [FilterType.notes]: false,
+    [FilterType.fileAttachmentToPacket]: false,
+    [FilterType.fileAttachmentToEmail]: false,
   },
   dateFilter: {
     fromDate: null,
     toDate: null,
-    type: DateFilters.allTime
+    type: null
   }
 };
 
@@ -126,22 +127,28 @@ export const QuickFindStore = signalStore(
 
     }),
     filteredResult: computed(() => {
-      return store.items().filter((item) => {
-        return store.filters()[item.type];
-      })
+      const filters = Object.values(store.filters());
+      const allSelected = filters.every(Boolean); // Checks if all values are true
+      const nothingSelected = filters.every(val => !val); // Checks if all values are false
+      const items = store.items();
+
+      if (allSelected || nothingSelected) {
+        return items;
+      }
+
+      return items.filter(item => store.filters()[item.type]);
     })
   })),
-  withMethods((store, quickFindSrv = inject(QuickFindService)) => ({
+  withMethods((store, quickFindSrv = inject(QuickFindService), quickFindUtilSrv = inject(QuickFindUtilService)) => ({
     getResult: rxMethod<void>(
       pipe(
         filter(() => store.searchQuery().length > 2),
         tap(() => patchState(store, { isLoading: true, isError: false, items: [] })),
         switchMap(() => {
-          return quickFindSrv.getSearchResultForQuery({
-            searchQuery: store.searchQuery(),
-            fromDate: store.dateFilter.fromDate(),
-            toDate: store.dateFilter.toDate()
-          }).pipe(
+
+          const searchParam = quickFindUtilSrv.getSearchRequestParam(getState(store));
+
+          return quickFindSrv.getSearchResultForQuery(searchParam).pipe(
             tap({
               next: (result) => {
                 patchState(store, { items: result.search_results, isLoading: false })
@@ -152,6 +159,7 @@ export const QuickFindStore = signalStore(
               }
             })
           );
+
         })
       )
     ),
@@ -166,14 +174,19 @@ export const QuickFindStore = signalStore(
     resetSearchQueryAndResult: () => {
       patchState(store, { items: [], searchQuery: '' });
     },
-    setDateFilter: (val: DateFilterState) => {
-      patchState(store, { dateFilter: { ...val } });
+    setDateFilter: (val: DateFilters) => {
+      patchState(store, { dateFilter: { ...quickFindUtilSrv.getCalculatedDateRange(val) } });
     },
     setFromAndToDate: (val: Partial<DateFilterState>) => {
       patchState(store, (state) => {
         return { dateFilter: { ...state.dateFilter, ...val } }
       })
     }
-  }))
+  })),
+  withHooks({
+    onInit(store) {
+      store.setDateFilter(DateFilters.lastWeek);
+    },
+  })
 );
 

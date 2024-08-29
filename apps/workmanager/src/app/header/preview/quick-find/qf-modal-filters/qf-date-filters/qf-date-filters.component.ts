@@ -1,4 +1,4 @@
-import { Component, DestroyRef, effect, inject, input, OnInit, untracked } from '@angular/core';
+import { Component, DestroyRef, effect, inject, input, OnInit } from '@angular/core';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -9,7 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IDateFilter } from '../../model/date-filter';
 import { DateFilters } from '../../store/quick-find.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { DateAdapter } from '@angular/material/core';
 import { debounceTime, skip } from 'rxjs';
 import { QuickFindStore } from '../../store/quick-find.store';
 
@@ -43,7 +42,6 @@ export class QfDateFiltersComponent implements OnInit {
   store = inject(QuickFindStore);
 
   constructor(
-    private _dateAdapter: DateAdapter<Date>,
     private destroyRef: DestroyRef
   ) { }
 
@@ -53,16 +51,16 @@ export class QfDateFiltersComponent implements OnInit {
   }
 
   dateRangeEffectRef = effect(() => {
-    const appliedDateFilter = this.store.dateFilter.type();
-    untracked(() => {
-      const appliedFilter = this.store.dateFilter();
-      this.dateRange.setValue({ fromDate: appliedFilter.fromDate, toDate: appliedFilter.toDate });
-    })
-    if (appliedDateFilter === DateFilters.allTime) {
+
+    const appliedFilter = this.store.dateFilter();
+    this.dateRange.setValue({ fromDate: appliedFilter.fromDate, toDate: appliedFilter.toDate });
+
+    if (appliedFilter.type === DateFilters.allTime) {
       this.dateRange.enable({ emitEvent: false });
     } else {
       this.dateRange.disable({ emitEvent: false });
     }
+
   })
 
   initDateFilterTypes() {
@@ -78,7 +76,7 @@ export class QfDateFiltersComponent implements OnInit {
     this.dateRange.valueChanges
       .pipe(
         takeUntilDestroyed(this.destroyRef),
-        debounceTime(100),
+        debounceTime(50),
         skip(1)
       ).subscribe({
         next: () => {
@@ -92,41 +90,7 @@ export class QfDateFiltersComponent implements OnInit {
   }
 
   dateFilterChanged(changeValue: MatSelectChange) {
-    const currentDate = this._dateAdapter.today();
-    switch (changeValue.value) {
-      case DateFilters.allTime: {
-        this.store.setDateFilter({
-          fromDate: null,
-          toDate: null,
-          type: DateFilters.allTime
-        })
-        break;
-      }
-      case DateFilters.today: {
-        this.store.setDateFilter({
-          fromDate: currentDate,
-          toDate: currentDate,
-          type: DateFilters.today
-        })
-        break;
-      }
-      case DateFilters.lastWeek: {
-        this.store.setDateFilter({
-          fromDate: this._dateAdapter.addCalendarDays(currentDate, -6),
-          toDate: currentDate,
-          type: DateFilters.lastWeek
-        })
-        break;
-      }
-      case DateFilters.lastMonth: {
-        this.store.setDateFilter({
-          fromDate: this._dateAdapter.addCalendarMonths(currentDate, -1),
-          toDate: currentDate,
-          type: DateFilters.lastMonth
-        })
-        break;
-      }
-    }
+    this.store.setDateFilter(changeValue.value);
   }
 
 }
