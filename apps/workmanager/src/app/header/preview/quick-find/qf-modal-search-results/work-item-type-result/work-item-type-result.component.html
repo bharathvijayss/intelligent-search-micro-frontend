@@ -14,28 +14,28 @@
   <div class="search-item__content">
     <div class="search-item__content-header">
       <span
-        [matTooltip]="item().Status | status: 'title'"
-        [ngClass]="item().Status | status: 'class'"
-        [style.color]="item().Status | status: 'color'"
+        [matTooltip]="item().status | status: 'title'"
+        [ngClass]="item().status | status: 'class'"
+        [style.color]="item().status | status: 'color'"
       >
-        {{ item().Status | status: 'icon' }}
+        {{ item().status | status: 'icon' }}
       </span>
-      @if (item().NewInformationReceived) {
+      @if (item().newInformationReceived) {
         <span
           [matTooltip]="locale().tooltips.new_info"
           class="material-symbols-outlined material-symbols-outlined-fill new-info-icon"
           >info</span
         >
       }
-      @if (item().Problem) {
+      @if (item().problem) {
         <span
           [matTooltip]="locale().tooltips.case_problem_state"
           class="material-symbols-outlined material-symbols-outlined-fill problem-icon"
           >warning</span
         >
       }
-      @if (item().CanBeDoneByRobot) {
-        @if (item().WillBeDoneByRobot) {
+      @if (item().canBeDoneByRobot) {
+        @if (item().willBeDoneByRobot) {
           <span
             [matTooltip]="locale().tooltips.bot_can_do"
             class="material-symbols-outlined material-symbols-outlined-fill dueInFuture"
@@ -51,7 +51,7 @@
       }
       @if (showPeerReviewInfo()) {
         <!-- Not Implemented yet -->
-        @if (item().InPeerReview) {
+        @if (item().inPeerReview) {
           <span
             [matTooltip]="'icons.peer' | translate"
             class="material-symbols-outlined material-symbols-outlined-fill primary"
@@ -77,12 +77,12 @@
       @if (isClosedWork()) {
         <span
           >{{ locale().closed }}:
-          {{ item().EndDate | en8LocaleDate: 'dt' }}</span
+          {{ item().endDate | en8LocaleDate: 'dt' }}</span
         >
       } @else if (isPaused()) {
-        @if (item().TimeRemainingWhenPaused) {
+        @if (item().timeRemainingWhenPaused) {
           <span>{{
-            item().TimeRemainingWhenPaused
+            item().timeRemainingWhenPaused
               | timeToText
                 : locale().time_until_due
                 : locale().time_after_overdue
@@ -90,13 +90,13 @@
         } @else {
           <span> {{ 'global.paused' | translate }} </span>
         }
-      } @else if (item().DueDate) {
+      } @else if (item().dueDate) {
         <span [ngClass]="ragStatusClass()">{{
           'header.intelligent_search.due'
             | translate
               : {
-                  d: item().DueDate | en8LocaleDate: 'd',
-                  t: item().DueDate | en8LocaleDate: 't',
+                  d: item().dueDate | en8LocaleDate: 'd',
+                  t: item().dueDate | en8LocaleDate: 't',
                 }
         }}</span>
       } @else {

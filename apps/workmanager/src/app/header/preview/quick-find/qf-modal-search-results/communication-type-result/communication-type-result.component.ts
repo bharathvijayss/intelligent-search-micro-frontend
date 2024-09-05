@@ -1,11 +1,11 @@
 import { Component, computed, input, OnInit } from '@angular/core';
-import { communicationItemResult, QuickFindResult } from '../../store/dummy-data.constant';
-import { FilterType } from '../../store/quick-find.service';
 import { MatTooltip } from '@angular/material/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocaleDatePipe } from './../../../../../shared/locale-date.pipe';
 import { MatCardModule } from '@angular/material/card';
 import { I18nPluralPipe } from '@angular/common';
+import { ICommunicationItemResult } from '../../model/communication-item-result';
+import { FilterType, IQuickFindResult } from '../../store/quick-find.constant';
 
 @Component({
   selector: 'en8-communication-type-result',
@@ -23,7 +23,7 @@ import { I18nPluralPipe } from '@angular/common';
 export class CommunicationTypeResultComponent implements OnInit {
 
   item = input.required({
-    transform: (val: QuickFindResult) => (val as communicationItemResult)
+    transform: (val: IQuickFindResult) => (val as ICommunicationItemResult)
   });
 
   showContent = false;
@@ -35,8 +35,8 @@ export class CommunicationTypeResultComponent implements OnInit {
 
   ngOnInit(): void {
     this.attachmentMapping = {
-      '=1': `${this.item().AttachmentCount} ${this.locale().attachment}`,
-      'other': `${this.item().AttachmentCount} ${this.locale().attachments}`,
+      '=1': `${this.item().attachmentCount} ${this.locale().attachment}`,
+      'other': `${this.item().attachmentCount} ${this.locale().attachments}`,
     }
   }
 
@@ -74,22 +74,22 @@ export class CommunicationTypeResultComponent implements OnInit {
   })
 
   title = computed(() => {
-    let result = `${this.item().Reference} ${this.item().Title || this.locale().no_title}`;
+    let result = `${this.item().reference} ${this.item().title || this.locale().no_title}`;
 
     if (this.isEmailItem()) {
-      result = `${(this.item().Subject || this.locale().no_email_subject)}, ${result}`;
+      result = `${(this.item().subject || this.locale().no_email_subject)}, ${result}`;
     }
 
     return result
   })
 
   subtitle = computed(() => {
-    return `${this.item().FullName} (${(this.item().EmailAddress || this.locale().no_email_id)})`;
+    return `${this.item().fullName} (${(this.item().emailAddress || this.locale().no_email_id)})`;
   })
 
   content = computed(() => {
     // it is not possible to add an empty note but it is possible to send an empty email.
-    let body: string = this.item().Body || this.locale().no_email_content;
+    let body: string = this.item().body || this.locale().no_email_content;
     body = body.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "");
     body = body.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "");
     const tag = document.createElement("div");
@@ -100,8 +100,8 @@ export class CommunicationTypeResultComponent implements OnInit {
   openCommunicationItem() {
     console.log('comm item opened');
     // this.tabSrv.OpenWorkItem(
-    //   this.item().PacketGUID,
-    //   this.item().ProcessType
+    //   this.item().packetGuid,
+    //   this.item().processType
     // );
   }
 

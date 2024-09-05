@@ -7,10 +7,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { IDateFilter } from '../../model/date-filter';
-import { DateFilters } from '../../store/quick-find.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { debounceTime, skip } from 'rxjs';
 import { QuickFindStore } from '../../store/quick-find.store';
+import { DateFilters } from '../../store/quick-find.constant';
 
 @Component({
   selector: 'en8-qf-date-filters',

@@ -1,4 +1,4 @@
-import { DateFilters } from "../store/quick-find.service";
+import { DateFilters } from "../store/quick-find.constant";
 
 export interface IDateFilter {
   value: DateFilters,

@@ -1,7 +1,7 @@
 import { Component, computed, input } from '@angular/core';
-import { QuickFindResult, userItemResult } from '../../store/dummy-data.constant';
-import { FilterType } from '../../store/quick-find.service';
 import { MatTooltip } from '@angular/material/tooltip';
+import { IUserItemResult } from '../../model/user-item-result';
+import { FilterType, IQuickFindResult } from '../../store/quick-find.constant';
 
 @Component({
   selector: 'en8-user-type-result',
@@ -15,7 +15,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 export class UserTypeResultComponent {
 
   item = input.required({
-    transform: (val: QuickFindResult) => (val as userItemResult)
+    transform: (val: IQuickFindResult) => (val as IUserItemResult)
   });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -37,16 +37,16 @@ export class UserTypeResultComponent {
   })
 
   title = computed(() => {
-    return `${this.item().FullName}`
+    return `${this.item().fullName}`
   })
 
   subtitle = computed(() => {
-    return `${this.item().EmailAddress || this.locale().no_email_id}`
+    return `${this.item().emailAddress || this.locale().no_email_id}`
   })
 
   openContact() {
     console.log('open contact');
-    // this.tabSrv.OpenContact(this.item().UserGUID);
+    // this.tabSrv.OpenContact(this.item().userGuid);
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, computed, input } from '@angular/core';
-import { attachmentItemResult, PacketCommunicationType, QuickFindResult } from '../../store/dummy-data.constant';
 import { MatTooltip } from '@angular/material/tooltip';
+import { IAttachmentItemResult } from '../../model/attachment-item-result';
+import { PacketCommunicationType } from './../../../../../shared/dto';
+import { IQuickFindResult } from '../../store/quick-find.constant';
 
 @Component({
   selector: 'en8-attachment-type-result',
@@ -12,7 +14,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 export class AttachmentTypeResultComponent {
 
   item = input.required({
-    transform: (val: QuickFindResult) => (val as attachmentItemResult)
+    transform: (val: IQuickFindResult) => (val as IAttachmentItemResult)
   });
 
   icon = 'attach_file';
@@ -22,19 +24,19 @@ export class AttachmentTypeResultComponent {
   email_outgoing_icon = 'arrow_upward_alt';
 
   title = computed(() => {
-    return this.item().FileName;
+    return this.item().fileName;
   })
 
   subtitle = computed(() => {
-    return `${this.item().PacketReference} ${this.item().PacketTitle || this.locale().no_title}`;
+    return `${this.item().packetReference} ${this.item().packetTitle || this.locale().no_title}`;
   })
 
   isIncomingEmail = computed(() => {
-    return this.item().PacketCommunicationType === PacketCommunicationType.EmailIncoming;
+    return this.item().packetCommunicationType === PacketCommunicationType.EmailIncoming;
   })
 
   isOutgoingEmail = computed(() => {
-    return this.item().PacketCommunicationType === PacketCommunicationType.EmailOutgoing;
+    return this.item().packetCommunicationType === PacketCommunicationType.EmailOutgoing;
   })
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -45,13 +47,13 @@ export class AttachmentTypeResultComponent {
   }
 
   private getFileURL() {
-    // if (this.item().Source === 0) {
+    // if (this.item().source === 0) {
     //   return [
     //     AService.getURI("/Packet/GetPacketFile"),
     //     "?source=0&forceDownload=false&packetGUID=",
-    //     this.item().PacketGUID,
+    //     this.item().packetGUID,
     //     "&fileGUID=",
-    //     this.item().GUID,
+    //     this.item().guid,
     //   ].join("");
     // } else {
     //   return [
@@ -59,7 +61,7 @@ export class AttachmentTypeResultComponent {
     //       "/PacketCommunication/GetPacketCommunicationAttachment"
     //     ),
     //     "?forceDownload=false&packetCommunicationAttachmentGUID=",
-    //     this.item().GUID,
+    //     this.item().guid,
     //   ].join("");
     // }
   }

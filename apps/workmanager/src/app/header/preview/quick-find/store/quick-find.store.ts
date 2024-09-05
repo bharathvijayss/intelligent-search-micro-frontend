@@ -2,9 +2,9 @@ import { computed, inject } from "@angular/core";
 import { getState, patchState, signalStore, withComputed, withHooks, withMethods, withState } from "@ngrx/signals";
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { filter, pipe, switchMap, tap } from "rxjs";
-import { DateFilters, FilterType, QuickFindService } from "./quick-find.service";
-import { QuickFindResult } from "./dummy-data.constant";
+import { QuickFindService } from "./quick-find.service";
 import { QuickFindUtilService } from "./quick-find-util.service";
+import { DateFilters, FilterType, IQuickFindResult } from "./quick-find.constant";
 
 export type FilterState = {
   [FilterType.case]: boolean,
@@ -20,7 +20,7 @@ export type FilterState = {
   [FilterType.fileAttachmentToEmail]: boolean,
 }
 
-type DateFilterState = {
+export type DateFilterState = {
   fromDate: Date | null,
   toDate: Date | null,
   type: DateFilters | null
@@ -28,7 +28,7 @@ type DateFilterState = {
 
 export type QuickFindState = {
   searchQuery: string,
-  items: QuickFindResult[],
+  items: IQuickFindResult[],
   isLoading: boolean,
   isError: boolean,
   filters: FilterState,
@@ -151,7 +151,7 @@ export const QuickFindStore = signalStore(
           return quickFindSrv.getSearchResultForQuery(searchParam).pipe(
             tap({
               next: (result) => {
-                patchState(store, { items: result.search_results, isLoading: false })
+                patchState(store, { items: result, isLoading: false })
               },
               error: (err) => {
                 console.error(err);

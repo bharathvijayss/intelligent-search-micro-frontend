@@ -3,8 +3,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { IFilter } from './../../model/filter';
 import { QuickFindStore } from '../../store/quick-find.store';
-import { FilterType } from '../../store/quick-find.service';
 import { TranslateService } from '@ngx-translate/core';
+import { FilterType } from '../../store/quick-find.constant';
 
 @Component({
   selector: 'en8-qf-checkbox-filters',

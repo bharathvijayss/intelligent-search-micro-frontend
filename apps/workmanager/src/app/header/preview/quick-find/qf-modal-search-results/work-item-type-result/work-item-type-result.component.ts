@@ -1,7 +1,5 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { ProfileStore } from './../../../../../store/app-settings.store';
-import { QuickFindResult, workItemResult } from '../../store/dummy-data.constant';
-import { FilterType } from '../../store/quick-find.service';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ActionSubType, PacketStatus, RAGStatus } from './../../../../../shared/dto';
 import { NgClass } from '@angular/common';
@@ -9,6 +7,8 @@ import { StatusPipe } from './../../../../../shared/status.pipe';
 import { LocaleDatePipe } from './../../../../../shared/locale-date.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { TimespanToTextPipe } from './../../../../../shared/timespan-to-text.pipe';
+import { IWorkItemResult } from '../../model/work-item-result';
+import { FilterType, IQuickFindResult } from '../../store/quick-find.constant';
 
 @Component({
   selector: 'en8-work-item-type-result',
@@ -29,7 +29,7 @@ export class WorkItemTypeResultComponent {
   profileStore = inject(ProfileStore);
 
   item = input.required({
-    transform: (val: QuickFindResult) => (val as workItemResult)
+    transform: (val: IQuickFindResult) => (val as IWorkItemResult)
   });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -55,16 +55,16 @@ export class WorkItemTypeResultComponent {
   })
 
   isClosedWork = computed(() => {
-    return !!(this.item().EndDate);
+    return !!(this.item().endDate);
   })
 
   title = computed(() => {
-    return `${this.item().Reference} ${this.item().Title || this.locale().no_title}`
+    return `${this.item().reference} ${this.item().title || this.locale().no_title}`
   })
 
   ragStatusClass = computed(() => {
 
-    const ragStatus = this.item().RAGStatus;
+    const ragStatus = this.item().ragStatus;
 
     if (this.isClosedWork()) {
       return '';
@@ -82,23 +82,23 @@ export class WorkItemTypeResultComponent {
   })
 
   isPaused = computed(() => {
-    return !this.item().DueDate &&
-      this.item().Status === PacketStatus.Waiting;
+    return !this.item().dueDate &&
+      this.item().status === PacketStatus.Waiting;
   })
 
   showPeerReviewInfo = computed(() => {
-    return this.item().ActionSubType === ActionSubType.ManualwithPeerReviewAction &&
-      !([PacketStatus.Resolved, PacketStatus.Closed].includes(this.item().Status))
+    return this.item().actionSubType === ActionSubType.ManualwithPeerReviewAction &&
+      !([PacketStatus.Resolved, PacketStatus.Closed].includes(this.item().status))
   })
 
   actionIcon = 'back_hand';
 
   openWorkItem() {
     // this.tabSrv.OpenWorkItem(
-    //   this.item().GUID,
-    //   this.item().PacketType
+    //   this.item().guid,
+    //   this.item().packetType
     // );
-    console.log('Tab Opened: ', this.item().GUID, this.item().PacketType);
+    console.log('Tab Opened: ', this.item().guid, this.item().packetType);
   }
 
   assignAndOpen($event: Event) {
@@ -107,7 +107,7 @@ export class WorkItemTypeResultComponent {
     //   $event.stopPropagation();
 
     //   this.masterSrv
-    //     .SetAssignee(this.item().GUID, null, null, true, true)
+    //     .SetAssignee(this.item().guid, null, null, true, true)
     //     .pipe(
     //       tap(() => {
     //         this.openWorkItem();
@@ -115,7 +115,7 @@ export class WorkItemTypeResultComponent {
     //     )
     //     .subscribe();
     // }
-    console.log('Assign and Open: ', $event, this.item().GUID);
+    console.log('Assign and Open: ', $event, this.item().guid);
   }
 
 }

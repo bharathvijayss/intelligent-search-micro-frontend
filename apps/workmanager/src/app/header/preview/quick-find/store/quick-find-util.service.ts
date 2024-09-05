@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DateAdapter } from '@angular/material/core';
-import { DateFilters } from './quick-find.service';
 import { ISearchParam } from '../model/search-param';
-import { QuickFindState } from './quick-find.store';
+import { DateFilterState, QuickFindState } from './quick-find.store';
+import { DateFilters } from './quick-find.constant';
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +11,9 @@ export class QuickFindUtilService {
 
   constructor(private _dateAdapter: DateAdapter<Date>) { }
 
-  getCalculatedDateRange(value: DateFilters) {
+  getCalculatedDateRange(value: DateFilters): DateFilterState {
     const currentDate = this._dateAdapter.today();
     switch (value) {
-      case DateFilters.allTime: {
-        return {
-          fromDate: null,
-          toDate: null,
-          type: DateFilters.allTime
-        }
-      }
       case DateFilters.today: {
         return {
           fromDate: currentDate,
@@ -41,6 +34,13 @@ export class QuickFindUtilService {
           toDate: currentDate,
           type: DateFilters.lastMonth
         };
+      }
+      default: { // DateFilters.allTime
+        return {
+          fromDate: null,
+          toDate: null,
+          type: DateFilters.allTime
+        }
       }
     }
   }

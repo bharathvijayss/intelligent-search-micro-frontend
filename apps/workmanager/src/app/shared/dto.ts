@@ -199,3 +199,85 @@ export enum ActionSubType {
    */
   AiAction = 11
 }
+
+/**
+ * The source of a Packet File.
+ */
+export enum PacketFileSource {
+  /**
+   * Attached to Packet
+   */
+  AttachedToPacket = 0,
+  /**
+   * Attached to an Email
+   */
+  EmailAttachment = 1,
+  /**
+   * Temporary Attachment
+   */
+  TemporaryAttachment = 2
+}
+
+/**
+ * The type of Packet Communication.
+ */
+export enum PacketCommunicationType {
+  /**
+   * Email Outgoing
+   */
+  EmailOutgoing = 0,
+  /**
+   * Phone Incoming
+   */
+  PhoneIncoming = 1,
+  /**
+   * Email Incoming
+   */
+  EmailIncoming = 2,
+  /**
+   * Self Service Comment
+   */
+  ESSComment = 3,
+  /**
+   * Note
+   */
+  AuditNote = 4,
+  /**
+   * Phone Outgoing
+   */
+  PhoneOutgoing = 5,
+  /**
+   * Letter Incoming
+   */
+  LetterIncoming = 6,
+  /**
+   * Letter Outgoing
+   */
+  LetterOutgoing = 7
+}
+
+export enum DataFieldType {
+  Packet = 0,
+  EmailIncomingPacketCommunication = 1,
+  EmailOutgoingPacketCommunication = 2,
+  ESSCommentPacketCommunication = 3,
+  AuditNotePacketCommunication = 4,
+  PhoneIncomingPacketCommunication = 5,
+  PhoneOutgoingPacketCommunication = 6,
+  LetterIncomingPacketCommunication = 7,
+  LetterOutgoingPacketCommunication = 8,
+  PacketCommunicationContact = 9,
+  PacketCommunicationAttachment = 10,
+  PacketHyperlink = 11,
+  PacketFile = 12,
+  PacketContact = 13,
+  PacketCustomData = 14,
+  User = 15
+}
+
+export enum UserTypeFilter {
+  Contact = 1,
+  Operational = 2,
+  EmployeeSelfService = 4,
+  Robot = 8
+}
