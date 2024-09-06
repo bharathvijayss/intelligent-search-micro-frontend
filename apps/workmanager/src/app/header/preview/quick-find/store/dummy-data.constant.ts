@@ -49,6 +49,31 @@ export const dummy_data: ISearchResult = {
         inPeerReview: null,
         timeRemainingWhenPaused: null,
         problem: false,
+        newInformationReceived: true,
+        canBeDoneByRobot: false,
+        willBeDoneByRobot: true,
+        relatedDataFields: []
+      },
+      {
+        guid: "ae7be98b-f24c-41df-8643-c6480f7ec3e7",
+        type: "Packet",
+        dueDate: "2022-11-02T22:21:54.617",
+        processType: ProcessType.Ticket,
+        assignedToUserGuid: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        status: PacketStatus.InProgress,
+        startDate: "2024-08-30T06:47:11.996Z",
+        endDate: null,
+        title: "Without reference number",
+        reference: "394157-T",
+        dataFieldId: "ae7be98b-f24c-41df-8643-c6480f7ec3e7",
+        dataFieldType: DataFieldType.Packet,
+        dataFieldName: "string",
+        confidence: 0.8,
+        ragStatus: RAGStatus.Overdue,
+        actionSubType: null,
+        inPeerReview: null,
+        timeRemainingWhenPaused: null,
+        problem: false,
         newInformationReceived: false,
         canBeDoneByRobot: false,
         willBeDoneByRobot: false,
@@ -117,7 +142,7 @@ export const dummy_data: ISearchResult = {
           },
           {
             fieldName: 'emailAddress',
-            data: null
+            data: 'bharath.vijay@enate.net'
           },
           {
             fieldName: 'subject',
