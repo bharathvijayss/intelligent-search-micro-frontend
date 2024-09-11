@@ -1,6 +1,6 @@
 import { AfterViewInit, booleanAttribute, Component, DestroyRef, ElementRef, inject, input, viewChild } from '@angular/core';
 import { QuickFindStore } from '../store/quick-find.store';
-import { debounceTime, filter, fromEvent, map, tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, fromEvent, map, tap } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -39,6 +39,7 @@ export class QfSearchBoxComponent implements AfterViewInit {
       filter(event => event.key === 'Enter'),
       debounceTime(300),
       map(() => this.searchInput().nativeElement.value || ''),
+      distinctUntilChanged(),
       tap((query: string) => this.store.setSearchQuery(query))
     ).subscribe({
       next: () => {

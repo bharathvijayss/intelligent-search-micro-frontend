@@ -8,7 +8,7 @@ import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { IDateFilter } from '../../model/date-filter';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { debounceTime, skip } from 'rxjs';
+import { debounceTime, distinctUntilChanged, skip } from 'rxjs';
 import { QuickFindStore } from '../../store/quick-find.store';
 import { DateFilters } from '../../store/quick-find.constant';
 
@@ -76,6 +76,7 @@ export class QfDateFiltersComponent implements OnInit {
     this.dateRange.valueChanges
       .pipe(
         takeUntilDestroyed(this.destroyRef),
+        distinctUntilChanged((prev, next) => prev.fromDate === next.fromDate && prev.toDate === next.toDate),
         debounceTime(50),
         skip(1)
       ).subscribe({
