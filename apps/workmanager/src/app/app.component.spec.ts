@@ -33,11 +33,17 @@ describe('AppComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('component should be created', () => {
-    expect(component).toBeDefined();
-  });
+  describe('constructor()', () => {
+    it('should create instance', () => {
+      expect(component).toBeDefined();
+    });
 
-  describe('translateSrv.use', () => {
+    it(`should define translation$ with return value of translateSrv.use()`, () => {
+      expect(component.translation$).toBe(return_value);
+    });
+  })
+
+  describe('translateSrv.use()', () => {
 
     it('should be called only once', () => {
       expect(translateSrv.use).toHaveBeenCalledTimes(1);
@@ -49,8 +55,5 @@ describe('AppComponent', () => {
 
   })
 
-  it(`should have translation$ defined with return value of translateSrv.use()`, () => {
-    expect(component.translation$).toBe(return_value);
-  });
 
 });
