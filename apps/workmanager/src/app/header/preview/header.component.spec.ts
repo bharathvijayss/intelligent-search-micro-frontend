@@ -12,10 +12,8 @@ export class MockQfComponent {
 }
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
 
-  beforeEach(async () => {
+  async function setup() {
     await TestBed.configureTestingModule({
       imports: [
         HeaderComponent,
@@ -35,11 +33,18 @@ describe('HeaderComponent', () => {
       })
       .compileComponents();
 
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-  });
+    const fixture: ComponentFixture<HeaderComponent> = TestBed.createComponent(HeaderComponent);
+    const component: HeaderComponent = fixture.componentInstance;
 
-  it('should create', () => {
+    return {
+      fixture,
+      component
+    }
+  }
+
+  it('should create', async () => {
+    const { component } = await setup();
+
     expect(component).toBeTruthy();
   });
 });

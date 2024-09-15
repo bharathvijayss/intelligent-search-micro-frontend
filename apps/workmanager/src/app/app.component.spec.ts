@@ -2,54 +2,61 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
+import { provideAutoSpy, Spy } from 'jest-auto-spies';
 
 const lang_code = 'en-gb';
 const return_value = of(lang_code);
 
-class TranslateServiceMock {
-  use = jest.fn().mockReturnValue(return_value)
-}
 describe('AppComponent', () => {
 
-  let fixture: ComponentFixture<AppComponent>;
-  let component: AppComponent;
-  let translateSrv: TranslateServiceMock;
-
-  beforeEach(async () => {
-    translateSrv = new TranslateServiceMock();
+  async function setup() {
     await TestBed.configureTestingModule({
       imports: [
         AppComponent
       ],
       providers: [
-        {
-          provide: TranslateService,
-          useValue: translateSrv
-        }
+        provideAutoSpy(TranslateService)
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-  });
+    const translateSrv: Spy<TranslateService> = TestBed.inject<unknown>(TranslateService) as Spy<TranslateService>;
+    translateSrv.use.mockReturnValue(return_value);
+
+    const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
+    const component: AppComponent = fixture.componentInstance;
+
+    return {
+      fixture,
+      component,
+      translateSrv
+    }
+  }
 
   describe('constructor()', () => {
-    it('should create instance', () => {
+    it('should create instance', async () => {
+      const { component } = await setup();
+
       expect(component).toBeDefined();
     });
 
-    it(`should define translation$ with return value of translateSrv.use()`, () => {
+    it(`should define translation$ with return value of translateSrv.use()`, async () => {
+      const { component } = await setup();
+
       expect(component.translation$).toBe(return_value);
     });
   })
 
   describe('translateSrv.use()', () => {
 
-    it('should be called only once', () => {
+    it('should be called only once', async () => {
+      const { translateSrv } = await setup();
+
       expect(translateSrv.use).toHaveBeenCalledTimes(1);
     });
 
-    it('should be called with default lang code', () => {
+    it('should be called with default lang code', async () => {
+      const { translateSrv } = await setup();
+
       expect(translateSrv.use).toHaveBeenCalledWith(lang_code);
     });
 
