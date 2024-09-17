@@ -25,7 +25,7 @@ export class QfSearchBoxComponent implements AfterViewInit {
 
   destroyRef = inject(DestroyRef);
 
-  searchInput = viewChild.required<ElementRef>('searchInp');
+  searchInput = viewChild.required<ElementRef<HTMLInputElement>>('searchInp');
 
   ngAfterViewInit() {
     if (!this.readonly()) {
@@ -34,11 +34,12 @@ export class QfSearchBoxComponent implements AfterViewInit {
   }
 
   initSearch() {
-    fromEvent<KeyboardEvent>(this.searchInput().nativeElement, 'keydown').pipe(
+    const searchInputEle = (this.searchInput().nativeElement) as HTMLInputElement;
+    fromEvent<KeyboardEvent>(searchInputEle, 'keydown').pipe(
       takeUntilDestroyed(this.destroyRef),
       filter(event => event.key === 'Enter'),
       debounceTime(300),
-      map(() => this.searchInput().nativeElement.value || ''),
+      map(() => searchInputEle.value),
       distinctUntilChanged(),
       tap((query: string) => this.store.setSearchQuery(query))
     ).subscribe({
