@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DestroyRef, ElementRef, inject, viewChild } from '@angular/core';
+import { AfterViewInit, Component, DestroyRef, ElementRef, inject, OnInit, viewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateService } from '@ngx-translate/core';
 import { filter, fromEvent, merge, tap } from 'rxjs';
@@ -16,7 +16,7 @@ import { QuickFindStore } from '../store/quick-find.store';
     QfSearchBoxComponent
   ],
 })
-export class QfComponent implements AfterViewInit {
+export class QfComponent implements AfterViewInit, OnInit {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   locale: any;
@@ -31,8 +31,10 @@ export class QfComponent implements AfterViewInit {
     private translateSrv: TranslateService,
     private destroyRef: DestroyRef,
     public dialog: MatDialog
-  ) {
-    this.locale = this.translateSrv.instant("header.intelligent_search") || {};
+  ) { }
+
+  ngOnInit() {
+    this.getTranslationData();
   }
 
   ngAfterViewInit() {
@@ -47,6 +49,14 @@ export class QfComponent implements AfterViewInit {
           this.openSearchContainer();
         })
       ).subscribe();
+  }
+
+  getTranslationData() {
+    const translationKey = "header.intelligent_search";
+    const translation = this.translateSrv.instant(translationKey);
+
+    // If the returned translation is the same as the key, assign an empty object
+    this.locale = translation !== translationKey ? translation : {};
   }
 
   openSearchContainer() {

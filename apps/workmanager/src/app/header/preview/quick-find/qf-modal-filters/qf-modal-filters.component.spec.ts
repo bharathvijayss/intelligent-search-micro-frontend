@@ -15,7 +15,11 @@ describe('IntelligentSearchFiltersComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  describe('constructor()', () => {
+
+    it('should create instance', () => {
+      expect(component).toBeTruthy();
+    });
+
+  })
 });
