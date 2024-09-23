@@ -8,7 +8,7 @@ import { Component, input } from '@angular/core';
 })
 export class QfSearchResultErrorComponent {
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-locale = input.required<any>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  locale = input.required<any>();
 
 }
