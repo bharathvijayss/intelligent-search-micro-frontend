@@ -7,7 +7,7 @@ export interface IAttachmentItemResult {
   fileName: string;
   packetGUID: string;
   packetReference: string;
-  packetTitle: string;
+  packetTitle: string | null;
   guid: string;
   packetCommunicationType: PacketCommunicationType | null;
   confidence: number;
