@@ -1,3 +1,4 @@
+import { ActionSubType, PacketStatus, RAGStatus } from '../../../../shared/dto';
 import { FilterType } from "../store/quick-find.constant";
 
 export interface IWorkItemResult {
@@ -7,15 +8,15 @@ export interface IWorkItemResult {
   reference: string;
   title: string | null;
   dueDate: string | null;
-  status: number;
+  status: PacketStatus;
   endDate: string | null;
-  ragStatus: number;
+  ragStatus: RAGStatus | null;
   newInformationReceived: boolean;
   timeRemainingWhenPaused: string | number | null;
   problem: boolean;
   canBeDoneByRobot: boolean | null;
   willBeDoneByRobot: boolean | null;
-  actionSubType: number | null;
+  actionSubType: ActionSubType | null;
   inPeerReview: boolean | null;
   confidence: number;
 }
