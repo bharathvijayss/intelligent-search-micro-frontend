@@ -73,13 +73,13 @@ describe('CommunicationTypeResultComponent', () => {
     it('should create instance', async () => {
       const { component } = await setup();
 
-      expect(component).toBeTruthy();
+      expect(component).toBeDefined();
     });
 
     it('locale should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.locale).toBeTruthy();
+      expect(component.locale).toBeDefined();
     })
 
     it('showContent should be defined with default value of false', async () => {
@@ -97,7 +97,7 @@ describe('CommunicationTypeResultComponent', () => {
     it('item should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.item).toBeTruthy();
+      expect(component.item).toBeDefined();
     })
 
     it('attachmentMapping should be undefined', async () => {

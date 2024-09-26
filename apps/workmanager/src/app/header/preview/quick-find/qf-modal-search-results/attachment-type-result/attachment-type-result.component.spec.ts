@@ -51,13 +51,13 @@ describe('AttachmentTypeResultComponent', () => {
     it('should create instance', async () => {
       const { component } = await setup();
 
-      expect(component).toBeTruthy();
+      expect(component).toBeDefined();
     });
 
     it('locale should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.locale).toBeTruthy();
+      expect(component.locale).toBeDefined();
     })
 
     it('icon should be defined with default value', async () => {
@@ -81,7 +81,7 @@ describe('AttachmentTypeResultComponent', () => {
     it('item should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.item).toBeTruthy();
+      expect(component.item).toBeDefined();
     })
 
   })

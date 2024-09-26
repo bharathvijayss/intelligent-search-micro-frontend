@@ -1,26 +1,43 @@
-// /* tslint:disable:no-unused-variable */
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { QfSearchResultPlaceholderComponent } from './qf-search-result-placeholder.component';
 
-// import { QfSearchResultPlaceholderComponent } from './qf-search-result-placeholder.component';
+describe('QfSearchResultPlaceholderComponent', () => {
 
-// describe('QfSearchResultPlaceholderComponent', () => {
-//   let component: QfSearchResultPlaceholderComponent;
-//   let fixture: ComponentFixture<QfSearchResultPlaceholderComponent>;
+  async function setup() {
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ QfSearchResultPlaceholderComponent ]
-//     })
-//     .compileComponents();
-//   }));
+    const locale = {
+      key: "value"
+    }
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(QfSearchResultPlaceholderComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+    TestBed.configureTestingModule({
+      imports: [QfSearchResultPlaceholderComponent]
+    }).compileComponents();
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+    const fixture: ComponentFixture<QfSearchResultPlaceholderComponent> = TestBed.createComponent(QfSearchResultPlaceholderComponent);
+    const component: QfSearchResultPlaceholderComponent = fixture.componentInstance;
+
+    fixture.componentRef.setInput('locale', locale);
+
+    return {
+      fixture,
+      component
+    }
+  }
+
+  describe('constructor()', () => {
+
+    it('should create instance', async () => {
+      const { component } = await setup();
+
+      expect(component).toBeDefined();
+    });
+
+    it('locale should be defined', async () => {
+      const { component } = await setup();
+
+      expect(component.locale).toBeDefined();
+    })
+
+  })
+
+});

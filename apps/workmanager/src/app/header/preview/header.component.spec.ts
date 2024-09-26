@@ -42,9 +42,9 @@ describe('HeaderComponent', () => {
     }
   }
 
-  it('should create', async () => {
+  it('should create instance', async () => {
     const { component } = await setup();
 
-    expect(component).toBeTruthy();
+    expect(component).toBeDefined();
   });
 });

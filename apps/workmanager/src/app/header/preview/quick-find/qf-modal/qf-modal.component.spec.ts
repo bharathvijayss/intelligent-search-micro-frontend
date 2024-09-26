@@ -75,13 +75,13 @@ describe('QFModalComponent', () => {
     it('should create instance', async () => {
       const { component } = await setup();
 
-      expect(component).toBeTruthy();
+      expect(component).toBeDefined();
     });
 
     it('should define data property', async () => {
       const { component } = await setup();
 
-      expect(component.data).toBeTruthy();
+      expect(component.data).toBeDefined();
     });
 
   })

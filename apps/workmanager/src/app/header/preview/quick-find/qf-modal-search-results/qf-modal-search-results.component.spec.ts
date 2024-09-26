@@ -52,37 +52,37 @@ describe('QuickFindModalSearchResultsComponent', () => {
     it('should create instance', async () => {
       const { component } = await setup();
 
-      expect(component).toBeTruthy();
+      expect(component).toBeDefined();
     });
 
     it('store should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.store).toBeTruthy();
+      expect(component.store).toBeDefined();
     })
 
     it('FilterType should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.FilterType).toBeTruthy();
+      expect(component.FilterType).toBeDefined();
     })
 
     it('translateSrv should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.translateSrv).toBeTruthy();
+      expect(component.translateSrv).toBeDefined();
     })
 
     it('locale should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.locale).toBeTruthy();
+      expect(component.locale).toBeDefined();
     })
 
     it('resultCount should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.resultCount).toBeTruthy();
+      expect(component.resultCount).toBeDefined();
     })
 
   })

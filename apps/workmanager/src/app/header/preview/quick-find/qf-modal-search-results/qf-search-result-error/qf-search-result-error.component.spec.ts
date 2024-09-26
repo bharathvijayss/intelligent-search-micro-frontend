@@ -1,26 +1,43 @@
-// /* tslint:disable:no-unused-variable */
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { QfSearchResultErrorComponent } from './qf-search-result-error.component';
 
-// import { QfSearchResultErrorComponent } from './qf-search-result-error.component';
+describe('QfSearchResultErrorComponent', () => {
 
-// describe('QfSearchResultErrorComponent', () => {
-//   let component: QfSearchResultErrorComponent;
-//   let fixture: ComponentFixture<QfSearchResultErrorComponent>;
+  async function setup() {
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ QfSearchResultErrorComponent ]
-//     })
-//     .compileComponents();
-//   }));
+    const locale = {
+      key: "value"
+    }
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(QfSearchResultErrorComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+    TestBed.configureTestingModule({
+      imports: [QfSearchResultErrorComponent]
+    }).compileComponents();
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+    const fixture: ComponentFixture<QfSearchResultErrorComponent> = TestBed.createComponent(QfSearchResultErrorComponent);
+    const component: QfSearchResultErrorComponent = fixture.componentInstance;
+
+    fixture.componentRef.setInput('locale', locale);
+
+    return {
+      fixture,
+      component
+    }
+  }
+
+  describe('constructor()', () => {
+
+    it('should create instance', async () => {
+      const { component } = await setup();
+
+      expect(component).toBeDefined();
+    });
+
+    it('locale should be defined', async () => {
+      const { component } = await setup();
+
+      expect(component.locale).toBeDefined();
+    })
+
+  })
+
+});

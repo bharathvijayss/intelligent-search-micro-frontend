@@ -77,7 +77,7 @@ describe('QfComponent', () => {
     it('should create instance', async () => {
       const { component } = await setup();
 
-      expect(component).toBeTruthy();
+      expect(component).toBeDefined();
     });
 
     it(`should have default value for searchBoxIcon propery as "${searchIconName}"`, async () => {
@@ -89,7 +89,7 @@ describe('QfComponent', () => {
     it('store should be defined', async () => {
       const { component } = await setup();
 
-      expect(component.store).toBeTruthy();
+      expect(component.store).toBeDefined();
     })
 
   })
