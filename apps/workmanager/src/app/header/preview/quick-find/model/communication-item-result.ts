@@ -4,7 +4,7 @@ export interface ICommunicationItemResult {
   type: FilterType;
   packetGuid: string;
   processType: number;
-  body: string;
+  body: string | null;
   guid: string;
   emailAddress: string | null;
   reference: string;

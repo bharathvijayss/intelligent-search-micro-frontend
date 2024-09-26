@@ -106,10 +106,8 @@ export class CommunicationTypeResultComponent implements OnInit {
   }
 
   viewContent($event: Event) {
-    if ($event) {
-      $event.stopImmediatePropagation();
-      $event.stopPropagation();
-    }
+    $event.stopImmediatePropagation();
+    $event.stopPropagation();
     this.showContent = !this.showContent;
   }
 
