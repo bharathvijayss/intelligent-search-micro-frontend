@@ -245,7 +245,7 @@ describe('CommunicationTypeResultComponent', () => {
 
   })
 
-  describe('viewContent', () => {
+  describe('viewContent()', () => {
 
     it('should call stopImmediatePropagation() and stopPropagation() only once', async () => {
       const { component, customEvent } = await setup();
@@ -270,6 +270,38 @@ describe('CommunicationTypeResultComponent', () => {
 
   })
 
+  describe('content()', () => {
 
+    it('should return fallback content if body is empty', async () => {
+      const { component, locale } = await setup();
+
+      expect(component.content()).toBe(locale.no_email_content);
+    });
+
+    it('should remove script tags from the body and handle HTML content and convert to plain text', async () => {
+      const expectedResult = 'Valid content';
+      const emailBody = `<script>alert("hack")</script><p>${expectedResult}</p>`;
+      const { component } = await setup(FilterType.inboundEmail, "title", "email subject", "email address", emailBody);
+
+      expect(component.content()).toBe(expectedResult);
+    });
+
+    it('should remove style tags from the body and handle HTML content and convert to plain text', async () => {
+      const expectedResult = 'Styled content';
+      const emailBody = `<style>body { color: red; }</style><p>${expectedResult}</p>`;
+      const { component } = await setup(FilterType.inboundEmail, "title", "email subject", "email address", emailBody);
+
+      expect(component.content()).toBe(expectedResult);
+    });
+
+    it('should handle HTML content and convert to plain text', async () => {
+      const expectedResult = 'Test content with HTML';
+      const emailBody = '<p>Test <strong>content</strong> with HTML</p>';
+      const { component } = await setup(FilterType.inboundEmail, "title", "email subject", "email address", emailBody);
+
+      expect(component.content()).toBe(expectedResult);
+    });
+
+  })
 
 });

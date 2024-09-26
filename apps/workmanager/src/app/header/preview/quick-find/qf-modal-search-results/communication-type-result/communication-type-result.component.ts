@@ -1,4 +1,4 @@
-import { Component, computed, input, OnInit } from '@angular/core';
+import { Component, computed, input, OnInit, SecurityContext } from '@angular/core';
 import { MatTooltip } from '@angular/material/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocaleDatePipe } from './../../../../../shared/locale-date.pipe';
@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { I18nPluralPipe } from '@angular/common';
 import { ICommunicationItemResult } from '../../model/communication-item-result';
 import { FilterType, IQuickFindResult } from '../../store/quick-find.constant';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'en8-communication-type-result',
@@ -32,6 +33,8 @@ export class CommunicationTypeResultComponent implements OnInit {
   locale = input.required<any>();
 
   attachmentMapping!: { [key: string]: string }
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.attachmentMapping = {
@@ -89,12 +92,18 @@ export class CommunicationTypeResultComponent implements OnInit {
 
   content = computed(() => {
     // it is not possible to add an empty note but it is possible to send an empty email.
-    let body: string = this.item().body || this.locale().no_email_content;
-    body = body.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "");
-    body = body.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "");
-    const tag = document.createElement("div");
-    tag.innerHTML = body;
-    return tag.innerText;
+
+    // let body: string = this.item().body || this.locale().no_email_content;
+    // body = body.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "");
+    // body = body.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "");
+    // const tag = document.createElement("div");
+    // tag.innerHTML = body;
+    // return tag.innerText;
+
+    let body = this.item().body || this.locale().no_email_content;
+    body = this.sanitizer.sanitize(SecurityContext.HTML, body);
+    body = body.replace(/<\/?[^>]+(>|$)/gi, "");
+    return body;
   })
 
   openCommunicationItem() {
