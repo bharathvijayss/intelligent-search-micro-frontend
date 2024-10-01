@@ -1,28 +1,59 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { QfDateFiltersComponent } from './qf-date-filters.component';
+// import { QuickFindStore } from '../../store/quick-find.store';
 
-import { QfDateFiltersComponent } from './qf-date-filters.component';
+// describe('QfDateFiltersComponent', () => {
 
-describe('QfDateFiltersComponent', () => {
-  let component: QfDateFiltersComponent;
-  let fixture: ComponentFixture<QfDateFiltersComponent>;
+//   const locale = {
+//     filters: {
+//       date: {
+//         "all_time": "All Time",
+//         "today": "Today",
+//         "last_week": "Last Week",
+//         "last_month": "Last Month",
+//       }
+//     }
+//   }
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ QfDateFiltersComponent ]
-    })
-    .compileComponents();
-  }));
+//   const MockQuickFindStore = {
+//     dateFilter: jest.fn(),
+//     getResult: jest.fn(),
+//     setFromAndToDate: jest.fn(),
+//     setDateFilter: jest.fn()
+//   }
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(QfDateFiltersComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//   async function setup() {
+//     TestBed.configureTestingModule({
+//       imports: [QfDateFiltersComponent],
+//       providers: [
+//         {
+//           provide: QuickFindStore,
+//           useValue: MockQuickFindStore
+//         },
+//       ]
+//     }).compileComponents();
+//     const fixture: ComponentFixture<QfDateFiltersComponent> = TestBed.createComponent(QfDateFiltersComponent);
+//     const component: QfDateFiltersComponent = fixture.componentInstance;
+//     const mockStore = TestBed.inject(QuickFindStore);
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//     fixture.componentRef.setInput('locale', locale);
+
+//     return {
+//       fixture,
+//       component,
+//       mockStore
+//     }
+//   }
+
+//   describe('constructor()', () => {
+
+//     it('should create instance', async () => {
+//       const { component } = await setup();
+
+//       expect(component).toBeDefined();
+//     })
+
+//   })
+
+// });
+

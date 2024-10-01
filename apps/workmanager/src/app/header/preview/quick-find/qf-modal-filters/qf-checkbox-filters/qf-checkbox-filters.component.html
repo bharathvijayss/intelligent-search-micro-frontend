@@ -5,7 +5,7 @@
     </mat-expansion-panel-header>
 
     <div class="filter-options">
-      @for (filter of filters; track filter; let index = $index) {
+      @for (filter of filters(); track filter; let index = $index) {
         <div>
           <mat-checkbox
             [checked]="filter.state().completed"
