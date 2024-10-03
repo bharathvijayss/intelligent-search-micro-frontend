@@ -1,4 +1,4 @@
-import { Component, DestroyRef, effect, inject, input, OnInit } from '@angular/core';
+import { Component, DestroyRef, effect, inject, input, OnInit, signal, WritableSignal } from '@angular/core';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -29,7 +29,7 @@ import { DateFilters } from '../../store/quick-find.constant';
 })
 export class QfDateFiltersComponent implements OnInit {
 
-  dateFilters!: IDateFilter[];
+  dateFilters: WritableSignal<IDateFilter[]> = signal([]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   locale = input.required<any>();
@@ -64,21 +64,39 @@ export class QfDateFiltersComponent implements OnInit {
   })
 
   initDateFilterTypes() {
-    this.dateFilters = [
-      { value: DateFilters.allTime, label: this.locale().filters.date[DateFilters.allTime] },
-      { value: DateFilters.today, label: this.locale().filters.date[DateFilters.today] },
-      { value: DateFilters.lastWeek, label: this.locale().filters.date[DateFilters.lastWeek] },
-      { value: DateFilters.lastMonth, label: this.locale().filters.date[DateFilters.lastMonth] }
-    ];
+    this.dateFilters.set([
+      {
+        value: DateFilters.allTime,
+        label: this.locale().filters.date[DateFilters.allTime]
+      },
+      {
+        value: DateFilters.today,
+        label: this.locale().filters.date[DateFilters.today]
+      },
+      {
+        value: DateFilters.lastWeek,
+        label: this.locale().filters.date[DateFilters.lastWeek]
+      },
+      {
+        value: DateFilters.lastMonth,
+        label: this.locale().filters.date[DateFilters.lastMonth]
+      }
+    ]);
   }
 
   initSearch() {
     this.dateRange.valueChanges
       .pipe(
         takeUntilDestroyed(this.destroyRef),
-        distinctUntilChanged((prev, next) => prev.fromDate === next.fromDate && prev.toDate === next.toDate),
         debounceTime(50),
-        skip(1)
+        skip(1),
+        distinctUntilChanged((prev, next) => {
+          /* istanbul ignore next */
+          const fromDateCheck = prev.fromDate?.toString() === next.fromDate?.toString();
+          /* istanbul ignore next */
+          const toDateCheck = prev.toDate?.toString() === next.toDate?.toString();
+          return fromDateCheck && toDateCheck;
+        })
       ).subscribe({
         next: () => {
           this.store.getResult();
