@@ -60,6 +60,7 @@
     "jest-auto-spies": "^3.0.0",
     "jest-environment-jsdom": "^29.4.1",
     "jest-preset-angular": "~14.1.0",
+    "ngx-translate-testing": "^7.0.0",
     "nx": "19.5.2",
     "prettier": "3.3.3",
     "ts-jest": "^29.1.0",

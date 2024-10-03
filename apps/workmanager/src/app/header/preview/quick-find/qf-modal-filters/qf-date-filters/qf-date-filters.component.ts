@@ -53,7 +53,10 @@ export class QfDateFiltersComponent implements OnInit {
   dateRangeEffectRef = effect(() => {
 
     const appliedFilter = this.store.dateFilter();
-    this.dateRange.setValue({ fromDate: appliedFilter.fromDate, toDate: appliedFilter.toDate });
+    this.dateRange.setValue({
+      fromDate: appliedFilter.fromDate,
+      toDate: appliedFilter.toDate
+    });
 
     if (appliedFilter.type === DateFilters.allTime) {
       this.dateRange.enable({ emitEvent: false });

@@ -1,12 +1,14 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { QfDateFiltersComponent } from './qf-date-filters.component';
-import { QuickFindStore } from '../../store/quick-find.store';
+import { DateFilterState, QuickFindStore } from '../../store/quick-find.store';
 import { provideNativeDateAdapter } from '@angular/material/core';
-import { provideAutoSpy } from 'jest-auto-spies';
-import { TranslateService } from '@ngx-translate/core';
 import { FormGroup } from '@angular/forms';
 import { DateFilters } from '../../store/quick-find.constant';
 import { MatSelectChange } from '@angular/material/select';
+import { TranslateTestingModule } from 'ngx-translate-testing';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { signalState } from '@ngrx/signals';
+import { patchState } from '@ngrx/signals';
 
 describe('QfDateFiltersComponent', () => {
 
@@ -19,26 +21,40 @@ describe('QfDateFiltersComponent', () => {
           "today": "Today",
           "last_week": "Last Week",
           "last_month": "Last Month",
+          "date_range_placeholder": {
+            "from_date": "From Date",
+            "to_date": "To Date"
+          }
         }
       }
     }
 
+    const dateFilterSignal = signalState<DateFilterState>({ fromDate: null, toDate: null, type: null });
+
     const MockQuickFindStore = {
-      dateFilter: jest.fn(),
+      dateFilter: dateFilterSignal,
       getResult: jest.fn(),
       setFromAndToDate: jest.fn(),
       setDateFilter: jest.fn()
     }
 
     TestBed.configureTestingModule({
-      imports: [QfDateFiltersComponent],
+      imports: [
+        QfDateFiltersComponent,
+        TranslateTestingModule.withTranslations({
+          global: {
+            "cancel": "cancel",
+            "apply": "apply"
+          }
+        })
+      ],
       providers: [
         {
           provide: QuickFindStore,
           useValue: MockQuickFindStore
         },
         provideNativeDateAdapter(),
-        provideAutoSpy(TranslateService)
+        provideNoopAnimations()
       ]
     }).compileComponents();
     const fixture: ComponentFixture<QfDateFiltersComponent> = TestBed.createComponent(QfDateFiltersComponent);
@@ -51,7 +67,8 @@ describe('QfDateFiltersComponent', () => {
       fixture,
       component,
       mockStore,
-      locale
+      locale,
+      dateFilterSignal
     }
   }
 
@@ -164,6 +181,54 @@ describe('QfDateFiltersComponent', () => {
 
       expect(mockStore.getResult).toHaveBeenCalledTimes(1);
     }));
+  });
+
+  describe('dateRangeEffectRef', () => {
+
+    async function dateRangeEffectRefSetup(filterType: DateFilters = DateFilters.allTime) {
+
+      const { component, fixture, dateFilterSignal } = await setup();
+
+      jest.spyOn(component.dateRange, 'enable');
+      jest.spyOn(component.dateRange, 'disable');
+      jest.spyOn(component.dateRange, 'setValue');
+
+      patchState(dateFilterSignal, { fromDate: new Date(), toDate: new Date(), type: filterType });
+
+      fixture.detectChanges();
+
+      return { component, dateFilterSignal }
+    }
+
+    it('should enable date range if applied filter is "all_time"', async () => {
+      const { component, dateFilterSignal } = await dateRangeEffectRefSetup(DateFilters.allTime);
+
+      TestBed.flushEffects();
+
+      expect(component.dateRange.setValue).toHaveBeenCalledTimes(1);
+      expect(component.dateRange.setValue).toHaveBeenCalledWith({
+        fromDate: dateFilterSignal.fromDate(),
+        toDate: dateFilterSignal.toDate(),
+      });
+      expect(component.dateRange.enable).toHaveBeenCalledTimes(1);
+      expect(component.dateRange.enable).toHaveBeenCalledWith({ emitEvent: false });
+      expect(component.dateRange.disable).not.toHaveBeenCalled();
+    });
+
+    it('should disable date range if applied filter is not "all_time"', async () => {
+      const { component, dateFilterSignal } = await dateRangeEffectRefSetup(DateFilters.lastMonth);
+
+      TestBed.flushEffects();
+
+      expect(component.dateRange.setValue).toHaveBeenCalledTimes(1);
+      expect(component.dateRange.setValue).toHaveBeenCalledWith({
+        fromDate: dateFilterSignal.fromDate(),
+        toDate: dateFilterSignal.toDate(),
+      });
+      expect(component.dateRange.enable).not.toHaveBeenCalled();
+      expect(component.dateRange.disable).toHaveBeenCalledTimes(1);
+      expect(component.dateRange.disable).toHaveBeenCalledWith({ emitEvent: false });
+    });
   });
 
 });
