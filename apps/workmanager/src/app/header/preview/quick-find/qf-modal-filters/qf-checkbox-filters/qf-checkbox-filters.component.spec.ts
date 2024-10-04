@@ -8,6 +8,7 @@ import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { IFilter } from '../../model/filter';
 import { noop } from 'rxjs';
 import { signal } from '@angular/core';
+import { signalState } from '@ngrx/signals';
 
 describe('QfCheckboxFiltersComponent', () => {
 
@@ -51,7 +52,7 @@ describe('QfCheckboxFiltersComponent', () => {
       allUsers: signal(true),
       allFiles: signal(true),
       updateFilters: jest.fn(),
-      filters: {
+      filters: signalState({
         [FilterType.case]: true,
         [FilterType.ticket]: true,
         [FilterType.action]: true,
@@ -63,7 +64,7 @@ describe('QfCheckboxFiltersComponent', () => {
         [FilterType.notes]: true,
         [FilterType.fileAttachmentToPacket]: true,
         [FilterType.fileAttachmentToEmail]: true,
-      },
+      }),
     }
 
     TestBed.configureTestingModule({
@@ -508,11 +509,11 @@ describe('QfCheckboxFiltersComponent', () => {
   describe('initFilterTypes()', () => {
 
     it('should initialize filter types and call initFilterTitle()', async () => {
-      const { component, mockStore, locale } = await setup();
+      const { component, mockStore, locale, fixture } = await setup();
       jest.spyOn(component, 'initFilterTitle');
       jest.spyOn(component.filters, 'set');
 
-      component.initFilterTypes();
+      fixture.detectChanges();
 
       expect(component.filters.set).toHaveBeenCalledTimes(1);
       expect(component.filters.set).toHaveBeenCalledWith([
@@ -597,9 +598,9 @@ describe('QfCheckboxFiltersComponent', () => {
         })
       ]);
 
-      // TestBed.flushEffects();
+      TestBed.flushEffects();
 
-      // expect(component.initFilterTitle).toHaveBeenCalledTimes(1);
+      expect(component.initFilterTitle).toHaveBeenCalledTimes(1);
     });
   });
 
