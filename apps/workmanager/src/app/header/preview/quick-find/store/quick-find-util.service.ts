@@ -50,8 +50,8 @@ export class QuickFindUtilService {
       QueryData: qfState.searchQuery,
       Filters: qfState.filters,
       DateFilters: {
-        fromDate: qfState.dateFilter?.fromDate,
-        toDate: qfState.dateFilter?.toDate
+        fromDate: qfState.dateFilter.fromDate,
+        toDate: qfState.dateFilter.toDate
       },
       Confidence: 0.5
     }
