@@ -4,7 +4,7 @@ import { FilterType } from "../store/quick-find.constant";
 export interface IAttachmentItemResult {
   type: FilterType;
   source: PacketFileSource;
-  fileName: string;
+  fileName: string | null;
   packetGUID: string;
   packetReference: string;
   packetTitle: string | null;

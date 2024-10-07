@@ -105,7 +105,7 @@ export class QuickFindService {
         return FilterType.outboundEmail;
       } else if (dataFieldType === DataFieldType.ESSCommentPacketCommunication) {
         return FilterType.selfServiceComments;
-      } else {
+      } else { // DataFieldType.AuditNotePacketCommunication
         return FilterType.notes;
       }
     }
@@ -125,13 +125,13 @@ export class QuickFindService {
       reference: data.reference,
       title: data.title,
       confidence: data.confidence,
-      body: processedRelatedDataFields?.['body'],
-      emailAddress: processedRelatedDataFields?.['emailAddress'] ?? null,
-      logged: processedRelatedDataFields?.['logged'] ?? null,
-      subject: processedRelatedDataFields?.['subject'] ?? null,
-      attachmentCount: processedRelatedDataFields?.['attachmentCount'] ?? null,
-      importance: processedRelatedDataFields?.['importance'] ?? null,
-      fullName: processedRelatedDataFields?.['fullName'] ?? null,
+      body: processedRelatedDataFields['body'] ?? null,
+      emailAddress: processedRelatedDataFields['emailAddress'] ?? null,
+      logged: processedRelatedDataFields['logged'] ?? null,
+      subject: processedRelatedDataFields['subject'] ?? null,
+      attachmentCount: processedRelatedDataFields['attachmentCount'] ?? null,
+      importance: processedRelatedDataFields['importance'] ?? null,
+      fullName: processedRelatedDataFields['fullName'] ?? null,
     };
   }
 
@@ -163,12 +163,12 @@ export class QuickFindService {
     return {
       type: getResultType(data.dataFieldType),
       source: getSource(data.dataFieldType),
-      fileName: processedRelatedDataFields?.['fileName'],
+      fileName: processedRelatedDataFields['fileName'] ?? null,
       packetGUID: data.guid,
       packetReference: data.reference,
       packetTitle: data.title,
       guid: data.dataFieldId,
-      packetCommunicationType: processedRelatedDataFields?.['packetCommunicationType'] ?? null,
+      packetCommunicationType: processedRelatedDataFields['packetCommunicationType'] ?? null,
       confidence: data.confidence
     };
   }
@@ -193,12 +193,10 @@ export class QuickFindService {
     return {
       userGuid: data.guid,
       type: getResultType(data.userType),
-      fullName: processedRelatedDataFields?.['fullName'],
-      emailAddress: processedRelatedDataFields?.['emailAddress'] ?? null,
+      fullName: processedRelatedDataFields['fullName'] ?? null,
+      emailAddress: processedRelatedDataFields['emailAddress'] ?? null,
       confidence: data.confidence
     }
   }
-
-
 
 }

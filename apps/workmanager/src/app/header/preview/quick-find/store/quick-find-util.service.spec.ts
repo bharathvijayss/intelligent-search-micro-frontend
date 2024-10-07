@@ -7,7 +7,7 @@ import { ISearchParam } from '../model/search-param';
 
 describe('Service: QuickFindUtil', () => {
 
-  async function setup() {
+  function setup() {
 
     const dateAdaptorMock = {
       today: jest.fn(),
@@ -15,7 +15,7 @@ describe('Service: QuickFindUtil', () => {
       addCalendarMonths: jest.fn()
     };
 
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       providers: [
         QuickFindUtilService,
         {
@@ -23,7 +23,7 @@ describe('Service: QuickFindUtil', () => {
           useValue: dateAdaptorMock
         }
       ]
-    }).compileComponents();
+    });
 
     const serviceUnderTest = TestBed.inject(QuickFindUtilService);
     const mockDateAdapter: DateAdapter<Date> = TestBed.inject(DateAdapter);
@@ -36,8 +36,8 @@ describe('Service: QuickFindUtil', () => {
 
   describe('constructor()', () => {
 
-    it('should create instance', async () => {
-      const { serviceUnderTest } = await setup();
+    it('should create instance', () => {
+      const { serviceUnderTest } = setup();
 
       expect(serviceUnderTest).toBeDefined();
     })
@@ -45,8 +45,8 @@ describe('Service: QuickFindUtil', () => {
   })
 
   describe('getCalculatedDateRange()', () => {
-    it('should return today\'s date for DateFilters.today', async () => {
-      const { serviceUnderTest, mockDateAdapter } = await setup();
+    it('should return today\'s date for DateFilters.today', () => {
+      const { serviceUnderTest, mockDateAdapter } = setup();
       const today = new Date('2024-10-07');
       jest.spyOn(mockDateAdapter, 'today').mockReturnValue(today);
 
@@ -60,8 +60,8 @@ describe('Service: QuickFindUtil', () => {
       });
     });
 
-    it('should return the date range for the last week', async () => {
-      const { serviceUnderTest, mockDateAdapter } = await setup();
+    it('should return the date range for the last week', () => {
+      const { serviceUnderTest, mockDateAdapter } = setup();
       const today = new Date('2024-10-07');
       const lastWeek = new Date('2024-10-01');
       jest.spyOn(mockDateAdapter, 'today').mockReturnValue(today);
@@ -78,8 +78,8 @@ describe('Service: QuickFindUtil', () => {
       expect(mockDateAdapter.addCalendarDays).toHaveBeenCalledWith(today, -6);
     });
 
-    it('should return the date range for the last month', async () => {
-      const { serviceUnderTest, mockDateAdapter } = await setup();
+    it('should return the date range for the last month', () => {
+      const { serviceUnderTest, mockDateAdapter } = setup();
       const today = new Date('2024-10-07');
       const lastMonth = new Date('2024-09-07');
       jest.spyOn(mockDateAdapter, 'today').mockReturnValue(today);
@@ -96,8 +96,8 @@ describe('Service: QuickFindUtil', () => {
       expect(mockDateAdapter.addCalendarMonths).toHaveBeenCalledWith(today, -1);
     });
 
-    it('should return null dates for DateFilters.allTime', async () => {
-      const { serviceUnderTest, mockDateAdapter } = await setup();
+    it('should return null dates for DateFilters.allTime', () => {
+      const { serviceUnderTest, mockDateAdapter } = setup();
       const today = new Date('2024-10-07');
       jest.spyOn(mockDateAdapter, 'today').mockReturnValue(today);
 
@@ -113,7 +113,7 @@ describe('Service: QuickFindUtil', () => {
   });
 
   describe('getSearchRequestParam()', () => {
-    it('should return the correct ISearchParam object from QuickFindState', async () => {
+    it('should return the correct ISearchParam object from QuickFindState', () => {
       const mockState: QuickFindState = {
         searchQuery: 'test',
         filters: {
@@ -147,7 +147,7 @@ describe('Service: QuickFindUtil', () => {
         },
         Confidence: 0.5
       };
-      const { serviceUnderTest } = await setup();
+      const { serviceUnderTest } = setup();
 
       const result = serviceUnderTest.getSearchRequestParam(mockState);
 
