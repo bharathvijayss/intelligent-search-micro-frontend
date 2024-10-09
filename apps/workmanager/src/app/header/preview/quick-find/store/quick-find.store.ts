@@ -1,7 +1,7 @@
 import { computed, inject } from "@angular/core";
 import { getState, patchState, signalStore, withComputed, withHooks, withMethods, withState } from "@ngrx/signals";
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { filter, pipe, switchMap, tap } from "rxjs";
+import { catchError, filter, of, pipe, switchMap, tap } from "rxjs";
 import { QuickFindService } from "./quick-find.service";
 import { QuickFindUtilService } from "./quick-find-util.service";
 import { DateFilters, FilterType, IQuickFindResult } from "./quick-find.constant";
@@ -153,11 +153,11 @@ export const QuickFindStore = signalStore(
               next: (result) => {
                 patchState(store, { items: result, isLoading: false })
               },
-              error: (err) => {
-                console.error(err);
+              error: () => {
                 patchState(store, { isError: true, isLoading: false })
               }
-            })
+            }),
+            catchError(() => of(null))
           );
 
         })
