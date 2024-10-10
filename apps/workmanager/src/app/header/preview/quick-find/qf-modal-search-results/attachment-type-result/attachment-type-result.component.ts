@@ -24,7 +24,7 @@ export class AttachmentTypeResultComponent {
   email_outgoing_icon = 'arrow_upward_alt';
 
   title = computed(() => {
-    return this.item().fileName;
+    return this.item().fileName ?? "";
   })
 
   subtitle = computed(() => {

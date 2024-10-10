@@ -305,7 +305,8 @@
       "placeholder": "Search for comms, work items, contacts, files",
       "close_shortcut_key": "Esc",
       "open_shortcut_key": "Alt + Q",
-      "result_count": "{{t}} results",
+      "result_count": "{{t}} result",
+      "results_count": "{{t}} results",
       "no_title": "[No Title]",
       "due": "Due: {{d}} at {{t}}",
       "no_due_date": "Due: No due date",
@@ -346,7 +347,7 @@
         "all": "All Filters Selected",
         "none": "No Filters Selected",
         "more": "more",
-        "applied_filters_title": "Filters Showing: {{f}}",
+        "applied_filters_title": "Filters Selected: {{f}}",
         "work_items": {
           "all": "Work Items",
           "case": "Cases",

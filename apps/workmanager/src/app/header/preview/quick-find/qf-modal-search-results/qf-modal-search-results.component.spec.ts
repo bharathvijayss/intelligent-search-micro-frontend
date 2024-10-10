@@ -6,12 +6,11 @@ import { TranslateService } from '@ngx-translate/core';
 
 describe('QuickFindModalSearchResultsComponent', () => {
 
-  const locale = {
-    key: "value"
-  }
-  const filteredResultLength = 0;
+  async function setup(filteredResultLength = 0) {
 
-  async function setup() {
+    const locale = {
+      key: "value"
+    }
 
     const MockQuickFindStore = {
       filteredResult: jest.fn().mockReturnValue({ length: filteredResultLength })
@@ -29,7 +28,7 @@ describe('QuickFindModalSearchResultsComponent', () => {
         provideAutoSpy(TranslateService),
       ]
     })
-    .compileComponents();
+      .compileComponents();
 
     const fixture: ComponentFixture<QuickFindModalSearchResultsComponent> = TestBed.createComponent(QuickFindModalSearchResultsComponent);
     const component: QuickFindModalSearchResultsComponent = fixture.componentInstance;
@@ -89,8 +88,9 @@ describe('QuickFindModalSearchResultsComponent', () => {
 
   describe('resultCount()', () => {
 
-    it('should invoke translateSrv.instant() only once with proper arguments', async () => {
-      const { translateSrv, component } = await setup();
+    it('should invoke translateSrv.instant() only once with result_count translation key if the filteredResult length is 1', async () => {
+      const filteredResultLength = 1
+      const { translateSrv, component } = await setup(filteredResultLength);
       const translationKey = 'header.intelligent_search.result_count';
       const translationArg = {
         t: filteredResultLength
@@ -102,7 +102,21 @@ describe('QuickFindModalSearchResultsComponent', () => {
       expect(translateSrv.instant).toHaveBeenCalledWith(translationKey, translationArg);
     })
 
-    it('should invoke store.filteredResult() only once', async () => {
+    it('should invoke translateSrv.instant() only once with results_count translation key if the filteredResult length is greater than 1', async () => {
+      const filteredResultLength = 2;
+      const { translateSrv, component } = await setup(filteredResultLength);
+      const translationKey = 'header.intelligent_search.results_count';
+      const translationArg = {
+        t: filteredResultLength
+      }
+
+      component.resultCount();
+
+      expect(translateSrv.instant).toHaveBeenCalledTimes(1);
+      expect(translateSrv.instant).toHaveBeenCalledWith(translationKey, translationArg);
+    })
+
+    it('should invoke store.filteredResult() only twice', async () => {
       const { quickFindStoreSrv, component } = await setup();
 
       component.resultCount();

@@ -12,12 +12,14 @@
       @if (isIncomingEmail()) {
         <span
           class="material-symbols-outlined material-symbols-outlined-fill text-active"
+          [matTooltip]="locale().tooltips.inboundEmail"
         >
           {{ email_incoming_icon }}
         </span>
       } @else if (isOutgoingEmail()) {
         <span
           class="material-symbols-outlined material-symbols-outlined-fill text-active"
+          [matTooltip]="locale().tooltips.outboundEmail"
         >
           {{ email_outgoing_icon }}
         </span>

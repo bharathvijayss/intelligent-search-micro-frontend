@@ -37,8 +37,9 @@ export class QuickFindModalSearchResultsComponent {
   translateSrv = inject(TranslateService);
 
   resultCount = computed(() => {
-    return this.translateSrv.instant('header.intelligent_search.result_count', {
-      t: this.store.filteredResult().length
+    const filteredResultLength = this.store.filteredResult().length;
+    return this.translateSrv.instant(`header.intelligent_search.${filteredResultLength > 1 ? "results" : "result"}_count`, {
+      t: filteredResultLength
     })
   })
 

@@ -7,7 +7,8 @@ describe('AttachmentTypeResultComponent', () => {
 
   async function setup(
     packetTitle: string | null = null,
-    packetCommunicationType: PacketCommunicationType = PacketCommunicationType.EmailIncoming
+    packetCommunicationType: PacketCommunicationType = PacketCommunicationType.EmailIncoming,
+    fileName: string | null = null
   ) {
 
     const locale = {
@@ -16,7 +17,7 @@ describe('AttachmentTypeResultComponent', () => {
 
     const attachmentItem: IQuickFindResult = {
       confidence: 0.5,
-      fileName: "filename",
+      fileName: fileName,
       guid: "guid",
       packetCommunicationType: packetCommunicationType,
       packetGUID: "packetguid",
@@ -89,9 +90,15 @@ describe('AttachmentTypeResultComponent', () => {
   describe('title()', () => {
 
     it('should return the fileName', async () => {
-      const { component, attachmentItem } = await setup();
+      const { component, attachmentItem } = await setup("packet_title", PacketCommunicationType.EmailIncoming, 'file_name');
 
       expect(component.title()).toBe(attachmentItem.fileName);
+    })
+
+    it('should return empty string if there is no filename', async () => {
+      const { component } = await setup();
+
+      expect(component.title()).toBe("");
     })
 
   })
