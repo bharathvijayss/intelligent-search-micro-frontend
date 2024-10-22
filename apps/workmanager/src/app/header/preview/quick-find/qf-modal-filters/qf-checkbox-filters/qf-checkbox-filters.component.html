@@ -33,5 +33,13 @@
         </div>
       }
     </div>
+    <mat-action-row>
+      <button mat-button (click)="selectAll()" [disabled]="store.allFiltersApplied()">
+        {{ locale().select_all }}
+      </button>
+      <button mat-button (click)="clearAll()" [disabled]="store.noFiltersApplied()">
+        {{ locale().clear_all }}
+      </button>
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>

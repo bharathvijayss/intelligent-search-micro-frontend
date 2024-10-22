@@ -126,6 +126,12 @@ export const QuickFindStore = signalStore(
       return _findCompletionState(filters);
 
     }),
+    allFiltersApplied: computed(() => {
+      return Object.values(store.filters()).every(val => val);
+    }),
+    noFiltersApplied: computed(() => {
+      return Object.values(store.filters()).every(val => !val);
+    }),
     filteredResult: computed(() => {
       const filters = Object.values(store.filters());
       const allSelected = filters.every(Boolean); // Checks if all values are true

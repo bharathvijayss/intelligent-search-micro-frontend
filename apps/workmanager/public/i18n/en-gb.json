@@ -303,6 +303,8 @@
     "quick_search": "Quick Search...",
     "intelligent_search": {
       "placeholder": "Search for comms, work items, contacts, files",
+      "select_all": "Select All",
+      "clear_all": "Clear All",
       "close_shortcut_key": "Esc",
       "open_shortcut_key": "Alt + Q",
       "result_count": "{{t}} result",
@@ -319,6 +321,7 @@
       "received": "Received {{d}} at {{t}}",
       "sent": "Sent {{d}} at {{t}}",
       "all": "All",
+      "none": "None",
       "closed": "Closed",
       "time_until_due": "Paused: {h+} hours {m} minutes before due",
       "time_after_overdue": "Paused: {h+} hours {m} minutes after overdue",
@@ -344,8 +347,6 @@
         "new_info": "New information received"
       },
       "filters": {
-        "all": "All Filters Selected",
-        "none": "No Filters Selected",
         "more": "more",
         "applied_filters_title": "Filters Selected: {{f}}",
         "work_items": {
@@ -358,7 +359,7 @@
           "all": "Comms",
           "received": "Emails Received",
           "sent": "Emails Sent",
-          "self_service": "Self Service Comments",
+          "self_service": "Self Service",
           "notes": "Notes"
         },
         "users": {

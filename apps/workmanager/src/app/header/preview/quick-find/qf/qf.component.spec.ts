@@ -187,7 +187,7 @@ describe('QfComponent', () => {
           locale: component.locale,
           searchBoxIcon: component.searchBoxIcon
         },
-        width: '45vw',
+        width: '50vw',
         minWidth: '450px',
         maxWidth: '950px',
         maxHeight: '90vh',

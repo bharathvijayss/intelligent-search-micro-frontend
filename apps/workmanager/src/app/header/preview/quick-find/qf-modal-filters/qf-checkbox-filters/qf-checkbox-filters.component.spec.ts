@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { QfCheckboxFiltersComponent } from './qf-checkbox-filters.component';
-import { QuickFindStore } from '../../store/quick-find.store';
+import { FilterState, QuickFindStore } from '../../store/quick-find.store';
 import { TranslateService } from '@ngx-translate/core';
 import { provideAutoSpy, Spy } from 'jest-auto-spies';
 import { FilterType } from '../../store/quick-find.constant';
@@ -15,10 +15,9 @@ describe('QfCheckboxFiltersComponent', () => {
   async function setup() {
 
     const locale = {
-      all: "All",
-      filters: {
-        "all": "All Filters Selected",
-        "none": "No Filters Selected",
+      "all": "All",
+      "none": "None",
+      "filters": {
         "more": "more",
         "work_items": {
           "all": "Work Items",
@@ -52,6 +51,8 @@ describe('QfCheckboxFiltersComponent', () => {
       allUsers: signal(true),
       allFiles: signal(true),
       updateFilters: jest.fn(),
+      allFiltersApplied: jest.fn(),
+      noFiltersApplied: jest.fn(),
       filters: signalState({
         [FilterType.case]: true,
         [FilterType.ticket]: true,
@@ -219,11 +220,14 @@ describe('QfCheckboxFiltersComponent', () => {
     it('should call filterTitle.set() with the appropriate locale value', async () => {
       const { component, locale } = await setup();
       jest.spyOn(component.filterTitle, 'set');
+      jest.spyOn(component, 'getAppliedFiltersTitle').mockImplementation((title) => title);
 
       component.setAllFiltersAppliedTitle();
 
-      expect(component.filterTitle.set).toHaveBeenCalledWith(locale.filters.all);
+      expect(component.getAppliedFiltersTitle).toHaveBeenCalledTimes(1);
+      expect(component.getAppliedFiltersTitle).toHaveBeenCalledWith(locale.all);
       expect(component.filterTitle.set).toHaveBeenCalledTimes(1);
+      expect(component.filterTitle.set).toHaveBeenCalledWith(locale.all);
     });
   });
 
@@ -428,8 +432,9 @@ describe('QfCheckboxFiltersComponent', () => {
 
       component.setSingleFilterTitle(singleFilterIndex);
 
-      expect(component.getAppliedFiltersTitle).not.toHaveBeenCalled();
-      expect(component.filterTitle.set).toHaveBeenCalledWith(locale.filters.none);
+      expect(component.getAppliedFiltersTitle).toHaveBeenCalledTimes(1);
+      expect(component.getAppliedFiltersTitle).toHaveBeenCalledWith(locale.none);
+      expect(component.filterTitle.set).toHaveBeenCalledWith(locale.none);
       expect(component.filterTitle.set).toHaveBeenCalledTimes(1);
     });
   });
@@ -603,5 +608,67 @@ describe('QfCheckboxFiltersComponent', () => {
       expect(component.initFilterTitle).toHaveBeenCalledTimes(1);
     });
   });
+
+  describe('selectAll()', () => {
+
+    it('should call store.updateFilters with all filters turned on', async () => {
+      const { component, mockStore } = await setup();
+      const filterStatus = true;
+      const expectedVal = { filter: filterStatus } as unknown as FilterState;
+      jest.spyOn(component, 'getAllFiltersWithAppliedState').mockReturnValue(expectedVal);
+
+      component.selectAll();
+
+      expect(component.getAllFiltersWithAppliedState).toHaveBeenCalledWith(filterStatus);
+      expect(component.getAllFiltersWithAppliedState).toHaveBeenCalledTimes(1);
+      expect(mockStore.updateFilters).toHaveBeenCalledWith(expectedVal);
+      expect(mockStore.updateFilters).toHaveBeenCalledTimes(1);
+    })
+
+  })
+
+  describe('clearAll()', () => {
+
+    it('should call store.updateFilters with all filters turned off', async () => {
+      const { component, mockStore } = await setup();
+      const filterStatus = false;
+      const expectedVal = { filter: filterStatus } as unknown as FilterState;
+      jest.spyOn(component, 'getAllFiltersWithAppliedState').mockReturnValue(expectedVal);
+
+      component.clearAll();
+
+      expect(component.getAllFiltersWithAppliedState).toHaveBeenCalledWith(filterStatus);
+      expect(component.getAllFiltersWithAppliedState).toHaveBeenCalledTimes(1);
+      expect(mockStore.updateFilters).toHaveBeenCalledWith(expectedVal);
+      expect(mockStore.updateFilters).toHaveBeenCalledTimes(1);
+    })
+
+  })
+
+  describe('getAllFiltersWithAppliedState()', () => {
+
+    it('should return filterstate object with supplied filter status for all the filters', async () => {
+      const { component } = await setup();
+      const state = true;
+      const expectedVal: FilterState = {
+        action: state,
+        case: state,
+        contact: state,
+        fileAttachmentToEmail: state,
+        fileAttachmentToPacket: state,
+        inboundEmail: state,
+        notes: state,
+        outboundEmail: state,
+        selfServiceComments: state,
+        serviceAgent: state,
+        ticket: state
+      };
+
+      const resp = component.getAllFiltersWithAppliedState(state);
+
+      expect(resp).toStrictEqual(expectedVal);
+    })
+
+  })
 
 });

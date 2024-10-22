@@ -1,5 +1,5 @@
 import { fakeAsync, TestBed, tick } from "@angular/core/testing"
-import { QuickFindStore } from "./quick-find.store"
+import { FilterState, QuickFindStore } from "./quick-find.store"
 import { QuickFindService } from "./quick-find.service"
 import { provideAutoSpy, Spy } from "jest-auto-spies"
 import { QuickFindUtilService } from "./quick-find-util.service"
@@ -382,6 +382,92 @@ describe('Store: QuickFind', () => {
       expect(qfStore.isError()).toBeTruthy();
     }))
 
+  })
+
+  describe('allFiltersApplied()', () => {
+
+    function allFiltersAppliedSetup(filterStatus = false) {
+
+      const { qfStore } = setup();
+
+      const state: FilterState = {
+        action: filterStatus,
+        case: filterStatus,
+        contact: filterStatus,
+        fileAttachmentToEmail: filterStatus,
+        fileAttachmentToPacket: filterStatus,
+        inboundEmail: filterStatus,
+        notes: filterStatus,
+        outboundEmail: filterStatus,
+        selfServiceComments: filterStatus,
+        serviceAgent: filterStatus,
+        ticket: filterStatus
+      };
+
+      return {
+        qfStore, state
+      }
+    }
+    it('should return true when all the filters are true', () => {
+      const filterStatus = true;
+      const { qfStore, state } = allFiltersAppliedSetup(filterStatus);
+
+      qfStore.updateFilters(state);
+
+      expect(qfStore.allFiltersApplied()).toBeTruthy();
+    })
+
+    it('should return false when all the filters are false', () => {
+      const filterStatus = false;
+      const { qfStore, state } = allFiltersAppliedSetup(filterStatus);
+
+      qfStore.updateFilters(state);
+
+      expect(qfStore.allFiltersApplied()).toBeFalsy();
+    })
+  })
+
+  describe('noFiltersApplied()', () => {
+
+    function noFiltersAppliedSetup(filterStatus = false) {
+
+      const { qfStore } = setup();
+
+      const state: FilterState = {
+        action: filterStatus,
+        case: filterStatus,
+        contact: filterStatus,
+        fileAttachmentToEmail: filterStatus,
+        fileAttachmentToPacket: filterStatus,
+        inboundEmail: filterStatus,
+        notes: filterStatus,
+        outboundEmail: filterStatus,
+        selfServiceComments: filterStatus,
+        serviceAgent: filterStatus,
+        ticket: filterStatus
+      };
+
+      return {
+        qfStore, state
+      }
+    }
+    it('should return true when all the filters are false', () => {
+      const filterStatus = false;
+      const { qfStore, state } = noFiltersAppliedSetup(filterStatus);
+
+      qfStore.updateFilters(state);
+
+      expect(qfStore.noFiltersApplied()).toBeTruthy();
+    })
+
+    it('should return false when all the filters are true', () => {
+      const filterStatus = true;
+      const { qfStore, state } = noFiltersAppliedSetup(filterStatus);
+
+      qfStore.updateFilters(state);
+
+      expect(qfStore.noFiltersApplied()).toBeFalsy();
+    })
   })
 
 })

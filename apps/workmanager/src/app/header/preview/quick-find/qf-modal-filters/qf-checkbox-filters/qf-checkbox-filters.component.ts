@@ -2,9 +2,10 @@ import { Component, effect, inject, Injector, input, OnInit, signal, WritableSig
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { IFilter } from './../../model/filter';
-import { QuickFindStore } from '../../store/quick-find.store';
+import { FilterState, QuickFindStore } from '../../store/quick-find.store';
 import { TranslateService } from '@ngx-translate/core';
 import { FilterType } from '../../store/quick-find.constant';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'en8-qf-checkbox-filters',
@@ -15,6 +16,7 @@ import { FilterType } from '../../store/quick-find.constant';
     MatCheckboxModule,
     MatAccordion,
     MatExpansionModule,
+    MatButtonModule
   ]
 })
 export class QfCheckboxFiltersComponent implements OnInit {
@@ -149,7 +151,7 @@ export class QfCheckboxFiltersComponent implements OnInit {
   }
 
   setAllFiltersAppliedTitle() {
-    this.filterTitle.set(this.locale().filters.all);
+    this.filterTitle.set(this.getAppliedFiltersTitle(this.locale().all));
   }
 
   getAppliedFiltersInfo() {
@@ -190,7 +192,7 @@ export class QfCheckboxFiltersComponent implements OnInit {
   setSingleFilterTitle(singleFilterIndex: number) {
     const title = singleFilterIndex !== -1
       ? this.getAppliedFiltersTitle(`${this.locale().all} ${this.filters()[singleFilterIndex].name}`)
-      : this.locale().filters.none;
+      : this.getAppliedFiltersTitle(this.locale().none);
     this.filterTitle.set(title);
   }
 
@@ -211,5 +213,29 @@ export class QfCheckboxFiltersComponent implements OnInit {
       });
     }
     this.store.updateFilters(updatedFilters);
+  }
+
+  selectAll() {
+    this.store.updateFilters(this.getAllFiltersWithAppliedState(true));
+  }
+
+  clearAll() {
+    this.store.updateFilters(this.getAllFiltersWithAppliedState(false));
+  }
+
+  getAllFiltersWithAppliedState(state: boolean): FilterState {
+    return {
+      action: state,
+      case: state,
+      contact: state,
+      fileAttachmentToEmail: state,
+      fileAttachmentToPacket: state,
+      inboundEmail: state,
+      notes: state,
+      outboundEmail: state,
+      selfServiceComments: state,
+      serviceAgent: state,
+      ticket: state
+    }
   }
 }

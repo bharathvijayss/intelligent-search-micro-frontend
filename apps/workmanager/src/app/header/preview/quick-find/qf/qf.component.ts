@@ -65,7 +65,7 @@ export class QfComponent implements AfterViewInit, OnInit {
         locale: this.locale,
         searchBoxIcon: this.searchBoxIcon
       },
-      width: `45vw`,
+      width: `50vw`,
       minWidth: '450px',
       maxWidth: '950px',
       maxHeight: '90vh',
