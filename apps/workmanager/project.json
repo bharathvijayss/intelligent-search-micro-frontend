@@ -16,7 +16,8 @@
         "index": "apps/workmanager/src/index.html",
         "browser": "apps/workmanager/src/main.ts",
         "polyfills": [
-          "zone.js"
+          "zone.js",
+          "@angular/localize/init"
         ],
         "tsConfig": "apps/workmanager/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
